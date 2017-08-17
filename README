@@ -1,0 +1,62 @@
+This archive contains the results of three nucleotide sequence queries
+using SSEARCH, FASTA, and BLAST.  Each of the queries were made against
+nucleotide data sets available from GenBank.  The data sets used were,
+the E. coli data set, the yeast data set, and the homosapien chromosome
+one.  The data sets were each obtained with the November 1999 updates.
+
+For an analysis of the results, please refer to
+https://github.com/MichaelDipperstein/mltp/raw/master/docs/DNApaper.html
+
+The following is a brief description of the files contained in this
+archive:
+
+File Name        Description
+------------     -----------
+BLAST.BAT        MS-DOS Batch file to run the BLAST searches
+BLAST1.BAT       MS-DOS Batch file to run the query 1 BLAST searches
+BLAST2.BAT       MS-DOS Batch file to run the query 2 BLAST searches
+BLAST3.BAT       MS-DOS Batch file to run the query 3 BLAST searches
+FASTA.BAT        MS-DOS Batch file to run the FASTA searches
+SSEARCH.BAT      MS-DOS Batch file to run the SSEARCH searches
+
+Results File     Description
+------------     -----------
+CR.TXT           File of carriage returns for FASTA and SSEARCH input
+NULL.TXT         Empty file for BLAST input
+
+QUERY1.TXT       25 nucleotide query containing a subsequence found in
+                 the homosapien chromosome one data set
+QUERY2.TXT       50 nucleotide query containing a subsequence found in
+                 the yeast data set
+QUERY2.TXT       100 nucleotide query containing a subsequence found in
+                 the E. coli data set
+
+BEQ1.TXT         BLAST search on E. Coli data set for query 1
+BEQ2.TXT         BLAST search on E. Coli data set for query 2
+BEQ3.TXT         BLAST search on E. Coli data set for query 3
+BYQ1.TXT         BLAST search on yeast data set for query 1
+BYQ2.TXT         BLAST search on yeast data set for query 2
+BYQ3.TXT         BLAST search on yeast data set for query 3
+BHQ1.TXT         BLAST search on homosapien data set for query 1
+BHQ2.TXT         BLAST search on homosapien data set for query 2
+BHQ3.TXT         BLAST search on homosapien data set for query 3
+
+FEQ1.TXT         FASTA search on E. Coli data set for query 1
+FEQ2.TXT         FASTA search on E. Coli data set for query 2
+FEQ3.TXT         FASTA search on E. Coli data set for query 3
+FEQ1.TXT         FASTA search on yeast data set for query 1
+FYQ2.TXT         FASTA search on yeast data set for query 2
+FYQ3.TXT         FASTA search on yeast data set for query 3
+FHQ1.TXT         FASTA search on homosapien data set for query 1
+FHQ2.TXT         FASTA search on homosapien data set for query 2
+FHQ3.TXT         FASTA search on homosapien data set for query 3
+
+SEQ1.TXT         SSEARCH search on E. Coli data set for query 1
+SEQ2.TXT         SSEARCH search on E. Coli data set for query 2
+SEQ3.TXT         SSEARCH search on E. Coli data set for query 3
+SYQ1.TXT         SSEARCH search on yeast data set for query 1
+SYQ2.TXT         SSEARCH search on yeast data set for query 2
+SYQ3.TXT         SSEARCH search on yeast data set for query 3
+SHQ1.TXT         SSEARCH search on homosapien data set for query 1
+SHQ2.TXT         SSEARCH search on homosapien data set for query 2
+SHQ3.TXT         SSEARCH search on homosapien data set for query 3

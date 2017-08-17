@@ -1,0 +1,73 @@
+Current time is 10:53:08.51p
+Enter new time: 
+BLASTN 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= gi|557821|emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid
+9168 subsequence
+         (50 letters)
+
+Database: c:\school\cs290i\dna\blast\exe\ecoli.nt
+           400 sequences; 4,662,239 total letters
+
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+
+gb|AE000325|ECAE000325 Escherichia coli , emrY, emrK, evgA, evgS...    25  0.74
+
+>gb|AE000325|ECAE000325 Escherichia coli , emrY, emrK, evgA, evgS genes from bases 2478575 to
+            2491558 (section 215 of 400) of the complete genome
+            Length = 12984
+            
+ Score = 24.9 bits (81), Expect = 0.74
+ Identities = 17/18 (94%)
+ Strand = Plus / Plus
+
+                              
+Query: 4    gacagccattaacgatag 21
+            |||||||||||||||| |
+Sbjct: 2069 gacagccattaacgattg 2086
+
+
+  Database: c:\school\cs290i\dna\blast\exe\ecoli.nt
+    Posted date:  Dec 3, 1999  7:19 AM
+  Number of letters in database: 4,662,239
+  Number of sequences in database:  400
+  
+Lambda     K      H
+   0.192    0.173    0.357 
+
+Gapped
+Lambda     K      H
+   0.192    0.173    0.357 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 16, Extension: 4
+Number of Hits to DB: 69
+Number of Sequences: 400
+Number of extensions: 69
+Number of successful extensions: 6
+Number of sequences better than  2.0: 1
+length of query: 50
+length of database: 4,662,239
+effective HSP length: 45
+effective length of query: 5
+effective length of database: 4,644,239
+effective search space: 23221195
+effective search space used: 23221195
+T: 0
+A: 0
+X1: 37 (10.2 bits)
+X2: 180 (49.7 bits)
+S1: 81 (24.9 bits)
+S2: 76 (23.5 bits)
+Current time is 10:53:11.97p
+Enter new time: 

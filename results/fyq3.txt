@@ -1,0 +1,104 @@
+Current time is  7:46:08.66p
+Enter new time: 
+ FASTA searches a protein or DNA sequence data bank
+ version 3.2t06 July 29, 1999
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+query3.txt: 100 nt
+ >gi|1786542|gb|AE000142|ECAE000142 Escherichia coli , mhpB, mhpE, adhC genes from bases 367767 to 379237 (section 32 of
+ vs  yeast.nt library
+searching yeast.nt library
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 6 library sequences
+  24     0     0:
+  26     0     0:
+  28     1     1:*
+  30     1     4:*
+  32    18    17:==*
+  34    31    47:====== *
+  36    81    97:==============  *
+  38   156   160:==========================*
+  40   266   223:=====================================*=======
+  42   289   273:=============================================*===
+  44   306   301:==================================================*
+  46   317   307:===================================================*=
+  48   316   294:================================================*====
+  50   284   268:============================================*===
+  52   251   236:=======================================*==
+  54   188   201:================================ *
+  56   157   168:===========================*
+  58   110   138:===================   *
+  60    90   112:===============   *
+  62    74    90:============= *
+  64    71    71:===========*
+  66    42    56:=======  *
+  68    49    44:=======*=
+  70    36    35:=====*
+  72    24    27:====*
+  74    18    21:===*
+  76    18    16:==*
+  78    13    13:==*
+  80    10    10:=*
+  82    12     8:=*
+  84     8     6:*=
+  86     5     5:*
+  88     6     4:*          inset = represents 1 library sequences
+  90     5     3:*
+  92     6     2:*         :=*====
+  94     3     2:*         :=*=
+  96     1     1:*         :*
+  98     1     1:*         :*
+ 100     1     1:*         :*
+ 102     1     1:*         :*
+ 104     1     0:=         *=
+ 106     1     0:=         *=
+ 108     1     0:=         *=
+ 110     0     0:          *
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     0     0:          *
+14686544 residues in  3260 sequences
+  Expectation_n fit: rho(ln(x))= 4.0299+/-0.00303; mu= 16.2972+/- 0.239;
+ mean_var=59.6813+/-12.964, 0's: 0 Z-trim: 4  B-trim: 0 in 0/51
+ Kolmogorov-Smirnov  statistic: 0.0272 (N=29) at  52
+
+FASTA (3.26 July, 1999) function [optimized, +5/-4 matrix (5:-4)] ktup: 6
+ join: 46, opt: 31, gap-pen: -16/ -4, width:  16 reg.-scaled
+ Scan time: 36.000
+Enter filename for results []:  How many scores would you like to see? [20] The best  scores are:                             initn init1 opt z-sc E(3265)
+gi|736296|emb|Z48755|SC8325 S.cerevis (16267) [f]   59   59   90   94.8     1.6
+gi|1302206|emb|Z71482|SCYNL206C S.cer (2808) [r]   50   50   92  106.6     2.1
+gi|695715|emb|Z48502|SC9532X S.cerevi (24105) [f]   86   56   86   87.6     2.8
+gi|717059|gb|U22382|YSCL9324 Saccharo (21732) [f]   55   55   86   88.1     2.9
+gi|1008263|emb|Z49367|SCYJL092W S.cer (4267) [f]   40   40   89  100.5       3
+gi|1015647|emb|Z49515|SCYJR015W S.cer (2025) [r]   40   40   90  105.7     3.2
+gi|535979|emb|Z35765|SCYBL004W S.cere (14999) [r]   56   56   86   90.1     3.2
+gi|1008265|emb|Z49368|SCYJL093C S.cer (2980) [f]   40   40   89  102.4     3.3
+gi|1006713|emb|Z49280|SCYJL005W S.cer (7479) [r]   45   45   87   95.0     3.4
+gi|535983|emb|Z35766|SCYBL005W S.cere (10506) [r]   56   56   86   91.9     3.6
+gi|1302358|emb|Z71560|SCYNL284C S.cer (8871) [f]   56   56   86   92.8     3.8
+gi|1015645|emb|Z49514|SCYJR014W S.cer (1127) [r]   40   40   90  108.7     3.9
+gi|1302362|emb|Z71561|SCYNL285W S.cer (7053) [f]   56   56   86   94.0     4.1
+gi|1420484|emb|Z75115|SCYOR207C S.cer (4280) [r]   65   65   86   96.6     4.9
+gi|665967|gb|U21094|YSCL9753 Saccharo (24761) [f]   93   65   81   81.0     6.2
+gi|544497|gb|U14913|YSCH8167 Saccharo (38868) [r]   77   77   79   76.0     7.4
+gi|1289283|emb|Z46727|SC9395 S.cerevi (39334) [r]   56   56   78   74.7     8.7
+gi|486028|emb|Z28029|SCYKL030W S.cere (3272) [r]   45   45   82   92.8      10
+gi|642799|emb|Z48008|SC8119 S.cerevis (37404) [r]   91   61   77   73.6      10
+gi|1431296|emb|Z74231|SCYDL183C S.cer (2952) [r]   72   72   82   93.4      11
+ More scores? [0]  Display alignments also? (y/n) [n] 
+
+100 residues in 1 query   sequences
+14686544 residues in 3260 library sequences
+ Scomplib [version 3.2t06 July 29, 1999]
+ start: Sat Dec 11 19:46:08 1999 done: Sat Dec 11 19:46:44 1999
+ Scan time: 36.000 Display time:  0.000
+
+Function used was  FASTA 
+Current time is  7:46:44.97p
+Enter new time: 

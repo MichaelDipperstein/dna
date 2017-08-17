@@ -1,0 +1,105 @@
+Current time is  7:26:20.51p
+Enter new time: 
+ SSEARCH searches a sequence database
+ using the Smith-Waterman algorithm
+ version 3.2t06 July 29, 1999
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+query2.txt: 50 nt
+ >gi|557821|emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid 9168 subsequence
+ vs  hs_chr01.nt library
+searching hs_chr01.nt library
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 1 library sequences
+  24     0     0:
+  26     0     0:
+  28     0     0:
+  30     1     0:=
+  32     2     2:=*
+  34     5     5:====*
+  36    13    10:=========*===
+  38    10    17:==========      *
+  40    26    23:======================*===
+  42    30    29:============================*=
+  44    23    32:=======================        *
+  46    27    32:===========================    *
+  48    34    31:==============================*===
+  50    33    28:===========================*=====
+  52    22    25:======================  *
+  54    12    21:============        *
+  56    19    18:=================*=
+  58    16    14:=============*==
+  60    18    12:===========*======
+  62    12     9:========*===
+  64     7     7:======*
+  66     7     6:=====*=
+  68     5     5:====*
+  70     6     4:===*==
+  72     3     3:==*
+  74     2     2:=*
+  76     3     2:=*=
+  78     1     1:*
+  80     1     1:*
+  82     0     1:*
+  84     1     1:*
+  86     0     0:
+  88     1     0:=
+  90     0     0:
+  92     0     0:
+  94     0     0:
+  96     2     0:==
+  98     0     0:
+ 100     0     0:
+ 102     0     0:
+ 104     0     0:
+ 106     0     0:
+ 108     0     0:
+ 110     0     0:
+ 112     0     0:
+ 114     0     0:
+ 116     0     0:
+ 118     0     0:
+>120     0     0:
+22067619 residues in   130 sequences
+  Expectation_n fit: rho(ln(x))= 5.7541+/-0.0252; mu= 8.4513+/- 2.841;
+ mean_var=34.5863+/-24.183, 0's: 0 Z-trim: 0  B-trim: 9 in 1/20
+ Kolmogorov-Smirnov  statistic: 0.0481 (N=27) at  54
+
+ Smith-Waterman (PGopt) (3.2 May, 1999) function [+5/-4 matrix (5:-4)], gap-penalty: -16/-4 reg.-scaled
+ Scan time: 208.000
+Enter filename for results []:  How many scores would you like to see? [20] The best  scores are:                                      s-w z-sc E(342)
+gi|5867447|ref|NT_000011.1|Hs1_15| Homo sapien (79886) [r]  101   96.9    0.38
+gi|6017016|ref|NT_002479.1|Hs1_2600| Homo sapi (75442) [r]  100   95.8    0.46
+gi|5867542|ref|NT_000042.1|Hs1_45| Homo sapien (79886) [r]   94   85.0     1.7
+gi|5867492|ref|NT_002149.1|Hs1_2268| Homo sapi (79886) [f]   92   81.6     2.7
+gi|6381876|ref|NT_002662.2|Hs1_2808| Homo sapi (79886) [r]   89   76.5     5.1
+gi|5867474|ref|NT_000020.1|Hs1_21| Homo sapien (50114) [f]   88   79.4     5.7
+gi|5867449|ref|NT_001405.1|Hs1_1522| Homo sapi (79886) [r]   88   74.8     6.4
+gi|5867482|ref|NT_002059.1|Hs1_2178| Homo sapi (79886) [f]   87   73.1     7.9
+gi|6117805|ref|NT_000008.2|Hs1_12| Homo sapien (79886) [f]   87   73.1     7.9
+gi|5867498|ref|NT_002169.1|Hs1_2288| Homo sapi (62274) [f]   86   73.9     9.2
+gi|5867447|ref|NT_000011.1|Hs1_15| Homo sapien (79886) [f]   86   71.4     9.8
+gi|5867544|ref|NT_000046.1|Hs1_49| Homo sapien (79886) [r]   86   71.4     9.8
+gi|6249568|ref|NT_002680.1|Hs1_2826| Homo sapi (31655) [f]   84   77.1      12
+gi|5867544|ref|NT_000046.1|Hs1_49| Homo sapien (79886) [r]   85   69.7      12
+gi|5867535|ref|NT_000036.1|Hs1_39| Homo sapien (79886) [r]   85   69.7      12
+gi|5867535|ref|NT_000036.1|Hs1_39| Homo sapien (79886) [f]   85   69.7      12
+gi|5867518|ref|NT_002391.1|Hs1_2512| Homo sapi (79886) [r]   84   68.0      15
+gi|5867550|ref|NT_000004.1|Hs1_9| Homo sapiens (79886) [r]   84   68.0      15
+gi|5867485|ref|NT_002071.1|Hs1_2190| Homo sapi (79886) [f]   83   66.3      18
+gi|5867549|ref|NT_000002.1|Hs1_7| Homo sapiens (79886) [f]   83   66.3      18
+ More scores? [0]  Display alignments also? (y/n) [n] 
+
+50 residues in 1 query   sequences
+22067619 residues in 130 library sequences
+ Scomplib [version 3.2t06 July 29, 1999]
+ start: Sat Dec 11 19:26:20 1999 done: Sat Dec 11 19:29:48 1999
+ Scan time: 208.000 Display time:  0.000
+
+Function used was  Smith-Waterman 
+Current time is  7:29:48.29p
+Enter new time: 

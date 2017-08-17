@@ -1,0 +1,101 @@
+Current time is 10:53:11.97p
+Enter new time: 
+BLASTN 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= gi|557821|emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid
+9168 subsequence
+         (50 letters)
+
+Database: c:\school\cs290i\dna\blast\exe\yeast.nt
+           3260 sequences; 14,686,544 total letters
+
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+
+emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid 9168               72  2e-014
+gb|U33057|SCD9717 Saccharomyces cerevisiae chromosome IV cosmids...    27  0.50
+gb|U00060|YSCH9332 Saccharomyces cerevisiae chromosome VIII cosm...    27  0.73
+
+>emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid 9168
+            Length = 42793
+            
+ Score = 71.6 bits (250), Expect = 2e-014
+ Identities = 50/50 (100%)
+ Strand = Plus / Plus
+
+                                                              
+Query: 1    tgggacagccattaacgatagaattacagctagttccttcggaggatcct 50
+            ||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 5391 tgggacagccattaacgatagaattacagctagttccttcggaggatcct 5440
+
+
+>gb|U33057|SCD9717 Saccharomyces cerevisiae chromosome IV cosmids 8166, 9787, 9717, and
+             lambda 3073
+             Length = 72119
+             
+ Score = 27.1 bits (89), Expect = 0.50
+ Identities = 25/34 (73%)
+ Strand = Plus / Plus
+
+                                               
+Query: 1     tgggacagccattaacgatagaattacagctagt 34
+             ||  |||||||||||  |||  | || | |||||
+Sbjct: 22833 tgttacagccattaatcatacgaataaaactagt 22866
+
+
+>gb|U00060|YSCH9332 Saccharomyces cerevisiae chromosome VIII cosmid 9332
+             Length = 36176
+             
+ Score = 26.6 bits (87), Expect = 0.73
+ Identities = 23/30 (76%)
+ Strand = Plus / Minus
+
+                                           
+Query: 11    attaacgatagaattacagctagttccttc 40
+             || || ||  || ||| ||||||||||| |
+Sbjct: 28457 atgaaggagtgacttaaagctagttcctcc 28428
+
+
+  Database: c:\school\cs290i\dna\blast\exe\yeast.nt
+    Posted date:  Dec 3, 1999  7:20 AM
+  Number of letters in database: 14,686,544
+  Number of sequences in database:  3260
+  
+Lambda     K      H
+   0.192    0.173    0.357 
+
+Gapped
+Lambda     K      H
+   0.192    0.173    0.357 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 16, Extension: 4
+Number of Hits to DB: 230
+Number of Sequences: 3260
+Number of extensions: 230
+Number of successful extensions: 37
+Number of sequences better than  2.0: 3
+length of query: 50
+length of database: 14,686,544
+effective HSP length: 45
+effective length of query: 5
+effective length of database: 14,539,844
+effective search space: 72699220
+effective search space used: 72699220
+T: 0
+A: 0
+X1: 37 (10.2 bits)
+X2: 180 (49.7 bits)
+S1: 81 (24.9 bits)
+S2: 82 (25.2 bits)
+Current time is 10:53:17.46p
+Enter new time: 

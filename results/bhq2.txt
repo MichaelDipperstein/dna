@@ -1,0 +1,56 @@
+Current time is 10:53:17.52p
+Enter new time: 
+BLASTN 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= gi|557821|emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid
+9168 subsequence
+         (50 letters)
+
+Database: c:\school\cs290i\dna\blast\exe\hs_chr01.nt
+           130 sequences; 22,067,619 total letters
+
+
+
+ ***** No hits found ******
+
+  Database: c:\school\cs290i\dna\blast\exe\hs_chr01.nt
+    Posted date:  Dec 3, 1999  7:21 AM
+  Number of letters in database: 22,067,619
+  Number of sequences in database:  130
+  
+Lambda     K      H
+   0.192    0.173    0.357 
+
+Gapped
+Lambda     K      H
+   0.192    0.173    0.357 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 16, Extension: 4
+Number of Hits to DB: 233
+Number of Sequences: 130
+Number of extensions: 233
+Number of successful extensions: 23
+Number of sequences better than  2.0: 0
+length of query: 50
+length of database: 22,067,619
+effective HSP length: 45
+effective length of query: 5
+effective length of database: 22,061,769
+effective search space: 110308845
+effective search space used: 110308845
+T: 0
+A: 0
+X1: 37 (10.2 bits)
+X2: 180 (49.7 bits)
+S1: 81 (24.9 bits)
+S2: 84 (25.7 bits)
+Current time is 10:53:24.27p
+Enter new time: 

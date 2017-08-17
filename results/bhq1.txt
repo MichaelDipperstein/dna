@@ -1,0 +1,72 @@
+Current time is 10:48:20.48p
+Enter new time: 
+BLASTN 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= gi|5867443|ref|NT_000007.1|Hs1_11| Homo sapiens 1p36.1-p36.3
+subsequence.
+         (25 letters)
+
+Database: c:\school\cs290i\dna\blast\exe\hs_chr01.nt
+           130 sequences; 22,067,619 total letters
+
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+
+ref|NT_000007.1|HS1_11| Homo sapiens 1p36.1-p36.3 sequence.            37  8e-004
+
+>ref|NT_000007.1|HS1_11| Homo sapiens 1p36.1-p36.3 sequence.
+             Length = 115602
+             
+ Score = 37.1 bits (125), Expect = 8e-004
+ Identities = 25/25 (100%)
+ Strand = Plus / Plus
+
+                                      
+Query: 1     tccatggatggtcataaatatgaga 25
+             |||||||||||||||||||||||||
+Sbjct: 11461 tccatggatggtcataaatatgaga 11485
+
+
+  Database: c:\school\cs290i\dna\blast\exe\hs_chr01.nt
+    Posted date:  Dec 3, 1999  7:21 AM
+  Number of letters in database: 22,067,619
+  Number of sequences in database:  130
+  
+Lambda     K      H
+   0.192    0.173    0.357 
+
+Gapped
+Lambda     K      H
+   0.192    0.173    0.357 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 16, Extension: 4
+Number of Hits to DB: 165
+Number of Sequences: 130
+Number of extensions: 165
+Number of successful extensions: 20
+Number of sequences better than  2.0: 1
+length of query: 25
+length of database: 22,067,619
+effective HSP length: 20
+effective length of query: 5
+effective length of database: 22,065,019
+effective search space: 110325095
+effective search space used: 110325095
+T: 0
+A: 0
+X1: 37 (10.2 bits)
+X2: 180 (49.7 bits)
+S1: 81 (24.9 bits)
+S2: 84 (25.7 bits)
+Current time is 10:48:27.68p
+Enter new time: 

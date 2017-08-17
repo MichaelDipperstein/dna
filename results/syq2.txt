@@ -1,0 +1,105 @@
+Current time is  7:23:59.35p
+Enter new time: 
+ SSEARCH searches a sequence database
+ using the Smith-Waterman algorithm
+ version 3.2t06 July 29, 1999
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+query2.txt: 50 nt
+ >gi|557821|emb|Z38061|SC9168 S.cerevisiae chromosome IX cosmid 9168 subsequence
+ vs  yeast.nt library
+searching yeast.nt library
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 5 library sequences
+  24     0     0:
+  26     0     0:
+  28     0     1:*
+  30     9     5:*=
+  32    16    17:===*
+  34    53    47:=========*=
+  36   100    97:===================*
+  38   173   160:===============================*===
+  40   245   224:============================================*====
+  42   257   273:====================================================  *
+  44   300   301:===========================================================*
+  46   271   307:=======================================================    *
+  48   297   294:==========================================================*=
+  50   278   268:=====================================================*==
+  52   251   236:===============================================*===
+  54   188   201:======================================  *
+  56   160   168:================================ *
+  58   145   138:===========================*=
+  60   118   112:======================*=
+  62    81    90:=================*
+  64    70    71:==============*
+  66    61    56:===========*=
+  68    37    44:========*
+  70    29    35:======*
+  72    35    27:=====*=
+  74    21    21:====*
+  76    20    16:===*
+  78     7    13:==*
+  80    11    10:=*=
+  82     7     8:=*
+  84     7     6:=*
+  86     8     5:*=
+  88     3     4:*          inset = represents 1 library sequences
+  90     4     3:*
+  92     1     2:*         :=*
+  94     0     2:*         : *
+  96     0     1:*         :*
+  98     2     1:*         :*=
+ 100     2     1:*         :*=
+ 102     0     1:*         :*
+ 104     1     0:=         *=
+ 106     0     0:          *
+ 108     0     0:          *
+ 110     0     0:          *
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     1     0:=         *=
+14686544 residues in  3260 sequences
+  Expectation_n fit: rho(ln(x))= 5.1724+/-0.00273; mu= 17.9920+/- 0.216;
+ mean_var=39.5138+/- 8.972, 0's: 0 Z-trim: 1  B-trim: 0 in 0/51
+ Kolmogorov-Smirnov  statistic: 0.0139 (N=29) at  40
+
+ Smith-Waterman (PGopt) (3.2 May, 1999) function [+5/-4 matrix (5:-4)], gap-penalty: -16/-4 reg.-scaled
+ Scan time: 141.000
+Enter filename for results []:  How many scores would you like to see? [20] The best  scores are:                                      s-w z-sc E(3268)
+gi|557821|emb|Z38061|SC9168 S.cerevisiae chrom (42793) [f]  250  331.3 4.1e-14
+gi|1431471|emb|Z74328|SCYDR032C S.cerevisiae c (4294) [f]   93  100.5     2.9
+gi|1431473|emb|Z74329|SCYDR033W S.cerevisiae c (5041) [f]   93   99.2       3
+gi|1301809|emb|Z68196|SC9673 S.cerevisiae chro (24628) [f]   93   86.1     3.2
+gi|1420186|emb|Z74960|SCYOR052C S.cerevisiae c (1732) [r]   91  104.8     4.2
+gi|1420803|emb|Z75280|SCYOR372C S.cerevisiae c (2651) [f]   89   98.1     6.5
+gi|927764|gb|U33057|SCD9717 Saccharomyces cere (72119) [f]   89   70.9     7.6
+gi|1907116|emb|X59720|SCCHRIII S.cerevisiae ch (79886) [f]   89   70.1     7.7
+gi|1370364|emb|Z73529|SCYPL173W S.cerevisiae c (1579) [r]   88  100.8     7.7
+gi|577192|gb|U17246|YSCL9470 Saccharomyces cer (40738) [f]   88   74.0     9.1
+gi|486326|emb|Z28185|SCYKL185W S.cerevisiae ch (3458) [f]   87   92.7     9.9
+gi|1066467|gb|U40828|YSCP9642 Saccharomyces ce (25164) [r]   87   76.4      11
+gi|487928|gb|U00060|YSCH9332 Saccharomyces cer (36176) [r]   87   73.4      11
+gi|1420492|emb|Z75119|SCYOR211C S.cerevisiae c (4377) [f]   86   89.2      12
+gi|1420494|emb|Z75120|SCYOR212W S.cerevisiae c (5318) [f]   86   87.6      12
+gi|1430966|emb|Z74055|SCYDL007W S.cerevisiae c (5914) [f]   85   85.1      15
+gi|1015742|emb|Z49566|SCYJR066W S.cerevisiae c (7860) [f]   85   82.8      16
+gi|1289283|emb|Z46727|SC9395 S.cerevisiae chro (39334) [f]   85   69.5      17
+gi|1431496|emb|Z74350|SCYDR054C S.cerevisiae c (2882) [f]   84   89.5      18
+gi|1302033|emb|Z71388|SCYNL112W S.cerevisiae c (3740) [f]   84   87.3      18
+ More scores? [0]  Display alignments also? (y/n) [n] 
+
+50 residues in 1 query   sequences
+14686544 residues in 3260 library sequences
+ Scomplib [version 3.2t06 July 29, 1999]
+ start: Sat Dec 11 19:23:59 1999 done: Sat Dec 11 19:26:20 1999
+ Scan time: 141.000 Display time:  0.000
+
+Function used was  Smith-Waterman 
+Current time is  7:26:20.51p
+Enter new time: 

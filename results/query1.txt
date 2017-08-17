@@ -1,0 +1,3 @@
+>gi|5867443|ref|NT_000007.1|Hs1_11| Homo sapiens 1p36.1-p36.3 subsequence.
+TCCATGGATGGTCATAAATATGAGA
+

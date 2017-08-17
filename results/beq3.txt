@@ -1,0 +1,4604 @@
+Current time is 11:00:20.50p
+Enter new time: 
+BLASTN 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= gi|1786542|gb|AE000142|ECAE000142 Escherichia coli , mhpB,
+mhpE, adhC genes from bases 367767 to 379237 (section 32 of 400) of
+the complete genome subsequence
+         (100 letters)
+
+Database: c:\school\cs290i\dna\blast\exe\ecoli.nt
+           400 sequences; 4,662,239 total letters
+
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+
+gb|AE000142|ECAE000142 Escherichia coli , mhpB, mhpE, adhC genes...   140  1e-034
+gb|AE000483|ECAE000483 Escherichia coli , phnB, phnA, yjdA, yjcZ...   111  7e-026
+gb|AE000131|ECAE000131 Escherichia coli , gmhA, yafJ, yafK, yafQ...   103  2e-023
+gb|AE000154|ECAE000154 Escherichia coli , gsk, ybaL, fsr, ushA g...    98  6e-022
+gb|AE000508|ECAE000508 Escherichia coli , prfC, osmY, yjjU, yjjV...    91  1e-019
+gb|AE000373|ECAE000373 Escherichia coli , recJ, dsbC, xerD, fldB...    91  1e-019
+gb|AE000139|ECAE000139 Escherichia coli  gene from bases 334346 ...    86  4e-018
+gb|AE000382|ECAE000382 Escherichia coli , hybG, hybF, hybE, hybD...    85  5e-018
+gb|AE000474|ECAE000474 Escherichia coli , rrsE, gltV, rrlE, rrfE...    84  1e-017
+gb|AE000460|ECAE000460 Escherichia coli , fadA, fadB, pepQ, yigZ...    84  1e-017
+gb|AE000128|ECAE000128 Escherichia coli , ldcC, mesJ, yaeO, yaeQ...    82  5e-017
+gb|AE000145|ECAE000145 Escherichia coli , yaiB, phoA, psiF, yaiC...    82  6e-017
+gb|AE000182|ECAE000182 Escherichia coli , rhlE, ybiA, dinG, ybiB...    81  1e-016
+gb|AE000295|ECAE000295 Escherichia coli , galF, cpsG, cpsB, yefD...    80  2e-016
+gb|AE000509|ECAE000509 Escherichia coli , serB, sms, nadR, yjjK,...    75  8e-015
+gb|AE000334|ECAE000334 Escherichia coli , acrD, yffB, dapE, purC...    75  8e-015
+gb|AE000203|ECAE000203 Escherichia coli , putA, putP, ycdB genes...    74  1e-014
+gb|AE000140|ECAE000140 Escherichia coli , codB, codA genes from ...    74  1e-014
+gb|AE000311|ECAE000311 Escherichia coli , rcsC, atoS, atoC, atoD...    74  1e-014
+gb|AE000403|ECAE000403 Escherichia coli , mdh, argR, yhcP, yhcQ,...    74  2e-014
+gb|AE000313|ECAE000313 Escherichia coli , ubiG, yfaL, nrdA, nrdB...    73  2e-014
+gb|AE000387|ECAE000387 Escherichia coli , glnE, ygiF, ygiM, cca,...    73  3e-014
+gb|AE000310|ECAE000310 Escherichia coli , eco, yojH, yojI, alkB,...    73  3e-014
+gb|AE000188|ECAE000188 Escherichia coli , artJ, artM, artQ, artI...    73  3e-014
+gb|AE000494|ECAE000494 Escherichia coli , chpS, chpB, ppa, ytfQ,...    72  4e-014
+gb|AE000339|ECAE000339 Escherichia coli , sseB, yfhI, yfhJ, fdx,...    72  7e-014
+gb|AE000480|ECAE000480 Escherichia coli , yjcE, yjcF, yjcG, yjcH...    71  1e-013
+gb|AE000119|ECAE000119 Escherichia coli , ftsZ, lpxC, yacA, secA...    70  2e-013
+gb|AE000465|ECAE000465 Escherichia coli , fdhD, yiiG, frvR, frvX...    70  3e-013
+gb|AE000466|ECAE000466 Escherichia coli , yiiM, cpxA, cpxR, yiiP...    70  3e-013
+gb|AE000201|ECAE000201 Escherichia coli , cspG, sfa, torS, torT,...    69  3e-013
+gb|AE000432|ECAE000432 Escherichia coli , proK, yhjW, yhjX, yhjY...    69  4e-013
+gb|AE000462|ECAE000462 Escherichia coli , yihI, hemN, glnG, glnL...    69  4e-013
+gb|AE000175|ECAE000175 Escherichia coli , ybgD, gltA, sdhC, sdhD...    69  4e-013
+gb|AE000304|ECAE000304 Escherichia coli , mglC, mglA, mglB, galS...    69  5e-013
+gb|AE000327|ECAE000327 Escherichia coli , glk, nupC, yfeA, alaX,...    68  7e-013
+gb|AE000476|ECAE000476 Escherichia coli , pgi, yjbE, yjbF, yjbG,...    68  1e-012
+gb|AE000352|ECAE000352 Escherichia coli , ygaC, nrdE, nrdF, proV...    67  1e-012
+gb|AE000477|ECAE000477 Escherichia coli , lamB, malM, yjbI, ubiC...    67  1e-012
+gb|AE000158|ECAE000158 Escherichia coli , ybcF, purK, purE, ybbF...    66  3e-012
+gb|AE000296|ECAE000296 Escherichia coli , yegA, dcd, udk, yegE g...    66  4e-012
+gb|AE000360|ECAE000360 Escherichia coli , cysH, cysI, cysJ genes...    65  5e-012
+gb|AE000390|ECAE000390 Escherichia coli , ygjJ, ygjK, ygjL, ygjM...    65  7e-012
+gb|AE000378|ECAE000378 Escherichia coli , yggM, ansB, yggN, yggL...    65  8e-012
+gb|AE000332|ECAE000332 Escherichia coli , eutH, eutG, eutJ, eutE...    62  4e-011
+gb|AE000117|ECAE000117 Escherichia coli , araC, yabI, yabJ, yabK...    61  8e-011
+gb|AE000299|ECAE000299 Escherichia coli  gene from bases 2175352...    61  1e-010
+gb|AE000125|ECAE000125 Escherichia coli , hemL, yadQ, yadR, yadS...    60  2e-010
+gb|AE000389|ECAE000389 Escherichia coli , air, ygjG, ygjH, ebgR,...    59  3e-010
+gb|AE000280|ECAE000280 Escherichia coli , yebL, yebI, ruvB, ruvA...    59  4e-010
+gb|AE000303|ECAE000303 Escherichia coli , yohC, yohD, yohF, yohG...    58  1e-009
+gb|AE000495|ECAE000495 Escherichia coli , cybC, nrdG, nrdD, treC...    57  2e-009
+gb|AE000417|ECAE000417 Escherichia coli , yhgA, bioH, yhgH, yhgI...    57  2e-009
+gb|AE000507|ECAE000507 Escherichia coli , mdoB, yjjA, dnaC, dnaT...    56  3e-009
+gb|AE000434|ECAE000434 Escherichia coli , xylF, xylG, xylH, xylR...    56  3e-009
+gb|AE000321|ECAE000321 Escherichia coli , pdxB, div, fabB, yfcA,...    55  5e-009
+gb|AE000116|ECAE000116 Escherichia coli , yabH, yabP, yabQ, yabO...    55  6e-009
+gb|AE000481|ECAE000481 Escherichia coli , nrfE, nrfF, nrfG, gltP...    55  8e-009
+gb|AE000174|ECAE000174 Escherichia coli , ybfC, ybfD, ybgA, phrB...    55  8e-009
+gb|AE000436|ECAE000436 Escherichia coli , yiaT, yiaU, yiaV, yiaW...    54  9e-009
+gb|AE000297|ECAE000297 Escherichia coli , alkA, yegD, baeS, baeR...    54  9e-009
+gb|AE000211|ECAE000211 Escherichia coli , ycfF, ndh, ycfJ, mfd g...    54  1e-008
+gb|AE000383|ECAE000383 Escherichia coli , exbD, exbB, metC, yghB...    53  2e-008
+gb|AE000482|ECAE000482 Escherichia coli , yjcS, yjcT, yjcU, yjcV...    53  2e-008
+gb|AE000475|ECAE000475 Escherichia coli , iclR, metH, yjbB, pepE...    52  4e-008
+gb|AE000320|ECAE000320 Escherichia coli , hisJ, argT, ubiX, purF...    52  5e-008
+gb|AE000114|ECAE000114 Escherichia coli , caiF, caiE, caiD, caiC...    52  5e-008
+gb|AE000124|ECAE000124 Escherichia coli , sfsA, yadP, hrpB, mrcB...    52  5e-008
+gb|AE000502|ECAE000502 Escherichia coli , fimB, fimE, fimA, fimI...    52  6e-008
+gb|AE000397|ECAE000397 Escherichia coli , yhbW, mtr, deaD, yhbM,...    51  8e-008
+gb|AE000496|ECAE000496 Escherichia coli , yjgK, yjgL, argI, yjgD...    51  1e-007
+gb|AE000469|ECAE000469 Escherichia coli , frwC, frwB, pflD, pflC...    50  2e-007
+gb|AE000396|ECAE000396 Escherichia coli , yraM, yraN, yraO, yraP...    50  2e-007
+gb|AE000305|ECAE000305 Escherichia coli , lysP, yeiE, yeiH, nfo,...    49  4e-007
+gb|AE000329|ECAE000329 Escherichia coli , cysZ, cysK, ptsH, ptsI...    49  5e-007
+gb|AE000394|ECAE000394 Escherichia coli , rnpB, yhaD, yhaE, yhaF...    48  1e-006
+gb|AE000333|ECAE000333 Escherichia coli , tktB, yffH, yffG, narQ...    48  1e-006
+gb|AE000209|ECAE000209 Escherichia coli , flgK, flgL, rne, yceC,...    48  1e-006
+gb|AE000111|ECAE000111 Escherichia coli , thrL, thrA, thrB, thrC...    47  1e-006
+gb|AE000470|ECAE000470 Escherichia coli , argE, argC, argB, argH...    46  2e-006
+gb|AE000426|ECAE000426 Escherichia coli , yhiP, yhiQ, prlC, yhiR...    45  9e-006
+gb|AE000377|ECAE000377 Escherichia coli , yggG, speB, speA, yqgB...    44  1e-005
+gb|AE000148|ECAE000148 Escherichia coli , ybaD, ribD, ribH, nusB...    44  2e-005
+gb|AE000355|ECAE000355 Escherichia coli , ygbD, hypF, hydN, ascG...    44  2e-005
+gb|AE000497|ECAE000497 Escherichia coli , yjgP, yjgQ, yjgR, yjgS...    44  2e-005
+gb|AE000487|ECAE000487 Escherichia coli , yjeH, mopB, mopA, yjeJ...    43  3e-005
+gb|AE000461|ECAE000461 Escherichia coli , rrlA, rrfA, mobA, yihD...    43  3e-005
+gb|AE000278|ECAE000278 Escherichia coli , holE, ptrB, yebE, yebF...    42  6e-005
+gb|AE000191|ECAE000191 Escherichia coli , lrp, ftsK, lolA, ycaJ,...    41  8e-005
+gb|AE000435|ECAE000435 Escherichia coli , yiaJ, yiaL, yiaM, yiaN...    41  8e-005
+gb|AE000200|ECAE000200 Escherichia coli , appA, yccC, insB_4 gen...    41  9e-005
+gb|AE000429|ECAE000429 Escherichia coli , yhjE, yhjH, kdgK, yhjJ...    41  1e-004
+gb|AE000170|ECAE000170 Escherichia coli , ybeJ, yi52_3, lnt, gln...    40  2e-004
+gb|AE000493|ECAE000493 Escherichia coli , ytfJ, ytfK, ytfL, msrA...    39  4e-004
+gb|AE000141|ECAE000141 Escherichia coli , cynR, cynT, cynS, cynX...    39  5e-004
+gb|AE000456|ECAE000456 Escherichia coli , aslB, aslA, hemY, hemX...    36  0.004
+gb|AE000165|ECAE000165 Escherichia coli , entC, entE, entB, entA...    35  0.006
+gb|AE000169|ECAE000169 Escherichia coli , ybeL, ybeK, gltL, gltK...    35  0.008
+gb|AE000171|ECAE000171 Escherichia coli , asnB, nagD, nagC, nagA...    33  0.024
+gb|AE000463|ECAE000463 Escherichia coli , yihM, yihN, yihP, yihQ...    33  0.024
+gb|AE000376|ECAE000376 Escherichia coli , fba, pgk, epd, yggC, y...    33  0.029
+gb|AE000425|ECAE000425 Escherichia coli , yhiJ, yhiK, yhiL, yhiM...    33  0.029
+gb|AE000447|ECAE000447 Escherichia coli , gyrB, recF, dnaN, dnaA...    33  0.029
+gb|AE000490|ECAE000490 Escherichia coli , purA, yjeB, vacB, yjfH...    33  0.029
+gb|AE000467|ECAE000467 Escherichia coli , yiiS, yiiT, fpr, glpX,...    33  0.029
+gb|AE000340|ECAE000340 Escherichia coli , csiE genes from bases ...    33  0.029
+gb|AE000464|ECAE000464 Escherichia coli , yihS, yihT, yihU, yihV...    33  0.029
+gb|AE000268|ECAE000268 Escherichia coli , katE, ydjC, celF, celD...    33  0.029
+gb|AE000183|ECAE000183 Escherichia coli , glnQ, glnP, glnH, dps,...    33  0.029
+gb|AE000122|ECAE000122 Escherichia coli , gcd, hpt, yadF, yadG, ...    33  0.029
+gb|AE000206|ECAE000206 Escherichia coli , mdoG, mdoH, yceK, msyB...    33  0.029
+gb|AE000449|ECAE000449 Escherichia coli , yieK, yieL, yieC, bglB...    33  0.029
+gb|AE000341|ECAE000341 Escherichia coli , glyA, hmpA, glnB, yfhA...    33  0.029
+gb|AE000503|ECAE000503 Escherichia coli , uxuA, uxuB, uxuR, yjiC...    33  0.029
+gb|AE000414|ECAE000414 Escherichia coli , yhfY, yhfZ, trpS, gph,...    33  0.029
+gb|AE000344|ECAE000344 Escherichia coli , nadB, yfiC, srmB, yfiE...    33  0.029
+gb|AE000365|ECAE000365 Escherichia coli , mltA, metZ, metW, metV...    33  0.029
+gb|AE000163|ECAE000163 Escherichia coli , ybdG, nfnB, ybdF, yi81...    33  0.029
+gb|AE000309|ECAE000309 Escherichia coli , narP, ccmH, dsbE, ccmF...    33  0.029
+gb|AE000172|ECAE000172 Escherichia coli , fur, fldA, seqA, pgm, ...    33  0.029
+gb|AE000180|ECAE000180 Escherichia coli , ybhC, ybhB, bioA, bioB...    33  0.029
+gb|AE000244|ECAE000244 Escherichia coli , narU, yddG, fdnG, fdnH...    33  0.029
+gb|AE000468|ECAE000468 Escherichia coli , metB, metL, metF, katG...    32  0.052
+gb|AE000308|ECAE000308 Escherichia coli , bcr, yejD, yejH, rplY,...    32  0.052
+gb|AE000269|ECAE000269 Escherichia coli , celA, osmE, nadE genes...    32  0.076
+gb|AE000330|ECAE000330 Escherichia coli , cysU, cysP, yfeF genes...    32  0.076
+gb|AE000202|ECAE000202 Escherichia coli , yccD, cbpA, yccE, agp,...    30  0.16
+gb|AE000113|ECAE000113 Escherichia coli , rpsT, yaaC, ileS, lspA...    30  0.16
+gb|AE000438|ECAE000438 Escherichia coli , mtlA, mtlD, mtlR, yibL...    30  0.16
+gb|AE000243|ECAE000243 Escherichia coli , ydcC, ydcE, yddE, narV...    30  0.16
+gb|AE000285|ECAE000285 Escherichia coli , fliZ, fliA, fliC, fliD...    30  0.16
+gb|AE000399|ECAE000399 Escherichia coli , dacB, yhbZ, yhbE, rpmA...    30  0.16
+gb|AE000478|ECAE000478 Escherichia coli , yjbK, yjbL, yjbM, yjbN...    30  0.16
+gb|AE000421|ECAE000421 Escherichia coli , yrhB, ggt, yhhA, ugpQ,...    30  0.16
+gb|AE000187|ECAE000187 Escherichia coli , grxA, ybjC, mdaA, rimK...    30  0.16
+gb|AE000152|ECAE000152 Escherichia coli , ybaA, hha, ybaJ, acrB,...    30  0.16
+gb|AE000362|ECAE000362 Escherichia coli , mazG, chpA, chpR, relA...    30  0.16
+gb|AE000281|ECAE000281 Escherichia coli , bisZ, cutC, argS, flhA...    30  0.20
+gb|AE000444|ECAE000444 Escherichia coli , yicM, yicN, yicO, yicP...    30  0.24
+gb|AE000351|ECAE000351 Escherichia coli , ygaF, gabD, gabT, gabP...    30  0.29
+gb|AE000302|ECAE000302 Escherichia coli , yehV, yehW, yehX, yehY...    29  0.35
+gb|AE000412|ECAE000412 Escherichia coli , argD, pabA, fic, yhfG,...    29  0.42
+gb|AE000411|ECAE000411 Escherichia coli , slyX, slyD, kefB, yheR...    29  0.42
+
+>gb|AE000142|ECAE000142 Escherichia coli , mhpB, mhpE, adhC genes from bases 367767 to 379237
+            (section 32 of 400) of the complete genome
+            Length = 11471
+            
+ Score =  140 bits (500), Expect = 1e-034
+ Identities = 100/100 (100%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 6511 tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 6570
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||||||||||||||||||||
+Sbjct: 6571 caggcatctgcgcacgactgccggatgcggcgtgaacgcc 6610
+
+
+ Score =  133 bits (473), Expect = 2e-032
+ Identities = 97/100 (97%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||||||||| | ||||||||||| |||||||||||||||||||||||||
+Sbjct: 6410 tatccggcctacggatggcgtgagaatttgtaggtctgataagacgcgttagcgtcgcat 6469
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||||||||||||||||||||
+Sbjct: 6470 caggcatctgcgcacgactgccggatgcggcgtgaacgcc 6509
+
+
+ Score =  133 bits (473), Expect = 2e-032
+ Identities = 97/100 (97%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| ||||||| |||||||||||||||||||||||||||||||||||||
+Sbjct: 6612 tatccggcctacgggtggcgcgagaatttgtaggcctgataagacgcgttagcgtcgcat 6671
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||||||||||||| ||||||
+Sbjct: 6672 caggcatctgcgcacgactgccggatgcggcgtaaacgcc 6711
+
+
+ Score =  123 bits (436), Expect = 2e-029
+ Identities = 88/89 (98%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 6713 tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 6772
+
+                                         
+Query: 61   caggcatctgcgcacgactgccggatgcg 89
+            ||||||||||| |||||||||||||||||
+Sbjct: 6773 caggcatctgcacacgactgccggatgcg 6801
+
+
+ Score = 91.5 bits (322), Expect = 7e-020
+ Identities = 86/101 (85%), Gaps = 3/101 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            ||||||||||||   | || ||  ||   |||||||||||||||||||  | ||||||||
+Sbjct: 8957 tatccggcctacacttcgcccgt-aagccgtaggcctgataagacgcgcaaagcgtcgca 8899
+
+                                                     
+Query: 60   tcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||  |||||||||||||||||||||||||||||||
+Sbjct: 8898 tcaggcatg-gcgcacgactgccggatgcggcgtgaacgcc 8859
+
+
+ Score = 69.4 bits (242), Expect = 3e-013
+ Identities = 66/80 (82%), Gaps = 2/80 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgt-tagcgtcgca 59
+            ||||||| ||||   | || |   ||   |||||||||||||||||||  ||||||||||
+Sbjct: 8857 tatccggtctacacttcgcccataaacc-gtaggcctgataagacgcgcatagcgtcgca 8799
+
+                                
+Query: 60   tcaggcatctgcgcacgact 79
+            ||||||||||||||||||||
+Sbjct: 8798 tcaggcatctgcgcacgact 8779
+
+
+ Score = 44.8 bits (153), Expect = 8e-006
+ Identities = 33/36 (91%)
+ Strand = Plus / Plus
+
+                                                
+Query: 65   catctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||   |||||||||||||||||||||||||||||
+Sbjct: 6373 catcccagcacgactgccggatgcggcgtgaacgcc 6408
+
+
+ Score = 42.6 bits (145), Expect = 4e-005
+ Identities = 29/29 (100%)
+ Strand = Plus / Minus
+
+                                         
+Query: 72   gcacgactgccggatgcggcgtgaacgcc 100
+            |||||||||||||||||||||||||||||
+Sbjct: 8987 gcacgactgccggatgcggcgtgaacgcc 8959
+
+
+>gb|AE000483|ECAE000483 Escherichia coli , phnB, phnA, yjdA, yjcZ, proP, basS, basR, yjdB
+            genes from bases 4322780 to 4333263 (section 373 of 400)
+            of the complete genome
+            Length = 10484
+            
+ Score =  111 bits (394), Expect = 7e-026
+ Identities = 90/100 (90%), Gaps = 1/100 (1%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||||| || |||||||||||||||||||||||||||||  ||||||||||
+Sbjct: 1072 tatccggcctacggagggtgcgggaatttgtaggcctgataagacgcgcaagcgtcgcat 1131
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||||| ||||   |||||||||||||| || ||||
+Sbjct: 1132 caggcatctg-gcaccgttgccggatgcggcgcgagcgcc 1170
+
+
+ Score =  111 bits (394), Expect = 7e-026
+ Identities = 90/100 (90%), Gaps = 1/100 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           |||||||||||||||||| |||||||||||||||||||||||||||||  ||||||||||
+Sbjct: 872 tatccggcctacggatggtgcgggaatttgtaggcctgataagacgcgcaagcgtcgcat 931
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           ||||||  || ||||   ||||||||||||||| ||||||
+Sbjct: 932 caggcagttg-gcactgttgccggatgcggcgtaaacgcc 970
+
+
+ Score =  108 bits (385), Expect = 4e-025
+ Identities = 89/100 (89%), Gaps = 1/100 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||||||||||||||| || |||||||||||||||||||||||||||||  ||||||||||
+Sbjct: 672 tatccggcctacggagggtgcgggaatttgtaggcctgataagacgcgcaagcgtcgcat 731
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           ||||||  |  |||| | ||||||||||||||| ||||||
+Sbjct: 732 caggca-gtcggcaccattgccggatgcggcgtaaacgcc 770
+
+
+ Score =  106 bits (376), Expect = 2e-024
+ Identities = 88/100 (88%), Gaps = 1/100 (1%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||||| || |||||||||||||||||||||||||||||  ||||||||||
+Sbjct: 972  tatccggcctacggagggtgcgggaatttgtaggcctgataagacgcgcaagcgtcgcat 1031
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||   | ||||   ||||||||||||||| ||||||
+Sbjct: 1032 caggcagtcg-gcaccgttgccggatgcggcgtaaacgcc 1070
+
+
+ Score =  106 bits (376), Expect = 2e-024
+ Identities = 88/100 (88%), Gaps = 1/100 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||||||||||||||| || |||||||||||||||||||||||||||||  ||||||||||
+Sbjct: 772 tatccggcctacggagggtgcgggaatttgtaggcctgataagacgcgcaagcgtcgcat 831
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           ||||||  |  ||||   ||||||||||||||| ||||||
+Sbjct: 832 caggca-gtcggcaccgttgccggatgcggcgtaaacgcc 870
+
+
+ Score = 67.2 bits (234), Expect = 1e-012
+ Identities = 58/68 (85%), Gaps = 1/68 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 33  ggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcggcg 92
+           ||||||||||||||||  ||||||||||||||||  |  ||||   ||||||||||||||
+Sbjct: 604 ggcctgataagacgcgcgagcgtcgcatcaggca-gtcggcactgttgccggatgcggcg 662
+
+                   
+Query: 93  tgaacgcc 100
+           | ||||||
+Sbjct: 663 taaacgcc 670
+
+
+>gb|AE000131|ECAE000131 Escherichia coli , gmhA, yafJ, yafK, yafQ, dinJ, yafL, yafM, fhiA,
+           mbhA, dinP, yafN, yafO, yafP genes from bases 243412 to
+           253342 (section 21 of 400) of the complete genome
+           Length = 9931
+           
+ Score =  103 bits (365), Expect = 2e-023
+ Identities = 85/100 (85%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||| |||||||||| | |||     |||||||||| ||||||||||||| ||||||||||
+Sbjct: 830 tattcggcctacggttcgcgtacagatttgtaggcatgataagacgcgtcagcgtcgcat 771
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           |||||||| |||||| | ||||||||||||||| |||| |
+Sbjct: 770 caggcatcagcgcacaaatgccggatgcggcgtaaacgtc 731
+
+
+ Score = 98.4 bits (347), Expect = 6e-022
+ Identities = 83/100 (83%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||| | |   ||   | ||||||||| ||||||||||||  ||||||||||
+Sbjct: 4901 tatccgtcctaccgttcaggcacaagtttgtaggcatgataagacgcgccagcgtcgcat 4842
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||||||||  ||||||||||||||| | ||||||
+Sbjct: 4841 caggcatctgcgcataactgccggatgcggcataaacgcc 4802
+
+
+ Score = 84.0 bits (295), Expect = 1e-017
+ Identities = 71/82 (86%), Gaps = 2/82 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 19   cgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgac 78
+            ||||||   | |||||| ||||||||||||  |||||||||||||||| ||||| || ||
+Sbjct: 4139 cgcgggc--tcgtaggcatgataagacgcgccagcgtcgcatcaggcacctgcgtacaac 4082
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 4081 tgccggatgcggcgtaaacgcc 4060
+
+
+ Score = 81.8 bits (287), Expect = 6e-017
+ Identities = 67/79 (84%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||| |||   ||   | ||||||||| |||||||||||| |||||||||||
+Sbjct: 4800 tatccggcctaccgatccggcacaagtttgtaggcatgataagacgcgctagcgtcgcat 4741
+
+                               
+Query: 61   caggcatctgcgcacgact 79
+            ||||||||||||||| | |
+Sbjct: 4740 caggcatctgcgcacaatt 4722
+
+
+ Score = 45.9 bits (157), Expect = 4e-006
+ Identities = 37/44 (84%)
+ Strand = Plus / Minus
+
+                                                        
+Query: 57   gcatcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            | |||  ||||  | |||| ||||||||||||||||||||||||
+Sbjct: 4946 gtatccagcattggtgcacaactgccggatgcggcgtgaacgcc 4903
+
+
+>gb|AE000154|ECAE000154 Escherichia coli , gsk, ybaL, fsr, ushA genes from bases 499244 to
+            510762 (section 44 of 400) of the complete genome
+            Length = 11519
+            
+ Score = 98.4 bits (347), Expect = 6e-022
+ Identities = 83/100 (83%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| |   ||   | |||||||||||||||||||| || ||||||||||
+Sbjct: 8675 tatccggcctacggttcaggcacaagtttgtaggcctgataagacgggtaagcgtcgcat 8616
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||   | || ||  ||||||||||||||||||||||
+Sbjct: 8615 caggcaatggtgctcggatgccggatgcggcgtgaacgcc 8576
+
+
+ Score = 95.9 bits (338), Expect = 3e-021
+ Identities = 82/100 (82%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| |   ||     ||||||||||||||||||||||| ||||||||||
+Sbjct: 8776 tatccggcctacggttcaggcacaggtttgtaggcctgataagacgcgtaagcgtcgcat 8717
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||   | || ||  ||||||||||||||| ||||||
+Sbjct: 8716 caggcaatggtgctcggatgccggatgcggcgtaaacgcc 8677
+
+
+ Score = 75.2 bits (263), Expect = 5e-015
+ Identities = 63/76 (82%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 25   aatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccgg 84
+            ||| ||||||| ||||||||||||  ||||||||||||||||||      | | |||| |
+Sbjct: 1513 aatatgtaggcatgataagacgcgccagcgtcgcatcaggcatcgagagccaaatgccag 1454
+
+                            
+Query: 85   atgcggcgtgaacgcc 100
+            ||||||||||||||||
+Sbjct: 1453 atgcggcgtgaacgcc 1438
+
+
+ Score = 53.4 bits (184), Expect = 2e-008
+ Identities = 52/67 (77%), Gaps = 2/67 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 36   ctgataagacgcgttagcgt--cgcatcaggcatctgcgcacgactgccggatgcggcgt 93
+            | |||  |  || |||| ||  |||||  ||||||  |||| ||||||||||||||||||
+Sbjct: 8844 cggatgcgctgctttagggtggcgcatttggcatcgacgcatgactgccggatgcggcgt 8785
+
+                   
+Query: 94   gaacgcc 100
+             ||||||
+Sbjct: 8784 aaacgcc 8778
+
+
+>gb|AE000508|ECAE000508 Escherichia coli , prfC, osmY, yjjU, yjjV, yjjW, yjjI, deoC, deoA,
+            deoB, deoD, yjjJ, lplA, smp genes from bases 4606922 to
+            4622439 (section 398 of 400) of the complete genome
+            Length = 15518
+            
+ Score = 91.0 bits (320), Expect = 1e-019
+ Identities = 88/102 (86%), Gaps = 4/102 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||||||||||| | | ||   ||  ||||||| ||||||||||||||| ||||||||
+Sbjct: 5017 tatccggcctacggttcg-gcacaaacctgtaggcatgataagacgcgttaagcgtcgca 4959
+
+                                                      
+Query: 60   tcaggcatc-tgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||  ||||| | ||||||||||||||||||||||||
+Sbjct: 4958 tcaggcattgtgcgc-caactgccggatgcggcgtgaacgcc 4918
+
+
+ Score = 88.5 bits (311), Expect = 6e-019
+ Identities = 87/102 (85%), Gaps = 4/102 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||||||||||| | | ||   ||  ||||||| ||||||||||||  | ||||||||
+Sbjct: 5219 tatccggcctacggttcg-gcacaaacctgtaggcatgataagacgcgacaagcgtcgca 5161
+
+                                                      
+Query: 60   tcaggcatc-tgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||  ||||| ||||||||||||||||||||||||||
+Sbjct: 5160 tcaggcattatgcgc-cgactgccggatgcggcgtgaacgcc 5120
+
+
+ Score = 86.0 bits (302), Expect = 3e-018
+ Identities = 86/102 (84%), Gaps = 4/102 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||||||||||| | | ||    | |||||||| ||||||||||||  | ||||||||
+Sbjct: 5118 tatccggcctacggttcg-gcacagacttgtaggcatgataagacgcgacaagcgtcgca 5060
+
+                                                      
+Query: 60   tcaggcatc-tgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||  ||||| | ||||||||||||||||||||||||
+Sbjct: 5059 tcaggcattgtgcgc-caactgccggatgcggcgtgaacgcc 5019
+
+
+ Score = 84.6 bits (297), Expect = 8e-018
+ Identities = 85/101 (84%), Gaps = 4/101 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 2    atccggcctacggatggcgcgggaatttgtaggcctgataagacgcgt-tagcgtcgcat 60
+            || |||||||||| | | ||    | ||||||||||||||||||||||  ||||||||||
+Sbjct: 5319 atacggcctacggttcg-gcacagacttgtaggcctgataagacgcgtcaagcgtcgcat 5261
+
+                                                     
+Query: 61   caggca-tctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||| | ||||| | |||||||||||||||| |||||||
+Sbjct: 5260 caggcattgtgcgc-caactgccggatgcggcgcgaacgcc 5221
+
+
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 45/67 (67%), Gaps = 9/67 (13%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| | |    |    | ||||||||||||||        ||  |||||
+Sbjct: 8820 tatccggcctacgggtagatacg--tctcgtaggcctgataag-------cgcagcgcat 8770
+
+                   
+Query: 61   caggcat 67
+            ||||| |
+Sbjct: 8769 caggcgt 8763
+
+
+>gb|AE000373|ECAE000373 Escherichia coli , recJ, dsbC, xerD, fldB, bglA, ygfF, gcvP genes
+            from bases 3034318 to 3047148 (section 263 of 400) of the
+            complete genome
+            Length = 12831
+            
+ Score = 91.0 bits (320), Expect = 1e-019
+ Identities = 80/100 (80%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||  |||   || |  | |   |  ||||||||||||||||||||||  ||||||||||
+Sbjct: 6207 tattgggcaggcgtaatgggtatgcctttgtaggcctgataagacgcgccagcgtcgcat 6148
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||| | |||| |||||||||| |||||||||||||
+Sbjct: 6147 caggcatcggagcacaactgccggattcggcgtgaacgcc 6108
+
+
+ Score = 39.6 bits (134), Expect = 3e-004
+ Identities = 30/34 (88%)
+ Strand = Plus / Minus
+
+                                              
+Query: 32   aggcctgataagacgcgttagcgtcgcatcaggc 65
+            || | ||||||||||||  |||||||||||||||
+Sbjct: 6057 agacatgataagacgcgccagcgtcgcatcaggc 6024
+
+
+>gb|AE000139|ECAE000139 Escherichia coli  gene from bases 334346 to 344434 (section 29 of
+            400) of the complete genome
+            Length = 10089
+            
+ Score = 85.7 bits (301), Expect = 4e-018
+ Identities = 85/100 (85%), Gaps = 8/100 (8%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||| |||||||  |||| |||||||||||||||   ||| ||||   |||
+Sbjct: 4751 tatccggcctacgaatggcgcaagaatctgtaggcctgataag---cgt-agcg---cat 4803
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||| ||| ||| |||||||||||||||||| |||||
+Sbjct: 4804 caggcatttgc-caccactgccggatgcggcgtggacgcc 4842
+
+
+ Score = 83.2 bits (292), Expect = 2e-017
+ Identities = 84/100 (84%), Gaps = 8/100 (8%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||  ||||||| |||| ||||||||||||||| ||   |||   |||||
+Sbjct: 4844 tatccggcctacgagtggcgcgagaatctgtaggcctgataag-cg---tag---cgcat 4896
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||| ||  ||| | ||||||||||||||||||||||
+Sbjct: 4897 caggcatttg-tcaccattgccggatgcggcgtgaacgcc 4935
+
+
+ Score = 83.2 bits (292), Expect = 2e-017
+ Identities = 84/100 (84%), Gaps = 8/100 (8%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||| |||||||  |||| ||||||||||||||| ||   |||   |||||
+Sbjct: 4658 tatccggcctacgaatggcgcaagaatctgtaggcctgataag-cg---tag---cgcat 4710
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||| ||  ||| | ||||||||||||||||||||||
+Sbjct: 4711 caggcatttg-tcaccattgccggatgcggcgtgaacgcc 4749
+
+
+ Score = 48.7 bits (167), Expect = 5e-007
+ Identities = 55/66 (83%), Gaps = 8/66 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||  ||||||| ||| |||||||||||||||| ||   |||   |||||
+Sbjct: 4937 tatccggcctacgagtggcgcgagaa-ttgtaggcctgataag-cg---tag---cgcat 4988
+
+                  
+Query: 61   caggca 66
+            ||||||
+Sbjct: 4989 caggca 4994
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 4635 tgccggatgcggcgtgaacgcc 4656
+
+
+>gb|AE000382|ECAE000382 Escherichia coli , hybG, hybF, hybE, hybD, hybC, hybB, hybA genes
+            from bases 3136586 to 3147609 (section 272 of 400) of the
+            complete genome
+            Length = 11024
+            
+ Score = 85.4 bits (300), Expect = 5e-018
+ Identities = 68/74 (91%), Gaps = 1/74 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+            || |||||||||||||||||||  ||||||||||||||||| || |||||| ||||||||
+Sbjct: 1136 ttcgtaggcctgataagacgcggcagcgtcgcatcaggcat-tgtgcacgattgccggat 1078
+
+                          
+Query: 87   gcggcgtgaacgcc 100
+            ||||||||||||||
+Sbjct: 1077 gcggcgtgaacgcc 1064
+
+
+>gb|AE000474|ECAE000474 Escherichia coli , rrsE, gltV, rrlE, rrfE, yjaA, yjaB, metA, aceB,
+             aceA, aceK, arp genes from bases 4205449 to 4220281
+             (section 364 of 400) of the complete genome
+             Length = 14833
+             
+ Score = 84.0 bits (295), Expect = 1e-017
+ Identities = 79/100 (79%), Gaps = 3/100 (3%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             ||||| |||||||   |||   ||    ||||||| ||||||||||||  ||||||||||
+Sbjct: 10676 tatccagcctacgttcggcaacggc---tgtaggcatgataagacgcgcaagcgtcgcat 10620
+
+                                                     
+Query: 61    caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             ||||||||      ||| ||||||||||||||||||||||
+Sbjct: 10619 caggcatcgtgcaccgattgccggatgcggcgtgaacgcc 10580
+
+
+ Score = 32.1 bits (107), Expect = 0.052
+ Identities = 39/53 (73%), Gaps = 5/53 (9%)
+ Strand = Plus / Minus
+
+                                                                  
+Query: 49    ttagcgtcg-catcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             |||||| |  |||||||     ||  |  | ||||||||||||||| ||||||
+Sbjct: 10726 ttagcgccctcatcagga----gcagagaattgccggatgcggcgtaaacgcc 10678
+
+
+>gb|AE000460|ECAE000460 Escherichia coli , fadA, fadB, pepQ, yigZ, trkH, rrsA, ileT, alaT
+           genes from bases 4024850 to 4035039 (section 350 of 400)
+           of the complete genome
+           Length = 10190
+           
+ Score = 84.0 bits (295), Expect = 1e-017
+ Identities = 79/100 (79%), Gaps = 2/100 (2%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||||||| |||| |||   ||   |||  |||||||||||||||||||  ||||||||||
+Sbjct: 321 tatccggtctaccgatccggcaccaat--gtaggcctgataagacgcgccagcgtcgcat 264
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           ||||||||      | | ||||||||||||||| ||||||
+Sbjct: 263 caggcatcatgcaccaattgccggatgcggcgtaaacgcc 224
+
+
+ Score = 84.0 bits (295), Expect = 1e-017
+ Identities = 79/100 (79%), Gaps = 3/100 (3%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           |||||||||||||| | |  |    ||||||||||  |||||||||||  ||||||||||
+Sbjct: 222 tatccggcctacggttcggact---atttgtaggcacgataagacgcgacagcgtcgcat 166
+
+                                                   
+Query: 61  caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           ||||||||      | | ||||||||||||||| ||||||
+Sbjct: 165 caggcatcatgcaccaattgccggatgcggcgtaaacgcc 126
+
+
+ Score = 58.3 bits (202), Expect = 6e-010
+ Identities = 54/67 (80%), Gaps = 3/67 (4%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           |||||||||||||| | |  |    ||||||||||  |||||||||||  ||||||||||
+Sbjct: 124 tatccggcctacggttcggact---atttgtaggcacgataagacgcgacagcgtcgcat 68
+
+                  
+Query: 61  caggcat 67
+           | |||||
+Sbjct: 67  cgggcat 61
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 344 tgccggatgcggcgtgaacgcc 323
+
+
+>gb|AE000128|ECAE000128 Escherichia coli , ldcC, mesJ, yaeO, yaeQ, yaeJ, cutF, yaeF, proS,
+            yaeB, rcsF genes from bases 209600 to 220082 (section 18
+            of 400) of the complete genome
+            Length = 10483
+            
+ Score = 82.1 bits (288), Expect = 5e-017
+ Identities = 80/100 (80%), Gaps = 3/100 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| | || ||   | | |||   |||||||| ||||||||||||  ||||||||||
+Sbjct: 6565 tatccgccttaaggtatgagggggg--ttgtaggcatgataagacgcgccagcgtcgcat 6508
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||| | || |||| | ||||||||||||||| ||||||
+Sbjct: 6507 caggcgt-tgagcaccattgccggatgcggcgtaaacgcc 6469
+
+
+>gb|AE000145|ECAE000145 Escherichia coli , yaiB, phoA, psiF, yaiC, proC, yaiI, aroL, yaiA,
+             aroM, yaiE, yaiD, yajF, araJ genes from bases 400349 to
+             411796 (section 35 of 400) of the complete genome
+             Length = 11448
+             
+ Score = 81.8 bits (287), Expect = 6e-017
+ Identities = 83/103 (80%), Gaps = 3/103 (2%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacg-gatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgc 58
+             |||||| |||||| | |   |    | |||| |||||||||||||||||  | |||||||
+Sbjct: 10122 tatccgccctacgcggttctggcacattttgcaggcctgataagacgcggcaagcgtcgc 10063
+
+                                                        
+Query: 59    atcaggcatctgcgcacg-actgccggatgcggcgtgaacgcc 100
+             |||||||||| | ||||  | ||||||||||||||||||||||
+Sbjct: 10062 atcaggcatcggagcacttattgccggatgcggcgtgaacgcc 10020
+
+
+ Score = 58.6 bits (203), Expect = 5e-010
+ Identities = 67/84 (79%), Gaps = 4/84 (4%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+             |||||||||||||| |   ||     ||||||||||||||||||||||  | ||||||||
+Sbjct: 10018 tatccggcctacggttctggcacct-tttgtaggcctgataagacgcggcaagcgtcgca 9960
+
+                                     
+Query: 60    tcaggcat-ctgcgcacgactgcc 82
+             ||||||||  ||||| | | ||||
+Sbjct: 9959  tcaggcatgatgcgc-caattgcc 9937
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Minus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             | ||||||||||||||||||||||
+Sbjct: 10147 attgccggatgcggcgtgaacgcc 10124
+
+
+>gb|AE000182|ECAE000182 Escherichia coli , rhlE, ybiA, dinG, ybiB, ybiC, ybiJ, ybiI genes
+            from bases 829957 to 840914 (section 72 of 400) of the
+            complete genome
+            Length = 10958
+            
+ Score = 80.7 bits (283), Expect = 1e-016
+ Identities = 79/99 (79%), Gaps = 12/99 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 2    atccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatc 61
+            ||||| || |||| | |     || |||||||||||||||||||||| ||||||||||||
+Sbjct: 6829 atccgtccaacggttcg-----gattttgtaggcctgataagacgcggtagcgtcgcatc 6883
+
+                                                   
+Query: 62   aggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||||        ||||||||||||||| ||||||
+Sbjct: 6884 aggcatctg-------ttgccggatgcggcgtaaacgcc 6915
+
+
+ Score = 30.7 bits (102), Expect = 0.13
+ Identities = 22/24 (91%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | ||||||||||||||| ||||||
+Sbjct: 1656 aatgccggatgcggcgtaaacgcc 1633
+
+
+>gb|AE000295|ECAE000295 Escherichia coli , galF, cpsG, cpsB, yefD, yefC, yefB, yefA, wcaB
+            genes from bases 2111240 to 2131493 (section 185 of 400)
+            of the complete genome
+            Length = 20254
+            
+ Score = 79.9 bits (280), Expect = 2e-016
+ Identities = 84/103 (81%), Gaps = 11/103 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatg---gcgcgggaatttgtaggcctgataagacgcgttagcgtcg 57
+            |||||| ||||||| |    || |||||  | |||||||||||||||||||| |||||||
+Sbjct: 5411 tatccgtcctacggttctgtgctcgggacct-gtaggcctgataagacgcgtcagcgtcg 5353
+
+                                                       
+Query: 58   catcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||| |||      | ||||||||||||||||||||||
+Sbjct: 5352 catcaggca-ctg------aatgccggatgcggcgtgaacgcc 5317
+
+
+ Score = 61.7 bits (214), Expect = 6e-011
+ Identities = 58/69 (84%), Gaps = 4/69 (5%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatg---gcgcgggaatttgtaggcctgataagacgcgttagcgtcg 57
+            |||||| ||||||| |    || ||||  || |||||||||||||||||||| |||||||
+Sbjct: 5315 tatccgtcctacggttctgtgctcgggtctt-gtaggcctgataagacgcgtcagcgtcg 5257
+
+                     
+Query: 58   catcaggca 66
+            |||||||||
+Sbjct: 5256 catcaggca 5248
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||
+Sbjct: 20214 tgccggatgcggcgtgaacgcc 20235
+
+
+>gb|AE000509|ECAE000509 Escherichia coli , serB, sms, nadR, yjjK, slt, trpR, yjjX, gpmB, rob
+            genes from bases 4622382 to 4632970 (section 399 of 400)
+            of the complete genome
+            Length = 10589
+            
+ Score = 74.6 bits (261), Expect = 8e-015
+ Identities = 69/78 (88%), Gaps = 3/78 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 25   aatttgtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgcac-gactgcc 82
+            ||  |||||||||||||||||||| || |||||||||||||||| || |||| || ||||
+Sbjct: 3972 aaactgtaggcctgataagacgcggtaagcgtcgcatcaggcat-tgagcaccgaatgcc 3914
+
+                              
+Query: 83   ggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||
+Sbjct: 3913 ggatgcggcgtgaacacc 3896
+
+
+ Score = 65.5 bits (228), Expect = 4e-012
+ Identities = 64/83 (77%), Gaps = 6/83 (7%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 18   gcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacga 77
+            |||   || |||||||||||||||||||| |       |||||||||||||      |||
+Sbjct: 8267 gcgattgattttgtaggcctgataagacgtgg------cgcatcaggcatcgtgcaccga 8320
+
+                                   
+Query: 78   ctgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||
+Sbjct: 8321 atgccggatgcggcgtgaacgcc 8343
+
+
+ Score = 46.5 bits (159), Expect = 2e-006
+ Identities = 35/39 (89%)
+ Strand = Plus / Plus
+
+                                                   
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggc 65
+            || |||||| ||||||||||||  |||||||||||||||
+Sbjct: 8380 ttggtaggcatgataagacgcggcagcgtcgcatcaggc 8418
+
+
+ Score = 30.7 bits (102), Expect = 0.13
+ Identities = 22/24 (91%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | |||||||||||||| |||||||
+Sbjct: 4035 aatgccggatgcggcgcgaacgcc 4012
+
+
+>gb|AE000334|ECAE000334 Escherichia coli , acrD, yffB, dapE, purC genes from bases 2585504 to
+            2595772 (section 224 of 400) of the complete genome
+            Length = 10269
+            
+ Score = 74.6 bits (261), Expect = 8e-015
+ Identities = 61/68 (89%), Gaps = 1/68 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 33   ggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcggcg 92
+            ||||||||||||||||| |||||||||||||||||| |  ||| | ||||||||||||||
+Sbjct: 5574 ggcctgataagacgcgtgagcgtcgcatcaggcatc-gttcaccattgccggatgcggcg 5516
+
+                    
+Query: 93   tgaacgcc 100
+            | ||||||
+Sbjct: 5515 ttaacgcc 5508
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             || |||||||||||||||||||
+Sbjct: 10201 tgtcggatgcggcgtgaacgcc 10222
+
+
+>gb|AE000203|ECAE000203 Escherichia coli , putA, putP, ycdB genes from bases 1073320 to 1084070
+             (section 93 of 400) of the complete genome
+             Length = 10751
+             
+ Score = 74.1 bits (259), Expect = 1e-014
+ Identities = 71/91 (78%), Gaps = 1/91 (1%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             ||||| ||||||  |   |||    ||| |||||| ||||||||||||  ||||||||||
+Sbjct: 10649 tatccagcctaccaaacccgcactgatt-gtaggcatgataagacgcgcaagcgtcgcat 10591
+
+                                            
+Query: 61    caggcatctgcgcacgactgccggatgcggc 91
+             ||||||||||||||| | ||||  || || |
+Sbjct: 10590 caggcatctgcgcacaaatgccttatccgcc 10560
+
+
+ Score = 53.6 bits (185), Expect = 2e-008
+ Identities = 41/46 (89%)
+ Strand = Plus / Minus
+
+                                                           
+Query: 55    tcgcatcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             | |||||||||||| | ||||||  |||||||||||||||||||||
+Sbjct: 10696 ttgcatcaggcatcagtgcacgatcgccggatgcggcgtgaacgcc 10651
+
+
+>gb|AE000140|ECAE000140 Escherichia coli , codB, codA genes from bases 344377 to 356874
+            (section 30 of 400) of the complete genome
+            Length = 12498
+            
+ Score = 73.8 bits (258), Expect = 1e-014
+ Identities = 62/71 (87%), Gaps = 1/71 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+            |||||||||||||||||||| |||||||||||||||||||| ||| |  || ||||||||
+Sbjct: 9617 gtaggcctgataagacgcgtcagcgtcgcatcaggcatctgagcatg-gtgtcggatgcg 9559
+
+                       
+Query: 90   gcgtgaacgcc 100
+             || || ||||
+Sbjct: 9558 acgcgagcgcc 9548
+
+
+ Score = 66.9 bits (233), Expect = 2e-012
+ Identities = 73/94 (77%), Gaps = 7/94 (7%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||||| |    | ||  |  |||||| |||||| |||||| ||||||||||
+Sbjct: 9546 tatccgacctacggtt----cagg--tccgtaggcatgataaaacgcgtcagcgtcgcat 9493
+
+                                              
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtg 94
+            |||||||| || ||| | ||||||||||  || |
+Sbjct: 9492 caggcatcggcacac-agtgccggatgcaccgcg 9460
+
+
+ Score = 57.8 bits (200), Expect = 9e-010
+ Identities = 60/81 (74%), Gaps = 2/81 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||| | |  |   | |  | |||||||||||||| ||||| |||| |||||
+Sbjct: 4515 tatccgacctacagtt--cagtgcacctcgtaggcctgataagtcgcgtcagcgacgcat 4458
+
+                                 
+Query: 61   caggcatctgcgcacgactgc 81
+            |||||||| ||   ||| | |
+Sbjct: 4457 caggcatcggctgtcgaatac 4437
+
+
+ Score = 53.6 bits (185), Expect = 2e-008
+ Identities = 65/92 (70%), Gaps = 9/92 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||| | |  |   | |    |||||||||||||| ||||| |||| |||||
+Sbjct: 4701 tatccgacctacagtt--cagtgcaccccgtaggcctgataagtcgcgtcagcggcgcat 4644
+
+                                            
+Query: 61   caggcatctgcgcacgactgccggatgcggcg 92
+            |||||||       ||  || |||||||| ||
+Sbjct: 4643 caggcat-------cggttgtcggatgcgacg 4619
+
+
+ Score = 51.2 bits (176), Expect = 9e-008
+ Identities = 64/92 (69%), Gaps = 9/92 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||| | |  |   | |    |||||||||||||| | ||| |||| |||||
+Sbjct: 4608 tatccgacctacagtt--cagtgcaccccgtaggcctgataagtcacgtcagcggcgcat 4551
+
+                                            
+Query: 61   caggcatctgcgcacgactgccggatgcggcg 92
+            |||||||       ||  || |||||||| ||
+Sbjct: 4550 caggcat-------cggttgtcggatgcgacg 4526
+
+
+ Score = 51.2 bits (176), Expect = 9e-008
+ Identities = 64/92 (69%), Gaps = 9/92 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||| | |  |     |    |||||||||||||| ||||| |||| |||||
+Sbjct: 4794 tatccgacctacagtt--cagttcaccccgtaggcctgataagtcgcgtcagcggcgcat 4737
+
+                                            
+Query: 61   caggcatctgcgcacgactgccggatgcggcg 92
+            |||||||       ||  || |||||||| ||
+Sbjct: 4736 caggcat-------cggttgtcggatgcgacg 4712
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||
+Sbjct: 12331 tgccggatgcggcgtgaacgcc 12352
+
+
+>gb|AE000311|ECAE000311 Escherichia coli , rcsC, atoS, atoC, atoD, atoA, atoB genes from
+           bases 2314918 to 2325378 (section 201 of 400) of the
+           complete genome
+           Length = 10461
+           
+ Score = 73.8 bits (258), Expect = 1e-014
+ Identities = 62/71 (87%), Gaps = 1/71 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 30  gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+           ||||||| |||||||||||| ||||||||||| ||||| ||| |  || |||||||||||
+Sbjct: 51  gtaggccagataagacgcgtcagcgtcgcatctggcatttgcac-tgaatgccggatgcg 109
+
+                      
+Query: 90  gcgtgaacgcc 100
+           |||| ||||||
+Sbjct: 110 gcgtaaacgcc 120
+
+
+>gb|AE000403|ECAE000403 Escherichia coli , mdh, argR, yhcP, yhcQ, tldD, yhdR genes from bases
+            3380904 to 3393957 (section 293 of 400) of the complete
+            genome
+            Length = 13054
+            
+ Score = 73.5 bits (257), Expect = 2e-014
+ Identities = 81/102 (79%), Gaps = 14/102 (13%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacgg--atggcgcgggaatttgtaggcctgataagacgcgttagcgtcgc 58
+            |||||| |||||||  |||   ||    |||||||||||||||||||||   ||||||||
+Sbjct: 9014 tatccgacctacggttatgttccg----tttgtaggcctgataagacgcac-agcgtcgc 9068
+
+                                                      
+Query: 59   atcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||       ||| |||||||||||||||||||||||
+Sbjct: 9069 atcaggca-------acggctgccggatgcggcgtgaacgcc 9103
+
+
+ Score = 71.1 bits (248), Expect = 1e-013
+ Identities = 80/102 (78%), Gaps = 14/102 (13%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacgg--atggcgcgggaatttgtaggcctgataagacgcgttagcgtcgc 58
+            |||||| |||||||  |||   ||    |||||||||||||||||||||   ||||||||
+Sbjct: 8923 tatccgacctacggttatgttccg----tttgtaggcctgataagacgcac-agcgtcgc 8977
+
+                                                      
+Query: 59   atcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||||       ||| |||||||||||||||| ||||||
+Sbjct: 8978 atcaggca-------acggctgccggatgcggcgtaaacgcc 9012
+
+
+ Score = 65.5 bits (228), Expect = 4e-012
+ Identities = 80/103 (77%), Gaps = 14/103 (13%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacgg--atggcgcgggaatttgtaggcctgataagacgcgttagcgtcgc 58
+            ||||| ||||||||  |||   |||   |||||||||||||||||||||   ||||||||
+Sbjct: 8830 tatccagcctacggttatgttccgg---tttgtaggcctgataagacgc-acagcgtcgc 8885
+
+                                                       
+Query: 59   atcaggcatctgcgcacgactgccggatg-cggcgtgaacgcc 100
+            ||||||||       ||| ||| |||||| |||||| ||||||
+Sbjct: 8886 atcaggca-------acggctgtcggatgccggcgtaaacgcc 8921
+
+
+ Score = 37.3 bits (126), Expect = 0.001
+ Identities = 26/27 (96%)
+ Strand = Plus / Plus
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+            ||| |||||||||||||||||||||||
+Sbjct: 8802 acggctgccggatgcggcgtgaacgcc 8828
+
+
+>gb|AE000313|ECAE000313 Escherichia coli , ubiG, yfaL, nrdA, nrdB, yfaE, inaA genes from
+            bases 2337484 to 2347627 (section 203 of 400) of the
+            complete genome
+            Length = 10144
+            
+ Score = 73.3 bits (256), Expect = 2e-014
+ Identities = 80/100 (80%), Gaps = 14/100 (14%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||    ||| |||   ||||||||||||||||||||||  ||||||||||
+Sbjct: 7719 tatccggcctac----ggctcgg---tttgtaggcctgataagacgcgccagcgtcgcat 7771
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||| ||      ||  |||||||||| |||||||||||
+Sbjct: 7772 caggc-tc------cgggtgccggatgcagcgtgaacgcc 7804
+
+
+ Score = 62.5 bits (217), Expect = 4e-011
+ Identities = 57/66 (86%), Gaps = 6/66 (9%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| |    |||  |||||||||||||||||||||||  ||||||||||
+Sbjct: 7806 tatccggcctacggct----cgg--atttgtaggcctgataagacgcgccagcgtcgcat 7859
+
+                  
+Query: 61   caggca 66
+            ||||||
+Sbjct: 7860 caggca 7865
+
+
+ Score = 61.7 bits (214), Expect = 6e-011
+ Identities = 62/74 (83%), Gaps = 7/74 (9%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgc-gttagcgtcgca 59
+           ||||||||||||||  || ||    |||||||||||||||||||||| |  |||||||||
+Sbjct: 909 tatccggcctacgg--ggagc----atttgtaggcctgataagacgcggcaagcgtcgca 856
+
+                         
+Query: 60  tcaggcatctgcgc 73
+           ||||||||  ||||
+Sbjct: 855 tcaggcattggcgc 842
+
+
+ Score = 35.7 bits (120), Expect = 0.004
+ Identities = 40/56 (71%), Gaps = 1/56 (1%)
+ Strand = Plus / Plus
+
+                                                                    
+Query: 46   gcgttagcgtcgcatcaggcatctgcgcacgac-tgccggatgcggcgtgaacgcc 100
+            |||  |||| |||||     |||||     ||  ||||||||||||||| ||||||
+Sbjct: 7662 gcgaaagcggcgcatgtaagatctgatattgagatgccggatgcggcgtaaacgcc 7717
+
+
+ Score = 35.1 bits (118), Expect = 0.006
+ Identities = 26/29 (89%)
+ Strand = Plus / Minus
+
+                                        
+Query: 72  gcacgactgccggatgcggcgtgaacgcc 100
+           |||||  ||||||||||||||| ||||||
+Sbjct: 939 gcacggttgccggatgcggcgtaaacgcc 911
+
+
+>gb|AE000387|ECAE000387 Escherichia coli , glnE, ygiF, ygiM, cca, bacA, ygiG, ygiH genes from
+            bases 3192722 to 3204028 (section 277 of 400) of the
+            complete genome
+            Length = 11307
+            
+ Score = 72.7 bits (254), Expect = 3e-014
+ Identities = 78/100 (78%), Gaps = 10/100 (10%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||| |||  ||| |   |  | |||||||||||||||||||||  ||||||||||
+Sbjct: 8086 tatccggc-tac--atgtcaacgacagttgtaggcctgataagacgcgcaagcgtcgcat 8142
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||| |        || ||||||||||||||||||||||
+Sbjct: 8143 caggcgt-------tgattgccggatgcggcgtgaacgcc 8175
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 8063 tgccggatgcggcgtaaacgcc 8084
+
+
+>gb|AE000310|ECAE000310 Escherichia coli , eco, yojH, yojI, alkB, ada, yojL, ompC, yojN, rcsB
+             genes from bases 2301701 to 2314975 (section 200 of 400)
+             of the complete genome
+             Length = 13275
+             
+ Score = 72.7 bits (254), Expect = 3e-014
+ Identities = 62/72 (86%), Gaps = 1/72 (1%)
+ Strand = Plus / Plus
+
+                                                                         
+Query: 29    tgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgc 88
+             |||||||| ||||||||||||||| |||  ||| ||||| ||| | ||| ||||||||||
+Sbjct: 13153 tgtaggccagataagacgcgttagtgtcttatctggcatttgcac-cgattgccggatgc 13211
+
+                         
+Query: 89    ggcgtgaacgcc 100
+             ||||| ||||||
+Sbjct: 13212 ggcgtaaacgcc 13223
+
+
+ Score = 62.8 bits (218), Expect = 3e-011
+ Identities = 82/114 (71%), Gaps = 16/114 (14%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatt--------tgtaggcctgataagacgcgttag 52
+           |||||| |||||||  || |  | | ||        ||||||||||||||||||||  ||
+Sbjct: 974 tatccgacctacgg--ggtggagcacttcacagcggtgtaggcctgataagacgcgccag 917
+
+                                                                 
+Query: 53  cgtcgcatcaggcatctg---cgcacgac---tgccggatgcggcgtgaacgcc 100
+           |||||||||||||| | |   ||  ||     || |||||||||||||| ||||
+Sbjct: 916 cgtcgcatcaggcaaccggctcgggcgttggatgtcggatgcggcgtgaccgcc 863
+
+
+ Score = 62.8 bits (218), Expect = 3e-011
+ Identities = 82/114 (71%), Gaps = 16/114 (14%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatt--------tgtaggcctgataagacgcgttag 52
+            |||||| |||||||  || |  | | ||        ||||||||||||||||||||  ||
+Sbjct: 1200 tatccgacctacgg--ggtggagcacttcacagcggtgtaggcctgataagacgcgccag 1143
+
+                                                                  
+Query: 53   cgtcgcatcaggcatctg---cgcac---gactgccggatgcggcgtgaacgcc 100
+            |||||||||||||| | |   || ||   |  || |||||||||||| | ||||
+Sbjct: 1142 cgtcgcatcaggcaaccggctcggacgttggatgtcggatgcggcgtaaccgcc 1089
+
+
+ Score = 61.7 bits (214), Expect = 6e-011
+ Identities = 62/78 (79%), Gaps = 6/78 (7%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 29  tgtaggcctgataagacgcgttagcgtcgcatcaggcatctg---cgcacgac---tgcc 82
+           ||||||||||||||||||||  |||||||||||||||| | |   ||  ||     || |
+Sbjct: 827 tgtaggcctgataagacgcgccagcgtcgcatcaggcaaccggctcgggcgttggatgtc 768
+
+                             
+Query: 83  ggatgcggcgtgaacgcc 100
+           ||||||||||||| ||||
+Sbjct: 767 ggatgcggcgtgaccgcc 750
+
+
+ Score = 59.2 bits (205), Expect = 4e-010
+ Identities = 61/78 (78%), Gaps = 6/78 (7%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatcaggcatc-----tgcgcacga-ctgcc 82
+            ||||||||||||||||||||  |||||||||||||||| |     || ||   |  || |
+Sbjct: 1053 tgtaggcctgataagacgcgccagcgtcgcatcaggcaaccggcttgggcgttagatgtc 994
+
+                              
+Query: 83   ggatgcggcgtgaacgcc 100
+            ||||||||||| | ||||
+Sbjct: 993  ggatgcggcgtaaccgcc 976
+
+
+ Score = 59.2 bits (205), Expect = 4e-010
+ Identities = 61/78 (78%), Gaps = 6/78 (7%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatcaggcatc-----tgcgcacga-ctgcc 82
+            ||||||||||||||||||||  |||||||||||||||| |     || ||   |  || |
+Sbjct: 1279 tgtaggcctgataagacgcgccagcgtcgcatcaggcaaccggcttgggcgttagatgtc 1220
+
+                              
+Query: 83   ggatgcggcgtgaacgcc 100
+            ||||||||||| | ||||
+Sbjct: 1219 ggatgcggcgtaaccgcc 1202
+
+
+ Score = 47.0 bits (161), Expect = 2e-006
+ Identities = 53/71 (74%), Gaps = 6/71 (8%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 36   ctgataagacgcgttagcgtcgcatcaggcatctg---cgcacg---actgccggatgcg 89
+            |||||||||||||  |||||||||||||||| | |   ||  ||     ||  |||||||
+Sbjct: 1385 ctgataagacgcgccagcgtcgcatcaggcaaccggctcgggcgttagatgttggatgcg 1326
+
+                       
+Query: 90   gcgtgaacgcc 100
+            |||| | ||||
+Sbjct: 1325 gcgtaaccgcc 1315
+
+
+>gb|AE000188|ECAE000188 Escherichia coli , artJ, artM, artQ, artI, artP, poxB genes from
+            bases 898938 to 910366 (section 78 of 400) of the
+            complete genome
+            Length = 11429
+            
+ Score = 72.7 bits (254), Expect = 3e-014
+ Identities = 74/99 (74%), Gaps = 3/99 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 5    cggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcagg 64
+            | || |||    | || |||  |||||||| |||||||||||||  ||||||||||||| 
+Sbjct: 1146 ctgcgtacattcgccggggggttttgtaggtctgataagacgcgccagcgtcgcatcaga 1087
+
+                                                   
+Query: 65   catctgc---gcacgactgccggatgcggcgtgaacgcc 100
+            |||| ||   |  |   |||||||||||||| | |||||
+Sbjct: 1086 catcagcacggtgcctgtgccggatgcggcggggacgcc 1048
+
+
+>gb|AE000494|ECAE000494 Escherichia coli , chpS, chpB, ppa, ytfQ, ytfR, ytfS, ytfT, yjfF,
+            fbp, yjfG, yjgA, pmbA genes from bases 4445891 to 4456990
+            (section 384 of 400) of the complete genome
+            Length = 11100
+            
+ Score = 72.2 bits (252), Expect = 4e-014
+ Identities = 64/73 (87%), Gaps = 2/73 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgcacgactgccggatg 87
+            ||||||||||||||||||| | | ||||||||||||||| ||  || | | |||||||||
+Sbjct: 8953 tgtaggcctgataagacgcatcaagcgtcgcatcaggca-ctatgctcaaatgccggatg 8895
+
+                         
+Query: 88   cggcgtgaacgcc 100
+            |||||||||||||
+Sbjct: 8894 cggcgtgaacgcc 8882
+
+
+ Score = 61.9 bits (215), Expect = 5e-011
+ Identities = 55/66 (83%), Gaps = 1/66 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgcacgactgccggatgc 88
+            |||||| |||||||||||| || |||||||||||||| || | |||| |  |||||||||
+Sbjct: 2713 gtaggcatgataagacgcggtaagcgtcgcatcaggcttcagtgcaccatcgccggatgc 2654
+
+                  
+Query: 89   ggcgtg 94
+            | || |
+Sbjct: 2653 gccgag 2648
+
+
+>gb|AE000339|ECAE000339 Escherichia coli , sseB, yfhI, yfhJ, fdx, hscA, yfhE, yfhF, suhB
+            genes from bases 2651739 to 2662352 (section 229 of 400)
+            of the complete genome
+            Length = 10614
+            
+ Score = 71.6 bits (250), Expect = 7e-014
+ Identities = 78/101 (77%), Gaps = 12/101 (11%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||| ||||||| |    | |     ||||||||||||||||||| ||| ||||||||
+Sbjct: 8704 tatccgacctacggtt----ctgttcactgtaggcctgataagacgcattacgcgtcgca 8759
+
+                                                     
+Query: 60   tcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||       ||| ||| |||||||||||||||||||
+Sbjct: 8760 tcaggca-------acggctgtcggatgcggcgtgaacgcc 8793
+
+
+ Score = 69.1 bits (241), Expect = 4e-013
+ Identities = 77/101 (76%), Gaps = 12/101 (11%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||| |||  || |    | | |   ||||||||||||||||||| ||| ||||||||
+Sbjct: 8613 tatccgccctggggtt----ctgtacactgtaggcctgataagacgcattacgcgtcgca 8668
+
+                                                     
+Query: 60   tcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||       ||| ||| |||||||||||||||||||
+Sbjct: 8669 tcaggca-------acggctgtcggatgcggcgtgaacgcc 8702
+
+
+ Score = 53.4 bits (184), Expect = 2e-008
+ Identities = 56/72 (77%), Gaps = 5/72 (6%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||| ||||||| |    | |     ||||||||||||||||||| ||| ||||||||
+Sbjct: 8795 tatccgacctacggtt----ctgttcactgtaggcctgataagacgcattacgcgtcgca 8850
+
+                        
+Query: 60   tcaggcatctgc 71
+            ||||||| | ||
+Sbjct: 8851 tcaggcaacggc 8862
+
+
+ Score = 41.8 bits (142), Expect = 6e-005
+ Identities = 38/46 (82%), Gaps = 2/46 (4%)
+ Strand = Plus / Plus
+
+                                                          
+Query: 24   gaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatct 69
+            ||||||||||||| ||||||  |||||  || |||||| ||||| |
+Sbjct: 1309 gaatttgtaggccggataag--gcgtttacgccgcatccggcatat 1352
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 39/48 (81%), Gaps = 7/48 (14%)
+ Strand = Plus / Minus
+
+                                                            
+Query: 28   ttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcac 75
+            ||||||||||||||||   ||| ||||   |||||||||| ||||| |
+Sbjct: 1282 ttgtaggcctgataag---cgt-agcg---catcaggcatttgcgccc 1242
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 1349 tgccggatgcggcgtaaacgcc 1328
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            || |||||||||||||||||||
+Sbjct: 8590 tgtcggatgcggcgtgaacgcc 8611
+
+
+>gb|AE000480|ECAE000480 Escherichia coli , yjcE, yjcF, yjcG, yjcH, acs, nrfA, nrfB, nrfC,
+            nrfD genes from bases 4277477 to 4289079 (section 370 of
+            400) of the complete genome
+            Length = 11603
+            
+ Score = 70.5 bits (246), Expect = 1e-013
+ Identities = 62/74 (83%), Gaps = 7/74 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+            ||||||||||||||||||||||  |||||||||||||||||        || ||||||||
+Sbjct: 5484 tttgtaggcctgataagacgcgacagcgtcgcatcaggcatt-------gattgccggat 5432
+
+                          
+Query: 87   gcggcgtgaacgcc 100
+            ||||||| ||||||
+Sbjct: 5431 gcggcgtaaacgcc 5418
+
+
+>gb|AE000119|ECAE000119 Escherichia coli , ftsZ, lpxC, yacA, secA, mutT, yacG, yacF, yacE,
+            guaC, hofC, hofB, ppdD genes from bases 105245 to 117678
+            (section 9 of 400) of the complete genome
+            Length = 12434
+            
+ Score = 70.2 bits (245), Expect = 2e-013
+ Identities = 61/72 (84%), Gaps = 1/72 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgc 88
+            | ||||||||||||||||||  |||||||||||||||||| | |  ||| || |||||||
+Sbjct: 6269 tttaggcctgataagacgcgccagcgtcgcatcaggcatc-gtgtgcgaatgtcggatgc 6211
+
+                        
+Query: 89   ggcgtgaacgcc 100
+            ||||  ||||||
+Sbjct: 6210 ggcgaaaacgcc 6199
+
+
+ Score = 68.3 bits (238), Expect = 7e-013
+ Identities = 62/72 (86%), Gaps = 2/72 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgcacgactgccggatgc 88
+            |||||||||||||||||||   |||||||||||||||||||  |  | | || |||||||
+Sbjct: 6385 gtaggcctgataagacgcggacagcgtcgcatcaggcatctt-gtgcaaatgtcggatgc 6327
+
+                        
+Query: 89   ggcgtgaacgcc 100
+            ||||||||||||
+Sbjct: 6326 ggcgtgaacgcc 6315
+
+
+>gb|AE000465|ECAE000465 Escherichia coli , fdhD, yiiG, frvR, frvX, frvB, frvA, yiiL, rhaD,
+            rhaA, rhaB, rhaS, rhaR, rhaT, sodA, kdgT genes from bases
+            4083404 to 4100362 (section 355 of 400) of the complete
+            genome
+            Length = 16959
+            
+ Score = 69.7 bits (243), Expect = 3e-013
+ Identities = 71/91 (78%), Gaps = 9/91 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| |  ||     | |||||||||||||||||||||  ||||||||||
+Sbjct: 8873 tatccggcctacgggt--cggcaacagttgtaggcctgataagacgcgacagcgtcgcat 8816
+
+                                           
+Query: 61   caggcatctgcgcacgactgccggatgcggc 91
+            |||||||        || |||||||||||||
+Sbjct: 8815 caggcat-------tgattgccggatgcggc 8792
+
+
+ Score = 68.0 bits (237), Expect = 8e-013
+ Identities = 73/93 (78%), Gaps = 13/93 (13%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaat--ttgtaggcctgataagacgcgttagcgtcgc 58
+            |||||||||||| | |    ||| |||  |||||||||||||||||||||  ||||||||
+Sbjct: 8781 tatccggcctacaggt----cggcaatagttgtaggcctgataagacgcgacagcgtcgc 8726
+
+                                             
+Query: 59   atcaggcatctgcgcacgactgccggatgcggc 91
+            |||||||||        || |||||||||||||
+Sbjct: 8725 atcaggcatt-------gattgccggatgcggc 8700
+
+
+ Score = 64.4 bits (224), Expect = 1e-011
+ Identities = 68/89 (76%), Gaps = 9/89 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||| | |  ||     | |||||||||||||||||||||  ||||||||||
+Sbjct: 8689 tatccggcctacaggt--cggcaacagttgtaggcctgataagacgcgacagcgtcgcat 8632
+
+                                         
+Query: 61   caggcatctgcgcacgactgccggatgcg 89
+            |||||||        || |||||||||||
+Sbjct: 8631 caggcat-------tgattgccggatgcg 8610
+
+
+ Score = 59.4 bits (206), Expect = 3e-010
+ Identities = 78/104 (75%), Gaps = 16/104 (15%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaat--ttgtaggcctgataagacgcgttagcgtcgc 58
+            |||| ||||||| | |    ||| |||  |||||||||||||||||||||  ||||||||
+Sbjct: 8598 tatcaggcctacaggt----cggcaatagttgtaggcctgataagacgcgacagcgtcgc 8543
+
+                                                        
+Query: 59   atcaggcatctgcgcacgactgcc--ggatgcggcgtgaacgcc 100
+            |||||||||        || ||||  |||||| ||| || ||||
+Sbjct: 8542 atcaggcat-------tgattgccgtggatgc-gcgcgagcgcc 8507
+
+
+ Score = 30.7 bits (102), Expect = 0.13
+ Identities = 22/24 (91%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            |||||||||||||||| || ||||
+Sbjct: 8898 actgccggatgcggcgcgagcgcc 8875
+
+
+>gb|AE000466|ECAE000466 Escherichia coli , yiiM, cpxA, cpxR, yiiP, pfkA, sbp, cdh, tpiA,
+           yiiQ, yiiR genes from bases 4100305 to 4110512 (section
+           356 of 400) of the complete genome
+           Length = 10208
+           
+ Score = 69.7 bits (243), Expect = 3e-013
+ Identities = 63/73 (86%), Gaps = 2/73 (2%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 29  tgtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgcacgactgccggatg 87
+           |||||||||||||||||||  | ||||||||||||||||||   || | | |||||||||
+Sbjct: 783 tgtaggcctgataagacgctatcagcgtcgcatcaggcatcct-gctcaaatgccggatg 841
+
+                        
+Query: 88  cggcgtgaacgcc 100
+           |||||| ||||||
+Sbjct: 842 cggcgtaaacgcc 854
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            |||||||||||||| |||||||
+Sbjct: 5945 tgccggatgcggcgcgaacgcc 5924
+
+
+>gb|AE000201|ECAE000201 Escherichia coli , cspG, sfa, torS, torT, torR, torC, torA, torD genes
+             from bases 1050451 to 1061725 (section 91 of 400) of the
+             complete genome
+             Length = 11275
+             
+ Score = 69.4 bits (242), Expect = 3e-013
+ Identities = 62/75 (82%), Gaps = 1/75 (1%)
+ Strand = Plus / Plus
+
+                                                                         
+Query: 27    tttgtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgcacgactgccgga 85
+             |||||  |||||| |||||||||| |||||||||||||||||    || |   |||||||
+Sbjct: 11177 tttgtgcgcctgaaaagacgcgtttagcgtcgcatcaggcattatggcgcagttgccgga 11236
+
+                            
+Query: 86    tgcggcgtgaacgcc 100
+             ||||||||||||| |
+Sbjct: 11237 tgcggcgtgaacgtc 11251
+
+
+>gb|AE000432|ECAE000432 Escherichia coli , proK, yhjW, yhjX, yhjY, tag, yiaC, bisC, yiaD,
+           yiaE, yiaF genes from bases 3705391 to 3716988 (section
+           322 of 400) of the complete genome
+           Length = 11598
+           
+ Score = 69.1 bits (241), Expect = 4e-013
+ Identities = 61/73 (83%), Gaps = 2/73 (2%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 30  gtaggcctgataagacgcgttagcgtcgcatcaggc--atctgcgcacgactgccggatg 87
+           |||||||||||||||||||| |||||||||||||||  || |||   | | || ||||||
+Sbjct: 596 gtaggcctgataagacgcgtcagcgtcgcatcaggcaaatgtgccggccattgtcggatg 537
+
+                        
+Query: 88  cggcgtgaacgcc 100
+           ||||| || ||||
+Sbjct: 536 cggcgcgaccgcc 524
+
+
+>gb|AE000462|ECAE000462 Escherichia coli , yihI, hemN, glnG, glnL, glnA, yihK genes from
+            bases 4047648 to 4057978 (section 352 of 400) of the
+            complete genome
+            Length = 10331
+            
+ Score = 68.8 bits (240), Expect = 4e-013
+ Identities = 72/90 (80%), Gaps = 3/90 (3%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 12   cggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatc-tg 70
+            |||||| ||  | || | |||||||||||||||||||    || ||||||||||||| ||
+Sbjct: 3563 cggatg-cggagaaagtcgtaggcctgataagacgcgaccacgccgcatcaggcatcatg 3505
+
+                                          
+Query: 71   cgcacgactgccggatgcggcgtgaacgcc 100
+            | || ||  ||| |||||||||| ||||||
+Sbjct: 3504 ctca-gatggcctgatgcggcgtaaacgcc 3476
+
+
+ Score = 59.2 bits (205), Expect = 4e-010
+ Identities = 61/74 (82%), Gaps = 4/74 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggc-atctgcgcacgactgccgga 85
+            |||||||||| ||||||  |||||  || |||||||||| ||||| ||| || |||| ||
+Sbjct: 3460 tttgtaggccggataag--gcgtttacgccgcatcaggccatctgagcatga-tgcctga 3516
+
+                          
+Query: 86   tgcggcgtgaacgc 99
+            |||||||||  |||
+Sbjct: 3517 tgcggcgtggtcgc 3530
+
+
+>gb|AE000175|ECAE000175 Escherichia coli , ybgD, gltA, sdhC, sdhD, sdhA, sdhB, sucA, sucB genes
+             from bases 747061 to 762127 (section 65 of 400) of the
+             complete genome
+             Length = 15067
+             
+ Score = 68.8 bits (240), Expect = 4e-013
+ Identities = 60/71 (84%), Gaps = 7/71 (9%)
+ Strand = Plus / Plus
+
+                                                                         
+Query: 30    gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+             |||||||||||||||||||  ||||||||||||||||       || | |||||||||||
+Sbjct: 10572 gtaggcctgataagacgcgcaagcgtcgcatcaggca-------accagtgccggatgcg 10624
+
+                        
+Query: 90    gcgtgaacgcc 100
+             |||||||||||
+Sbjct: 10625 gcgtgaacgcc 10635
+
+
+ Score = 53.9 bits (186), Expect = 1e-008
+ Identities = 54/71 (76%), Gaps = 7/71 (9%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 30    gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+             |||||||||||||||||||| ||||||||||||||| |       | | |||||||   |
+Sbjct: 15001 gtaggcctgataagacgcgtcagcgtcgcatcaggctt-------caattgccggagaag 14949
+
+                        
+Query: 90    gcgtgaacgcc 100
+             |||  || |||
+Sbjct: 14948 gcgataatgcc 14938
+
+
+>gb|AE000304|ECAE000304 Escherichia coli , mglC, mglA, mglB, galS, yeiB, folE, yeiG, cirA
+           genes from bases 2234612 to 2244964 (section 194 of 400)
+           of the complete genome
+           Length = 10353
+           
+ Score = 68.6 bits (239), Expect = 5e-013
+ Identities = 59/73 (80%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 28  ttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatg 87
+           ||||||||| ||||| |||||  ||||| ||||| ||||| ||    |   |||||||||
+Sbjct: 7   ttgtaggccggataaaacgcgccagcgttgcatccggcatttggctcctgttgccggatg 66
+
+                        
+Query: 88  cggcgtgaacgcc 100
+           |||||||||||||
+Sbjct: 67  cggcgtgaacgcc 79
+
+
+>gb|AE000327|ECAE000327 Escherichia coli , glk, nupC, yfeA, alaX, alaW genes from bases
+            2506342 to 2516389 (section 217 of 400) of the complete
+            genome
+            Length = 10048
+            
+ Score = 68.3 bits (238), Expect = 7e-013
+ Identities = 70/90 (77%), Gaps = 2/90 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacg-gatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgca 59
+            |||||| |||||| | |   | |    |||||||||||||||||||||  ||||||||||
+Sbjct: 3096 tatccgccctacgcgttaaagagccggtttgtaggcctgataagacgcactagcgtcgca 3037
+
+                                          
+Query: 60   tcaggcatctgcgcacgactgccggatgcg 89
+            |||||||| || || | | || |||| |||
+Sbjct: 3036 tcaggcat-tgtgctccattggcggacgcg 3008
+
+
+ Score = 36.8 bits (124), Expect = 0.002
+ Identities = 32/37 (86%), Gaps = 1/37 (2%)
+ Strand = Plus / Minus
+
+                                                 
+Query: 64   gcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||||| |||| | || |||||||||||| ||||||
+Sbjct: 3133 gcatctg-gcactattggcggatgcggcgtaaacgcc 3098
+
+
+>gb|AE000476|ECAE000476 Escherichia coli , pgi, yjbE, yjbF, yjbG, yjbH, yjbA, xylE, malG,
+            malF, malE, malK genes from bases 4230869 to 4245542
+            (section 366 of 400) of the complete genome
+            Length = 14674
+            
+ Score = 67.7 bits (236), Expect = 1e-012
+ Identities = 60/72 (83%), Gaps = 7/72 (9%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgc 88
+            ||||||||||||||||||||   ||||||||||||||||| |        ||||||||||
+Sbjct: 2209 tgtaggcctgataagacgcgaccgcgtcgcatcaggcatcggt-------tgccggatgc 2157
+
+                        
+Query: 89   ggcgtgaacgcc 100
+            ||||||||||||
+Sbjct: 2156 ggcgtgaacgcc 2145
+
+
+ Score = 60.6 bits (210), Expect = 1e-010
+ Identities = 58/74 (78%), Gaps = 7/74 (9%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 27    tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+             | ||||||||||||||||||||| ||||||||||||||||  ||        || |||||
+Sbjct: 11882 tatgtaggcctgataagacgcgtcagcgtcgcatcaggcagttg-------ttgtcggat 11830
+
+                           
+Query: 87    gcggcgtgaacgcc 100
+               |||||||| |||
+Sbjct: 11829 aaggcgtgaaagcc 11816
+
+
+ Score = 39.3 bits (133), Expect = 4e-004
+ Identities = 53/74 (71%), Gaps = 4/74 (5%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 29    tgtaggcctgataagacgcgttagcgtcgcatcaggcatc--tgcgcacgactgccggat 86
+             || || ||||| ||||||||  ||  ||| ||||   |    |||     | ||||||||
+Sbjct: 11979 tgaagccctga-aagacgcgc-agactcgtatcaccaagtaatgctgtgaaatgccggat 11922
+
+                           
+Query: 87    gcggcgtgaacgcc 100
+             ||||||||||||||
+Sbjct: 11921 gcggcgtgaacgcc 11908
+
+
+>gb|AE000352|ECAE000352 Escherichia coli , ygaC, nrdE, nrdF, proV, proW, proX genes from
+            bases 2796821 to 2807604 (section 242 of 400) of the
+            complete genome
+            Length = 10784
+            
+ Score = 67.5 bits (235), Expect = 1e-012
+ Identities = 63/75 (84%), Gaps = 2/75 (2%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcac-gactgccgga 85
+            ||||||||| ||||||||||||  ||||||||||||||||| || |||| ||  | ||||
+Sbjct: 9418 tttgtaggcatgataagacgcgccagcgtcgcatcaggcat-tgtgcacagaacggcgga 9360
+
+                           
+Query: 86   tgcggcgtgaacgcc 100
+            ||||||   ||||||
+Sbjct: 9359 tgcggcaaaaacgcc 9345
+
+
+>gb|AE000477|ECAE000477 Escherichia coli , lamB, malM, yjbI, ubiC, ubiA, plsB, dgkA, lexA,
+            dinF genes from bases 4245485 to 4256798 (section 367 of
+            400) of the complete genome
+            Length = 11314
+            
+ Score = 67.2 bits (234), Expect = 1e-012
+ Identities = 74/100 (74%), Gaps = 10/100 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||   || |    |   |||||||||||||||||||||  ||||||||||
+Sbjct: 1518 tatccggcctacatttgacagccg---ttgtaggcctgataagacgcgcaagcgtcgcat 1462
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||||| |        |  ||||| ||||||||| ||||||
+Sbjct: 1461 caggcgt-------tggttgccgaatgcggcgtaaacgcc 1429
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 1541 tgccggatgcggcgtaaacgcc 1520
+
+
+ Score = 29.9 bits (99), Expect = 0.24
+ Identities = 47/73 (64%), Gaps = 8/73 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgca 74
+            || |||  |   | ||||||||||| |||        ||  ||||||||||| |  |  |
+Sbjct: 6070 attgcgatgtgttgtgtaggcctgagaag-------cgccgcgcatcaggcaac-ccaga 6019
+
+                         
+Query: 75   cgactgccggatg 87
+             ||  ||||||||
+Sbjct: 6018 agaaagccggatg 6006
+
+
+ Score = 28.2 bits (93), Expect = 0.75
+ Identities = 21/24 (87%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | ||||||||||||||  ||||||
+Sbjct: 6128 attgccggatgcggcgaaaacgcc 6105
+
+
+>gb|AE000158|ECAE000158 Escherichia coli , ybcF, purK, purE, ybbF, ppiB, cysS, ybcI genes
+            from bases 545716 to 555858 (section 48 of 400) of the
+            complete genome
+            Length = 10143
+            
+ Score = 66.1 bits (230), Expect = 3e-012
+ Identities = 74/93 (79%), Gaps = 4/93 (4%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgca 59
+            |||||||||||| |||   |     ||| ||||||||||||||| |||| | || |||||
+Sbjct: 4996 tatccggcctaccgatccggtacccatt-gtaggcctgataagatgcgtcaagcatcgca 4938
+
+                                             
+Query: 60   tcaggcatctgcgcacgact-gccggatgcggc 91
+            |||||||| || |||| | | ||||||||||||
+Sbjct: 4937 tcaggcat-tgtgcaccaattgccggatgcggc 4906
+
+
+ Score = 48.4 bits (166), Expect = 6e-007
+ Identities = 38/40 (95%), Gaps = 1/40 (2%)
+ Strand = Plus / Minus
+
+                                                    
+Query: 28   ttgtaggcctgataagacgcgt-tagcgtcgcatcaggca 66
+            ||||||||||||||||||||||  ||||||||||||||||
+Sbjct: 4900 ttgtaggcctgataagacgcgtcaagcgtcgcatcaggca 4861
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 5019 tgccggatgcggcgtaaacgcc 4998
+
+
+>gb|AE000296|ECAE000296 Escherichia coli , yegA, dcd, udk, yegE genes from bases 2131436 to
+             2144687 (section 186 of 400) of the complete genome
+             Length = 13252
+             
+ Score = 65.5 bits (228), Expect = 4e-012
+ Identities = 56/65 (86%), Gaps = 3/65 (4%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             ||||||||||  |||  | |||   |||||||||| ||||||||||||||||||||||||
+Sbjct: 13248 tatccggcctggggaatgagcg---atttgtaggcatgataagacgcgttagcgtcgcat 13192
+
+                  
+Query: 61    caggc 65
+             |||||
+Sbjct: 13191 caggc 13187
+
+
+ Score = 45.9 bits (157), Expect = 4e-006
+ Identities = 37/40 (92%), Gaps = 1/40 (2%)
+ Strand = Plus / Minus
+
+                                                    
+Query: 29   tgtaggcctgataagacgcgt-tagcgtcgcatcaggcat 67
+            |||||||||||||||||||||  ||||||||||||||| |
+Sbjct: 6326 tgtaggcctgataagacgcgtaaagcgtcgcatcaggcgt 6287
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 18  tgccggatgcggcgtgaacgcc 39
+
+
+>gb|AE000360|ECAE000360 Escherichia coli , cysH, cysI, cysJ genes from bases 2885392 to
+            2897503 (section 250 of 400) of the complete genome
+            Length = 12112
+            
+ Score = 65.3 bits (227), Expect = 5e-012
+ Identities = 75/96 (78%), Gaps = 10/96 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 2    atccggcctacggat--ggcgcgggaatttgtaggcctgataagacgcgt-tagcgtcgc 58
+            |||| |||||||| |  |||  ||| | ||||||||||||||||||||||  ||||||||
+Sbjct: 7536 atcctgcctacggttctggcctggggacttgtaggcctgataagacgcgtcaagcgtcgc 7477
+
+                                                
+Query: 59   atcaggcatctgcgcacgactgccggatgcggcgtg 94
+            |||||||    ||    || || |||||| ||||||
+Sbjct: 7476 atcaggc----gc---tgaatgtcggatgtggcgtg 7448
+
+
+ Score = 48.4 bits (166), Expect = 6e-007
+ Identities = 38/40 (95%), Gaps = 1/40 (2%)
+ Strand = Plus / Minus
+
+                                                    
+Query: 28   ttgtaggcctgataaga-cgcgttagcgtcgcatcaggca 66
+            ||||||||||||||||| ||||| ||||||||||||||||
+Sbjct: 1004 ttgtaggcctgataagaacgcgtgagcgtcgcatcaggca 965
+
+
+>gb|AE000390|ECAE000390 Escherichia coli , ygjJ, ygjK, ygjL, ygjM, ygjN, ygjO, ygjP, ygjQ,
+            ygjR genes from bases 3225346 to 3236108 (section 280 of
+            400) of the complete genome
+            Length = 10763
+            
+ Score = 65.0 bits (226), Expect = 7e-012
+ Identities = 62/75 (82%), Gaps = 4/75 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgc---gcacgactgccgga 85
+            ||||| | |||||||||||  | |||||||||| |||||||||   || | |||| ||||
+Sbjct: 3694 gtaggtcggataagacgcgacaagcgtcgcatccggcatctgcaccgcgccactggcgga 3753
+
+                           
+Query: 86   tgcggcgtgaacgcc 100
+            ||||||||| |||||
+Sbjct: 3754 tgcggcgtggacgcc 3768
+
+
+ Score = 58.3 bits (202), Expect = 6e-010
+ Identities = 58/72 (80%), Gaps = 4/72 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 33   ggcctgataagacgcgtta-gcgtcgcatcaggcatctgc---gcacgactgccggatgc 88
+            |||| ||||| |||||  | |||| ||||| |||| ||||   || | |||| |||||||
+Sbjct: 3597 ggccggataaaacgcggcaagcgttgcatccggcaactgcaccgcgccactggcggatgc 3656
+
+                        
+Query: 89   ggcgtgaacgcc 100
+            ||||||||||||
+Sbjct: 3657 ggcgtgaacgcc 3668
+
+
+ Score = 31.8 bits (106), Expect = 0.063
+ Identities = 22/23 (95%)
+ Strand = Plus / Minus
+
+                                   
+Query: 78   ctgccggatgcggcgtgaacgcc 100
+            |||||||||||||||| ||||||
+Sbjct: 7021 ctgccggatgcggcgtaaacgcc 6999
+
+
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 49/80 (61%), Gaps = 1/80 (1%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 21   cgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactg 80
+            || | |||||||    |  ||  |||  ||        | ||   || |||  ||  |||
+Sbjct: 3490 cgcgcatttgtatatgttgtataacgattttttccgtaagcaataatttgca-actgctg 3548
+
+                                
+Query: 81   ccggatgcggcgtgaacgcc 100
+             |||||||||||| ||||||
+Sbjct: 3549 gcggatgcggcgtaaacgcc 3568
+
+
+>gb|AE000378|ECAE000378 Escherichia coli , yggM, ansB, yggN, yggL, yggH, mutY genes from
+            bases 3091998 to 3102445 (section 268 of 400) of the
+            complete genome
+            Length = 10448
+            
+ Score = 64.7 bits (225), Expect = 8e-012
+ Identities = 73/100 (73%), Gaps = 10/100 (10%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||| ||| ||   ||||   ||   ||||||| |||||||||||||  ||||||||||
+Sbjct: 4457 tatccagccgacatgtggcagcgg---ttgtaggtctgataagacgcgcaagcgtcgcat 4513
+
+                                                    
+Query: 61   caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            ||| | |        || |||||||||||| || ||||||
+Sbjct: 4514 cagacgt-------tgattgccggatgcggggtcaacgcc 4546
+
+
+ Score = 51.2 bits (176), Expect = 9e-008
+ Identities = 52/69 (75%), Gaps = 3/69 (4%)
+ Strand = Plus / Plus
+
+                                                                      
+Query: 1  tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+          ||||| ||  ||   ||||   ||    | |||| |||||||||||||||||||||||||
+Sbjct: 10 tatccagcacacatctggcagcggc---tataggtctgataagacgcgttagcgtcgcat 66
+
+                   
+Query: 61 caggcatct 69
+          ||| ||| |
+Sbjct: 67 cagacattt 75
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Plus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | ||||||||||||||||||||||
+Sbjct: 4432 attgccggatgcggcgtgaacgcc 4455
+
+
+ Score = 27.9 bits (92), Expect = 0.91
+ Identities = 20/22 (90%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||| ||
+Sbjct: 7716 tgccggatgcggcgtaaacacc 7737
+
+
+>gb|AE000332|ECAE000332 Escherichia coli , eutH, eutG, eutJ, eutE, cchB, cchA, eutI genes
+            from bases 2561338 to 2574035 (section 222 of 400) of the
+            complete genome
+            Length = 12698
+            
+ Score = 62.5 bits (217), Expect = 4e-011
+ Identities = 61/75 (81%), Gaps = 4/75 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgc---gcacgactgccgga 85
+            ||||||  |||||||||||  | |||||||||| ||||  |||   || | |||| ||||
+Sbjct: 4868 gtaggctggataagacgcggcaagcgtcgcatccggcaattgcaccgcgccactggcgga 4927
+
+                           
+Query: 86   tgcggcgtgaacgcc 100
+            |||||||||||||||
+Sbjct: 4928 tgcggcgtgaacgcc 4942
+
+
+ Score = 28.2 bits (93), Expect = 0.75
+ Identities = 21/24 (87%)
+ Strand = Plus / Plus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | || |||||||||||| ||||||
+Sbjct: 4819 attggcggatgcggcgtaaacgcc 4842
+
+
+>gb|AE000117|ECAE000117 Escherichia coli , araC, yabI, yabJ, yabK, tbpA, yabN, yabM, leuD,
+            leuC, leuB, leuA genes from bases 70188 to 83603 (section
+            7 of 400) of the complete genome
+            Length = 13416
+            
+ Score = 61.4 bits (213), Expect = 8e-011
+ Identities = 65/81 (80%), Gaps = 5/81 (6%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgc-gttagcgtcgca 59
+            |||||| ||||||| | | |||    ||||||||||||||||||||| |  |||||||||
+Sbjct: 2011 tatccgacctacgggtagtgcgt---tttgtaggcctgataagacgcggcaagcgtcgca 1955
+
+                                 
+Query: 60   tcaggc-atctgcgcacgact 79
+            |||||| | | || || ||||
+Sbjct: 1954 tcaggcaacccgcacaagact 1934
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            |||| |||||||||||||||||||
+Sbjct: 2036 actgtcggatgcggcgtgaacgcc 2013
+
+
+>gb|AE000299|ECAE000299 Escherichia coli  gene from bases 2175352 to 2185387 (section 189
+           of 400) of the complete genome
+           Length = 10036
+           
+ Score = 60.6 bits (210), Expect = 1e-010
+ Identities = 58/74 (78%), Gaps = 7/74 (9%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 27  tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+           | ||||||| ||||||||||| | |||||||||||||||||        |  ||||||||
+Sbjct: 74  tatgtaggcatgataagacgcttcagcgtcgcatcaggcat-------aggttgccggat 126
+
+                         
+Query: 87  gcggcgtgaacgcc 100
+           || |||| ||||||
+Sbjct: 127 gcagcgtaaacgcc 140
+
+
+>gb|AE000125|ECAE000125 Escherichia coli , hemL, yadQ, yadR, yadS, yadT, pfs, dgt, htrA,
+          yaeG genes from bases 173494 to 183692 (section 15 of
+          400) of the complete genome
+          Length = 10199
+          
+ Score = 60.0 bits (208), Expect = 2e-010
+ Identities = 56/70 (80%), Gaps = 2/70 (2%)
+ Strand = Plus / Minus
+
+                                                                      
+Query: 1  tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+          |||||| ||||||  |  || ||   |||||||||| |||||||||||  ||||||||||
+Sbjct: 73 tatccgacctacgatt--cggggccgtttgtaggcccgataagacgcgccagcgtcgcat 16
+
+                    
+Query: 61 caggcatctg 70
+          | |||||| |
+Sbjct: 15 cgggcatccg 6
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           || |||||||||||||||||||
+Sbjct: 96  tgtcggatgcggcgtgaacgcc 75
+
+
+>gb|AE000389|ECAE000389 Escherichia coli , air, ygjG, ygjH, ebgR, ebgA, ebgC, ygjI genes
+           from bases 3214247 to 3225403 (section 279 of 400) of
+           the complete genome
+           Length = 11157
+           
+ Score = 59.4 bits (206), Expect = 3e-010
+ Identities = 74/99 (74%), Gaps = 11/99 (11%)
+ Strand = Plus / Minus
+
+                                                                       
+Query: 1   tatccggcctacgga---tggcgcgggaatttgtaggcctgataagacgcgtta-gcgtc 56
+           |||| ||||| |||    ||  |||||    |||||||| |||||| ||||| | |||||
+Sbjct: 893 tatcaggcctgcggggtgtgtagcggg----tgtaggccggataaggcgcgtcaagcgtc 838
+
+                                                  
+Query: 57  gcatcaggcatctgc---gcacgactgccggatgcggcg 92
+           ||||| ||||  |||   || | |||| |||||||||||
+Sbjct: 837 gcatccggcaattgcaccgcgccactggcggatgcggcg 799
+
+
+ Score = 52.0 bits (179), Expect = 5e-008
+ Identities = 63/93 (67%), Gaps = 1/93 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||||||||||||    |   |   |    | ||||||||||||| |||  ||| ||||||
+Sbjct: 854 tatccggcctacacccgctacac-accccgcaggcctgataagatgcgccagcatcgcat 912
+
+                                            
+Query: 61  caggcatctgcgcacgactgccggatgcggcgt 93
+           |||||||       | || ||||||| |||| |
+Sbjct: 913 caggcattgtgctccaaccgccggatccggcat 945
+
+
+ Score = 39.6 bits (134), Expect = 3e-004
+ Identities = 46/62 (74%), Gaps = 2/62 (3%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 39  ataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcggcgtgaacg 98
+           ||||||||     || ||   |||||||||    | | || |||||||||||||||||||
+Sbjct: 1   ataagacgaacc-gcctcttctcaggcatcattactcaac-gccggatgcggcgtgaacg 58
+
+             
+Query: 99  cc 100
+           ||
+Sbjct: 59  cc 60
+
+
+>gb|AE000280|ECAE000280 Escherichia coli , yebL, yebI, ruvB, ruvA, yebB, ruvC, yebC, ntpA,
+            aspS, yecD, yecE genes from bases 1939606 to 1952547
+            (section 170 of 400) of the complete genome
+            Length = 12942
+            
+ Score = 59.2 bits (205), Expect = 4e-010
+ Identities = 73/101 (72%), Gaps = 6/101 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgtt-agcgtcgca 59
+            |||||| ||||||| |  ||       | |||| |||| |||||||||   |||||||||
+Sbjct: 2660 tatccgacctacggtt--cggtatctctggtagtcctggtaagacgcgaacagcgtcgca 2717
+
+                                                     
+Query: 60   tcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||||| |     | | |||||||||||||| || || |
+Sbjct: 2718 tcaggcatat---tgccagtgccggatgcggcgcgagcgac 2755
+
+
+ Score = 35.7 bits (120), Expect = 0.004
+ Identities = 24/24 (100%)
+ Strand = Plus / Plus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||||
+Sbjct: 12845 actgccggatgcggcgtgaacgcc 12868
+
+
+ Score = 28.2 bits (93), Expect = 0.75
+ Identities = 25/33 (75%)
+ Strand = Plus / Plus
+
+                                             
+Query: 68   ctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||  |||   || ||||||||||| || ||||
+Sbjct: 2626 ctgaacacatttgtcggatgcggcgcgagcgcc 2658
+
+
+ Score = 27.9 bits (92), Expect = 0.91
+ Identities = 20/22 (90%)
+ Strand = Plus / Plus
+
+                                   
+Query: 22    gggaatttgtaggcctgataag 43
+             |||| | |||||||||||||||
+Sbjct: 12909 gggactatgtaggcctgataag 12930
+
+
+>gb|AE000303|ECAE000303 Escherichia coli , yohC, yohD, yohF, yohG, yohH, yohI, yohJ, yohK,
+            cdd, sanA, yeiA genes from bases 2222952 to 2234669
+            (section 193 of 400) of the complete genome
+            Length = 11718
+            
+ Score = 57.5 bits (199), Expect = 1e-009
+ Identities = 55/74 (74%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+            || || ||| ||| |||||||   ||||||| |||||||||       ||  || |||||
+Sbjct: 1540 ttggtcggcatgaaaagacgcacaagcgtcgtatcaggcatggtactccggatgtcggat 1481
+
+                          
+Query: 87   gcggcgtgaacgcc 100
+            |||||| |||||||
+Sbjct: 1480 gcggcgcgaacgcc 1467
+
+
+ Score = 43.1 bits (147), Expect = 2e-005
+ Identities = 47/65 (72%), Gaps = 2/65 (3%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 27    tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggat 86
+             |||||||||| ||||||  |||||   | |||||| |||  | |    | | ||||||||
+Sbjct: 11639 tttgtaggccggataag--gcgttcaagccgcatccggcgacaggaaccaaatgccggat 11582
+
+                  
+Query: 87    gcggc 91
+             ||| |
+Sbjct: 11581 gcgtc 11577
+
+
+ Score = 39.3 bits (133), Expect = 4e-004
+ Identities = 37/50 (74%)
+ Strand = Plus / Plus
+
+                                                               
+Query: 51    agcgtcgcatcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             || | |||||| ||||| ||    |    |||||||||||| ||||||||
+Sbjct: 11574 agagacgcatccggcatttggttcctgtcgccggatgcggcttgaacgcc 11623
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 7804 tgccggatgcggcgtgaacgcc 7825
+
+
+>gb|AE000495|ECAE000495 Escherichia coli , cybC, nrdG, nrdD, treC, treB, treR, mgtA, yjgF,
+            pyrI, pyrB, pyrL, yjgG, yjgH, yjgI genes from bases
+            4456933 to 4471777 (section 385 of 400) of the complete
+            genome
+            Length = 14845
+            
+ Score = 56.7 bits (196), Expect = 2e-009
+ Identities = 72/101 (71%), Gaps = 14/101 (13%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgt--aggcctgataagacgcgttagcgtcgc 58
+            ||||||||||||   ||||     ||||  |  ||| |||||||||||||  ||||||||
+Sbjct: 1118 tatccggcctacatttggc-----aattgctccaggtctgataagacgcgacagcgtcgc 1064
+
+                                                     
+Query: 59   atcaggcatctgcgcacgactgccggatgcggcgtgaacgc 99
+            |||||||||        || | |||||||| || |  ||||
+Sbjct: 1063 atcaggcat-------tgattaccggatgcagcctacacgc 1030
+
+
+ Score = 31.0 bits (103), Expect = 0.11
+ Identities = 23/26 (88%)
+ Strand = Plus / Minus
+
+                                      
+Query: 75   cgactgccggatgcggcgtgaacgcc 100
+            | | ||||||||||||||| ||||||
+Sbjct: 1145 caaatgccggatgcggcgtaaacgcc 1120
+
+
+ Score = 27.9 bits (92), Expect = 0.91
+ Identities = 20/22 (90%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||| || |||
+Sbjct: 11022 tgccggatgcggcgtaaatgcc 11043
+
+
+>gb|AE000417|ECAE000417 Escherichia coli , yhgA, bioH, yhgH, yhgI, gntT, malQ, malP genes
+            from bases 3540672 to 3550564 (section 307 of 400) of the
+            complete genome
+            Length = 9893
+            
+ Score = 56.7 bits (196), Expect = 2e-009
+ Identities = 56/69 (81%), Gaps = 2/69 (2%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgt-tagcgtcgca 59
+            |||||||||||||  | | |  | |||| ||||||| ||||||||||||  ||| |||||
+Sbjct: 4871 tatccggcctacgattcgggatg-aattagtaggccggataagacgcgtcaagcatcgca 4929
+
+                     
+Query: 60   tcaggcatc 68
+            || ||||||
+Sbjct: 4930 tccggcatc 4938
+
+
+ Score = 41.2 bits (140), Expect = 9e-005
+ Identities = 32/37 (86%)
+ Strand = Plus / Minus
+
+                                                 
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggca 66
+            ||||||| || | ||||| ||||||||||||| ||||
+Sbjct: 3222 gtaggcccgaaatgacgctttagcgtcgcatcgggca 3186
+
+
+ Score = 34.6 bits (116), Expect = 0.009
+ Identities = 24/25 (96%)
+ Strand = Plus / Plus
+
+                                     
+Query: 76   gactgccggatgcggcgtgaacgcc 100
+            |||||||||||||||||||| ||||
+Sbjct: 4845 gactgccggatgcggcgtgaccgcc 4869
+
+
+>gb|AE000507|ECAE000507 Escherichia coli , mdoB, yjjA, dnaC, dnaT, yjjB, yjjP, yjjQ, yjjR,
+            yjjS, leuV, leuP, leuQ, yjjT, holD, rimI, yjjG genes from
+            bases 4594621 to 4606979 (section 397 of 400) of the
+            complete genome
+            Length = 12359
+            
+ Score = 56.1 bits (194), Expect = 3e-009
+ Identities = 46/55 (83%)
+ Strand = Plus / Minus
+
+                                                                   
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgc 81
+            || ||||||| |||||||||||  ||||||||||| ||||||||| | ||  |||
+Sbjct: 9545 ttcgtaggccagataagacgcgccagcgtcgcatctggcatctgcccccgcatgc 9491
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            || |||||||||||||||||||
+Sbjct: 9599 tgtcggatgcggcgtgaacgcc 9578
+
+
+>gb|AE000434|ECAE000434 Escherichia coli , xylF, xylG, xylH, xylR, malS, avtA genes from
+            bases 3728487 to 3738650 (section 324 of 400) of the
+            complete genome
+            Length = 10164
+            
+ Score = 56.1 bits (194), Expect = 3e-009
+ Identities = 62/87 (71%), Gaps = 1/87 (1%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 15   atggcgcgggaat-ttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgc 73
+            || ||| ||  || ||||||   |||| |||   ||  ||||| ||||||| | |   ||
+Sbjct: 5281 atagcgaggtcatgttgtagcgatgatgagaattgtcggcgtcacatcaggtaacgctgc 5340
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+              |  || |||||||||||||||||||
+Sbjct: 5341 gtggttgtcggatgcggcgtgaacgcc 5367
+
+
+>gb|AE000321|ECAE000321 Escherichia coli , pdxB, div, fabB, yfcA, mepA, aroC, yfcB genes from
+            bases 2434673 to 2447240 (section 211 of 400) of the
+            complete genome
+            Length = 12568
+            
+ Score = 55.3 bits (191), Expect = 5e-009
+ Identities = 67/87 (77%), Gaps = 11/87 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcg-ttagcgtcgca 59
+            |||||| ||||||  || ||        |||||||||||||||||||| | |||||||||
+Sbjct: 7159 tatccgacctacgtgtgacg--------tgtaggcctgataagacgcgataagcgtcgca 7210
+
+                                       
+Query: 60   tcaggcat-ctgcgcacgactgccgga 85
+            |||||||| |||| |  ||| |||| |
+Sbjct: 7211 tcaggcatgctgctccagac-gccgca 7236
+
+
+ Score = 42.6 bits (145), Expect = 4e-005
+ Identities = 49/70 (70%), Gaps = 1/70 (1%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+            ||||| | ||  |||||||  ||||||||||| | | | | ||| | | ||| |  | ||
+Sbjct: 3726 gtaggtcggagtagacgcgccagcgtcgcatccgacgt-tacgcgccaatgcggcctccg 3668
+
+                      
+Query: 90   gcgtgaacgc 99
+            ||   |||||
+Sbjct: 3667 gcactaacgc 3658
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 7136 tgccggatgcggcgtgaacgcc 7157
+
+
+>gb|AE000116|ECAE000116 Escherichia coli , yabH, yabP, yabQ, yabO, hepA, polB, araD, araA,
+            araB genes from bases 57207 to 70245 (section 6 of 400)
+            of the complete genome
+            Length = 13039
+            
+ Score = 55.0 bits (190), Expect = 6e-009
+ Identities = 66/89 (74%), Gaps = 11/89 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||  |   ||| |     ||||||||||||||||||||  ||||||||||
+Sbjct: 9376 tatccggcctacaaaat-cgcagcg---tgtaggcctgataagacgcgccagcgtcgcat 9431
+
+                                         
+Query: 61   caggcatctgcgcacgactgccggatgcg 89
+            ||||| |        || |||||||||||
+Sbjct: 9432 caggcgt-------tgaatgccggatgcg 9453
+
+
+ Score = 52.5 bits (181), Expect = 4e-008
+ Identities = 65/89 (73%), Gaps = 11/89 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||  |   ||| |      |||||||||||||||||||  ||||||||||
+Sbjct: 9461 tatccggcctacaaaat-cgcagcgc---gtaggcctgataagacgcgccagcgtcgcat 9516
+
+                                         
+Query: 61   caggcatctgcgcacgactgccggatgcg 89
+            ||||| |        || |||||||||||
+Sbjct: 9517 caggcgt-------tgaatgccggatgcg 9538
+
+
+ Score = 51.4 bits (177), Expect = 8e-008
+ Identities = 53/67 (79%), Gaps = 4/67 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||  |   ||| |     |||||||| |||||||||||| ||||||||||
+Sbjct: 9546 tatccggcctacaaaat-cgcagcg---tgtaggccagataagacgcgtcagcgtcgcat 9601
+
+                   
+Query: 61   caggcat 67
+            ||||| |
+Sbjct: 9602 caggcgt 9608
+
+
+>gb|AE000481|ECAE000481 Escherichia coli , nrfE, nrfF, nrfG, gltP, yjcO, fdhF, yjcP, yjcQ,
+            yjcR genes from bases 4289022 to 4301989 (section 371 of
+            400) of the complete genome
+            Length = 12968
+            
+ Score = 54.8 bits (189), Expect = 8e-009
+ Identities = 65/87 (74%), Gaps = 9/87 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgc 73
+            || |||| |      ||||||||||||||||||||| ||||||||||||||| | ||   
+Sbjct: 4783 attgcgctgtctggcgtaggcctgataagacgcgttaagcgtcgcatcaggcgt-tg--- 4728
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+                 || |||||||||| | ||||||
+Sbjct: 4727 ----atgtcggatgcggcataaacgcc 4705
+
+
+ Score = 54.8 bits (189), Expect = 8e-009
+ Identities = 65/87 (74%), Gaps = 9/87 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgc 73
+            || |||| |      ||||||||||||||||||||| ||||||||||||||| | ||   
+Sbjct: 4896 attgcgctgtctggcgtaggcctgataagacgcgttaagcgtcgcatcaggcgt-tg--- 4841
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+                 || |||||||||| | ||||||
+Sbjct: 4840 ----atgtcggatgcggcataaacgcc 4818
+
+
+ Score = 54.8 bits (189), Expect = 8e-009
+ Identities = 65/87 (74%), Gaps = 9/87 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgtt-agcgtcgcatcaggcatctgcgc 73
+            || |||| |      ||||||||||||||||||||| ||||||||||||||| | ||   
+Sbjct: 4557 attgcgctgtctggcgtaggcctgataagacgcgttaagcgtcgcatcaggcgt-tg--- 4502
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+                 || |||||||||| | ||||||
+Sbjct: 4501 ----atgtcggatgcggcataaacgcc 4479
+
+
+ Score = 52.3 bits (180), Expect = 4e-008
+ Identities = 64/87 (73%), Gaps = 9/87 (10%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgc 73
+            || |||| |      |||||||||||||||||||  | |||||||||||||| |      
+Sbjct: 4670 attgcgctgtctggcgtaggcctgataagacgcggcaagcgtcgcatcaggcgtt----- 4616
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+              || || |||||||||||| ||||||
+Sbjct: 4615 --ga-tgtcggatgcggcgtaaacgcc 4592
+
+
+ Score = 46.7 bits (160), Expect = 2e-006
+ Identities = 56/74 (75%), Gaps = 4/74 (5%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 15   atggcgcgggaatttgtaggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgc 73
+            || |||| |      |||||||||||||||||||  | |||||||||||||||  | | |
+Sbjct: 4444 attgcgctgtctggcgtaggcctgataagacgcggcaagcgtcgcatcaggca--ttcac 4387
+
+                          
+Query: 74   acgactgccggatg 87
+            || | |||||| ||
+Sbjct: 4386 ac-attgccgggtg 4374
+
+
+ Score = 43.1 bits (147), Expect = 2e-005
+ Identities = 35/38 (92%), Gaps = 1/38 (2%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 31   taggcctgataagacgc-gttagcgtcgcatcaggcat 67
+            ||||||||||||||||| |  |||||||||||||||||
+Sbjct: 4991 taggcctgataagacgcggcaagcgtcgcatcaggcat 4954
+
+
+>gb|AE000174|ECAE000174 Escherichia coli , ybfC, ybfD, ybgA, phrB, nei genes from bases
+            733355 to 747118 (section 64 of 400) of the complete
+            genome
+            Length = 13764
+            
+ Score = 54.8 bits (189), Expect = 8e-009
+ Identities = 49/59 (83%), Gaps = 1/59 (1%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 22   gggaatttgtaggcctgataagacgcgt-tagcgtcgcatcaggcatctgcgcacgact 79
+            || |||  ||||||||||||||||||||  |||||||||||||||||| | ||  | ||
+Sbjct: 6884 ggaaatacgtaggcctgataagacgcgtcaagcgtcgcatcaggcatcggtgctggcct 6942
+
+
+ Score = 42.6 bits (145), Expect = 4e-005
+ Identities = 37/47 (78%)
+ Strand = Plus / Plus
+
+                                                           
+Query: 54   gtcgcatcaggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            | ||| |||||||   | || |   ||||||||||||||||||||||
+Sbjct: 6797 gacgcgtcaggcaatcgagcccagatgccggatgcggcgtgaacgcc 6843
+
+
+>gb|AE000436|ECAE000436 Escherichia coli , yiaT, yiaU, yiaV, yiaW, aldB, yiaY, selB, selA
+            genes from bases 3748555 to 3759704 (section 326 of 400)
+            of the complete genome
+            Length = 11150
+            
+ Score = 54.5 bits (188), Expect = 9e-009
+ Identities = 52/66 (78%), Gaps = 5/66 (7%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||||      | ||     |||||| ||||||||||||| ||||||||||
+Sbjct: 3958 tatccggcctacggt-----caggttcccgtaggcatgataagacgcgtaagcgtcgcat 4012
+
+                  
+Query: 61   caggca 66
+            ||||||
+Sbjct: 4013 caggca 4018
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            |||||||||||||||| |||||
+Sbjct: 3935 tgccggatgcggcgtgtacgcc 3956
+
+
+>gb|AE000297|ECAE000297 Escherichia coli , alkA, yegD, baeS, baeR genes from bases
+          2144630 to 2163124 (section 187 of 400) of the complete
+          genome
+          Length = 18495
+          
+ Score = 54.5 bits (188), Expect = 9e-009
+ Identities = 48/57 (84%), Gaps = 3/57 (5%)
+ Strand = Plus / Minus
+
+                                                                   
+Query: 1  tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcg 57
+          ||||||||||  |||  | |||   |||||||||| |||||||||||||||||||||
+Sbjct: 54 tatccggcctggggaatgagcg---atttgtaggcatgataagacgcgttagcgtcg 1
+
+
+>gb|AE000211|ECAE000211 Escherichia coli , ycfF, ndh, ycfJ, mfd genes from bases 1160912 to
+            1173279 (section 101 of 400) of the complete genome
+            Length = 12368
+            
+ Score = 53.9 bits (186), Expect = 1e-008
+ Identities = 54/71 (76%), Gaps = 9/71 (12%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+            ||||||||||||||| |||         ||||||||||    || |||||| ||||||||
+Sbjct: 4125 gtaggcctgataagaagcg---------catcaggcattgatgctcgactgtcggatgcg 4075
+
+                       
+Query: 90   gcgtgaacgcc 100
+            ||||| |||||
+Sbjct: 4074 gcgtggacgcc 4064
+
+
+>gb|AE000383|ECAE000383 Escherichia coli , exbD, exbB, metC, yghB genes from bases 3147552 to
+            3159245 (section 273 of 400) of the complete genome
+            Length = 11694
+            
+ Score = 53.4 bits (184), Expect = 2e-008
+ Identities = 64/78 (82%), Gaps = 9/78 (11%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 24   gaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgca-cgactgcc 82
+            || |||||||||||||||||   ||| ||||   |||||||||| || ||| | | ||||
+Sbjct: 1125 gattttgtaggcctgataag---cgt-agcg---catcaggcat-tgagcacctaatgcc 1176
+
+                              
+Query: 83   ggatgcggcgtgaacgcc 100
+            ||||||| ||||||||||
+Sbjct: 1177 ggatgcgtcgtgaacgcc 1194
+
+
+>gb|AE000482|ECAE000482 Escherichia coli , yjcS, yjcT, yjcU, yjcV, yjcW, yjcX, rpiR, rpiB,
+             phnQ, phnP, phnO, phnN, phnM, phnL, phnK, phnJ, phnI,
+             phnH, phnG, phnF, phnE, phnD, phnC genes from bases
+             4301932 to 4322837 (section 372 of 400) of th...
+             Length = 20906
+             
+ Score = 53.4 bits (184), Expect = 2e-008
+ Identities = 60/81 (74%), Gaps = 6/81 (7%)
+ Strand = Plus / Plus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             |||||| |||||||   ||||    ||||||||||| ||||||  |||||  || |||||
+Sbjct: 13588 tatccgacctacggggagcgc----atttgtaggccggataag--gcgtttacgccgcat 13641
+
+                                  
+Query: 61    caggcatctgcgcacgactgc 81
+             | |||| | || ||   ||||
+Sbjct: 13642 ccggcaccggctcaattctgc 13662
+
+
+ Score = 45.6 bits (156), Expect = 4e-006
+ Identities = 52/70 (74%), Gaps = 4/70 (5%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             ||||||||||||  ||| |||        ||||| | |||||||||||| ||||||||||
+Sbjct: 13624 tatccggcctacaaatg-cgctcccc---gtaggtcggataagacgcgtcagcgtcgcat 13569
+
+                       
+Query: 61    caggcatctg 70
+             | | || | |
+Sbjct: 13568 ccgacacccg 13559
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||| ||||||
+Sbjct: 13647 tgccggatgcggcgtaaacgcc 13626
+
+
+>gb|AE000475|ECAE000475 Escherichia coli , iclR, metH, yjbB, pepE, yjbC, yjbD, lysC genes
+            from bases 4220224 to 4230926 (section 365 of 400) of the
+            complete genome
+            Length = 10703
+            
+ Score = 52.3 bits (180), Expect = 4e-008
+ Identities = 52/60 (86%), Gaps = 3/60 (5%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 29   tgtaggcctgataagacgcgt-tagcgtcgcatcaggca-tctgcgcacgactgccggat 86
+            |||||||||||||||||||||  |||||||||||||||| | ||  || || ||||||||
+Sbjct: 6731 tgtaggcctgataagacgcgtcaagcgtcgcatcaggcactatgaacaaga-tgccggat 6789
+
+
+>gb|AE000320|ECAE000320 Escherichia coli , hisJ, argT, ubiX, purF, cvpA, dedD, folC, accD,
+            dedA, truA, usg genes from bases 2423952 to 2434730
+            (section 210 of 400) of the complete genome
+            Length = 10779
+            
+ Score = 52.0 bits (179), Expect = 5e-008
+ Identities = 51/66 (77%), Gaps = 3/66 (4%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||||| |    |     |  |||||||||||||||||||  ||||||||||
+Sbjct: 5020 tatccgacctacggttctacccc---tgcgtaggcctgataagacgcgccagcgtcgcat 5076
+
+                  
+Query: 61   caggca 66
+            ||||||
+Sbjct: 5077 caggca 5082
+
+
+ Score = 32.6 bits (109), Expect = 0.035
+ Identities = 29/38 (76%)
+ Strand = Plus / Plus
+
+                                                  
+Query: 63   ggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||| |   | |  || |||||||||||| ||||||
+Sbjct: 4981 ggcatcgggcaatgcgtgtcggatgcggcgtaaacgcc 5018
+
+
+>gb|AE000114|ECAE000114 Escherichia coli , caiF, caiE, caiD, caiC, caiB, caiA, caiT, fixA,
+            fixB, fixC, fixX, yaaU genes from bases 34087 to 47220
+            (section 4 of 400) of the complete genome
+            Length = 13134
+            
+ Score = 52.0 bits (179), Expect = 5e-008
+ Identities = 59/76 (77%), Gaps = 8/76 (10%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||  ||    || |     |||||||||||||||||| | ||||||||||
+Sbjct: 5087 tatccggcctac--att---cgtgctcccgtaggcctgataagacgcatcagcgtcgcat 5141
+
+                            
+Query: 61   caggcatctgcgcacg 76
+            ||||||   |||||||
+Sbjct: 5142 caggca---gcgcacg 5154
+
+
+ Score = 39.0 bits (132), Expect = 4e-004
+ Identities = 28/30 (93%)
+ Strand = Plus / Plus
+
+                                          
+Query: 70   gcgcacgactgccggatgcggcgtgaacgc 99
+            ||||| |||||||||||||||||| |||||
+Sbjct: 5055 gcgcatgactgccggatgcggcgtaaacgc 5084
+
+
+>gb|AE000124|ECAE000124 Escherichia coli , sfsA, yadP, hrpB, mrcB, fhuA, fhuC, fhuD, fhuB genes
+             from bases 160664 to 173551 (section 14 of 400) of the
+             complete genome
+             Length = 12888
+             
+ Score = 52.0 bits (179), Expect = 5e-008
+ Identities = 43/52 (82%)
+ Strand = Plus / Minus
+
+                                                                 
+Query: 19    cgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatctg 70
+             || ||   |||||||||| |||||||||||  ||||||||||| |||||| |
+Sbjct: 12887 cggggccgtttgtaggcccgataagacgcgccagcgtcgcatcgggcatccg 12836
+
+
+>gb|AE000502|ECAE000502 Escherichia coli , fimB, fimE, fimA, fimI, fimC, fimD, fimF, fimG,
+            fimH, gntP genes from bases 4537775 to 4549087 (section
+            392 of 400) of the complete genome
+            Length = 11313
+            
+ Score = 51.7 bits (178), Expect = 6e-008
+ Identities = 38/41 (92%)
+ Strand = Plus / Plus
+
+                                                     
+Query: 27   tttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+            |||||||||| |||||||||||| ||||||||||| |||||
+Sbjct: 9575 tttgtaggccagataagacgcgtcagcgtcgcatctggcat 9615
+
+
+>gb|AE000397|ECAE000397 Escherichia coli , yhbW, mtr, deaD, yhbM, pnp, rpsO, truB, rbfA,
+            infB, nusA, yhbC genes from bases 3301019 to 3315838
+            (section 287 of 400) of the complete genome
+            Length = 14820
+            
+ Score = 51.4 bits (177), Expect = 8e-008
+ Identities = 53/71 (74%), Gaps = 7/71 (9%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+            || | ||||||||||||||  |||||| |||||||||       |    |||||||||| 
+Sbjct: 9875 gttgacctgataagacgcgccagcgtcacatcaggca-------atccatgccggatgca 9927
+
+                       
+Query: 90   gcgtgaacgcc 100
+            |||| ||||||
+Sbjct: 9928 gcgtaaacgcc 9938
+
+
+>gb|AE000496|ECAE000496 Escherichia coli , yjgK, yjgL, argI, yjgD, valS, holC, pepA genes from
+             bases 4471720 to 4483648 (section 386 of 400) of the
+             complete genome
+             Length = 11929
+             
+ Score = 50.9 bits (175), Expect = 1e-007
+ Identities = 71/100 (71%), Gaps = 5/100 (5%)
+ Strand = Plus / Minus
+
+                                                                         
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+             |||||| |||||  |  || | | || | |||||||||||||||| |   ||||||||||
+Sbjct: 10243 tatccgacctacaca--gcactg-aactcgtaggcctgataagacacaacagcgtcgcat 10187
+
+                                                     
+Query: 61    caggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             |||||  |||||   |  | || ||||||   | ||  ||
+Sbjct: 10186 caggc-gctgcg-gtgtatacctgatgcgtatttaaatcc 10149
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Minus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             | ||||||||||||||||||||||
+Sbjct: 10268 attgccggatgcggcgtgaacgcc 10245
+
+
+>gb|AE000469|ECAE000469 Escherichia coli , frwC, frwB, pflD, pflC, frwD, yijO, yijP, ppc
+            genes from bases 4139812 to 4150751 (section 359 of 400)
+            of the complete genome
+            Length = 10940
+            
+ Score = 50.3 bits (173), Expect = 2e-007
+ Identities = 61/82 (74%), Gaps = 8/82 (9%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgt-tagcgtcgca 59
+            ||||| ||||||      ||| |  || |||||||| ||||||||||||  |||||||||
+Sbjct: 6220 tatccagcctac------cgccgcgatctgtaggccggataagacgcgtcaagcgtcgca 6273
+
+                                  
+Query: 60   tcaggcatct-gcgcacgactg 80
+            || ||||  | ||||  | |||
+Sbjct: 6274 tccggcaaatagcgcctggctg 6295
+
+
+>gb|AE000396|ECAE000396 Escherichia coli , yraM, yraN, yraO, yraP, yraQ, yraR, yhbO, yhbP,
+            yhbQ, yhbT, yhbU, yhbV genes from bases 3290979 to
+            3301076 (section 286 of 400) of the complete genome
+            Length = 10098
+            
+ Score = 50.3 bits (173), Expect = 2e-007
+ Identities = 53/68 (77%), Gaps = 5/68 (7%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgc-gttagcgtcgca 59
+            |||| | ||||||| | |    |    |||||||||||||||||||| |  |||||||||
+Sbjct: 3723 tatctgacctacggtttgtatcg----ttgtaggcctgataagacgcggcaagcgtcgca 3668
+
+                    
+Query: 60   tcaggcat 67
+            ||||||||
+Sbjct: 3667 tcaggcat 3660
+
+
+ Score = 27.9 bits (92), Expect = 0.91
+ Identities = 20/22 (90%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            || |||||||||||| ||||||
+Sbjct: 3746 tgtcggatgcggcgtaaacgcc 3725
+
+
+>gb|AE000305|ECAE000305 Escherichia coli , lysP, yeiE, yeiH, nfo, yeiI, yeiJ, yeiK, yeiL,
+            yeiM genes from bases 2244907 to 2255430 (section 195 of
+            400) of the complete genome
+            Length = 10524
+            
+ Score = 48.9 bits (168), Expect = 4e-007
+ Identities = 40/44 (90%), Gaps = 1/44 (2%)
+ Strand = Plus / Minus
+
+                                                        
+Query: 26   atttgtaggcctgataagacgcgtt-agcgtcgcatcaggcatc 68
+            ||||||||||| ||||||||||||| ||||||||||| |||| |
+Sbjct: 5950 atttgtaggccggataagacgcgttaagcgtcgcatccggcaac 5907
+
+
+>gb|AE000329|ECAE000329 Escherichia coli , cysZ, cysK, ptsH, ptsI, crr, cysM, cysA, cysW
+            genes from bases 2528202 to 2539514 (section 219 of 400)
+            of the complete genome
+            Length = 11313
+            
+ Score = 48.7 bits (167), Expect = 5e-007
+ Identities = 39/46 (84%)
+ Strand = Plus / Minus
+
+                                                          
+Query: 23   ggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatc 68
+            | ||  ||||| ||||||||||||||  |||||||||||||||| |
+Sbjct: 9468 gtaacctgtagacctgataagacgcgcaagcgtcgcatcaggcaac 9423
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 8353 tgccggatgcggcgtaaacgcc 8374
+
+
+>gb|AE000394|ECAE000394 Escherichia coli , rnpB, yhaD, yhaE, yhaF, yhaU, yhaG, sohA, yhaV,
+             agaR, agaZ, agaV, agaW, agaA genes from bases 3267244 to
+             3279464 (section 284 of 400) of the complete genome
+             Length = 12221
+             
+ Score = 47.6 bits (163), Expect = 1e-006
+ Identities = 39/47 (82%)
+ Strand = Plus / Minus
+
+                                                            
+Query: 29    tgtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcac 75
+             |||||| | |||||||||||||||||||||||| | || |   ||||
+Sbjct: 12136 tgtaggtcggataagacgcgttagcgtcgcatccgacaccgctgcac 12090
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 218 tgccggatgcggcgtgaacgcc 197
+
+
+>gb|AE000333|ECAE000333 Escherichia coli , tktB, yffH, yffG, narQ genes from bases 2573978 to
+            2585561 (section 223 of 400) of the complete genome
+            Length = 11584
+            
+ Score = 47.6 bits (163), Expect = 1e-006
+ Identities = 35/38 (92%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatcaggca 66
+            |||||||| |||||||||||| ||||||||||| ||||
+Sbjct: 5741 tgtaggccggataagacgcgtcagcgtcgcatccggca 5704
+
+
+>gb|AE000209|ECAE000209 Escherichia coli , flgK, flgL, rne, yceC, yceF, yceD, rpmF, plsX
+            genes from bases 1137539 to 1147976 (section 99 of 400)
+            of the complete genome
+            Length = 10438
+            
+ Score = 47.6 bits (163), Expect = 1e-006
+ Identities = 51/70 (72%), Gaps = 2/70 (2%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatctgcgcacgactgccggatgcg 89
+            || |||||||||||  |||||  || ||||||||||  |      ||| |||||||||||
+Sbjct: 7613 gttggcctgataag--gcgtttacgccgcatcaggccgccagcaccgattgccggatgcg 7670
+
+                      
+Query: 90   gcgtgaacgc 99
+             ||| | | |
+Sbjct: 7671 acgtaaccac 7680
+
+
+>gb|AE000111|ECAE000111 Escherichia coli , thrL, thrA, thrB, thrC, yaaA, yaaJ, talB, mog,
+            yaaH genes from bases 1 to 10596 (section 1 of 400) of
+            the complete genome
+            Length = 10596
+            
+ Score = 47.3 bits (162), Expect = 1e-006
+ Identities = 34/36 (94%)
+ Strand = Plus / Minus
+
+                                                
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggc 65
+            |||||||||||||||||||  |||||||||||||||
+Sbjct: 5600 gtaggcctgataagacgcgccagcgtcgcatcaggc 5565
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            | ||||||||||||||||||||||
+Sbjct: 5672 aatgccggatgcggcgtgaacgcc 5649
+
+
+>gb|AE000470|ECAE000470 Escherichia coli , argE, argC, argB, argH, oxyR, udhA, yijC, yijD,
+           trmA genes from bases 4150694 to 4161052 (section 360 of
+           400) of the complete genome
+           Length = 10359
+           
+ Score = 46.5 bits (159), Expect = 2e-006
+ Identities = 79/122 (64%), Gaps = 22/122 (18%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatgg----cgcgggaatt--tgtaggcctgataagacgcgttagcg 54
+           |||||||||||||| |||    ||   || |   |||||| | ||||||| |||  ||| 
+Sbjct: 444 tatccggcctacggttgggcatcgtttgagtcactgtaggtcggataagatgcgcaagca 503
+
+                                                                       
+Query: 55  tcgcatcaggcatc--tgcg--------------cacgactgccggatgcggcgtgaacg 98
+           ||||||| | |||   ||||              ||  |  ||||||||||||| || ||
+Sbjct: 504 tcgcatccgacattattgcggcactggagtttggcaacagcgccggatgcggcgcgagcg 563
+
+             
+Query: 99  cc 100
+           ||
+Sbjct: 564 cc 565
+
+
+ Score = 41.5 bits (141), Expect = 8e-005
+ Identities = 77/122 (63%), Gaps = 22/122 (18%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatgg----cgcgggaatt--tgtaggcctgataagacgcgttagcg 54
+           |||||||||||| | |||    ||   || |   ||| || | ||||||| |||  ||  
+Sbjct: 321 tatccggcctacagttgggcatcgtttgagtcactgtcggtcggataagatgcgcaagta 380
+
+                                                                       
+Query: 55  tcgcatcaggcatc--tgcg--------------cacgactgccggatgcggcgtgaacg 98
+           ||||||| | |||   ||||              ||  | |||||||||||||| || ||
+Sbjct: 381 tcgcatccgacattattgcggcactggagtttggcaacagtgccggatgcggcgcgagcg 440
+
+             
+Query: 99  cc 100
+           ||
+Sbjct: 441 cc 442
+
+
+ Score = 38.7 bits (131), Expect = 5e-004
+ Identities = 59/92 (64%), Gaps = 16/92 (17%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 25  aatttgtaggcctgataagacgcgttagcgtcgcatcaggcatc--tgcg---------- 72
+           ||  |||||| | ||||||| |||  ||  ||||||| | |||   ||||          
+Sbjct: 228 aaggtgtaggtcggataagatgcgcaagtatcgcatccgacattattgcggcactggagt 287
+
+                                           
+Query: 73  ----cacgactgccggatgcggcgtgaacgcc 100
+               ||  | |||||||||||||| || ||||
+Sbjct: 288 ttggcaacagtgccggatgcggcgcgagcgcc 319
+
+
+>gb|AE000426|ECAE000426 Escherichia coli , yhiP, yhiQ, prlC, yhiR, gor, arsR, arsB, arsC genes
+             from bases 3638332 to 3648571 (section 316 of 400) of the
+             complete genome
+             Length = 10240
+             
+ Score = 44.5 bits (152), Expect = 9e-006
+ Identities = 36/43 (83%)
+ Strand = Plus / Minus
+
+                                                        
+Query: 25    aatttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+             | |||||||| | |||||||||||  ||||||||||| | |||
+Sbjct: 10051 actttgtaggtcggataagacgcgccagcgtcgcatccgacat 10009
+
+
+>gb|AE000377|ECAE000377 Escherichia coli , yggG, speB, speA, yqgB, yqgC, yqgD, metK, galP,
+            sprT, endA, yggJ, gshB genes from bases 3079702 to
+            3092055 (section 267 of 400) of the complete genome
+            Length = 12354
+            
+ Score = 44.3 bits (151), Expect = 1e-005
+ Identities = 75/119 (63%), Gaps = 26/119 (21%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||| ||||||   ||| |  |      |||||| ||||||| |||  ||| ||||||
+Sbjct: 1132 tatccgacctacgttcggcacccg------taggccggataagatgcgccagcatcgcat 1079
+
+                                                                       
+Query: 61   caggcatctgcgcacgac-------------------tgccggatgcggcgtgaacgcc 100
+            | ||||  ||||||| |                    || | |||||||||||||||||
+Sbjct: 1078 ccggcaa-tgcgcacaaggtaacaaatgtgccattcatgtcagatgcggcgtgaacgcc 1021
+
+
+ Score = 37.1 bits (125), Expect = 0.002
+ Identities = 49/67 (73%), Gaps = 8/67 (11%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            |||||||||||||| || |    |||   ||||| | ||||||  |||||  || |||||
+Sbjct: 1098 tatccggcctacgggtgcc----gaa--cgtaggtcggataag--gcgttcacgccgcat 1149
+
+                   
+Query: 61   caggcat 67
+            | | |||
+Sbjct: 1150 ccgacat 1156
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 6256 tgccggatgcggcgtgaacgcc 6235
+
+
+ Score = 32.6 bits (109), Expect = 0.035
+ Identities = 37/52 (71%), Gaps = 3/52 (5%)
+ Strand = Plus / Plus
+
+                                                                 
+Query: 1     tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttag 52
+             ||||| ||  ||   ||||   ||    | |||| |||||||||||||||||
+Sbjct: 12306 tatccagcacacatctggcagcggc---tataggtctgataagacgcgttag 12354
+
+
+ Score = 31.3 bits (104), Expect = 0.092
+ Identities = 24/28 (85%)
+ Strand = Plus / Minus
+
+                                        
+Query: 73   cacgactgccggatgcggcgtgaacgcc 100
+            ||  | || |||||||||||||||||||
+Sbjct: 1161 cattaatgtcggatgcggcgtgaacgcc 1134
+
+
+ Score = 30.7 bits (102), Expect = 0.13
+ Identities = 22/24 (91%)
+ Strand = Plus / Plus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             | ||||||||||||||||||| ||
+Sbjct: 12281 attgccggatgcggcgtgaacacc 12304
+
+
+>gb|AE000148|ECAE000148 Escherichia coli , ybaD, ribD, ribH, nusB, ispA, xseB, thiJ, apbA
+            genes from bases 432151 to 443842 (section 38 of 400) of
+            the complete genome
+            Length = 11692
+            
+ Score = 43.7 bits (149), Expect = 2e-005
+ Identities = 41/51 (80%), Gaps = 1/51 (1%)
+ Strand = Plus / Minus
+
+                                                               
+Query: 32   aggcctgataagacgcgtta-gcgtcgcatcaggcatctgcgcacgactgc 81
+            ||||||||| ||||| |  | ||||| ||||||||||| | |||| ||| |
+Sbjct: 4228 aggcctgatgagacgtgacaagcgtcacatcaggcatcggtgcacaactac 4178
+
+
+>gb|AE000355|ECAE000355 Escherichia coli , ygbD, hypF, hydN, ascG, ascF, ascB genes from
+            bases 2830414 to 2840544 (section 245 of 400) of the
+            complete genome
+            Length = 10131
+            
+ Score = 43.7 bits (149), Expect = 2e-005
+ Identities = 49/69 (71%), Gaps = 5/69 (7%)
+ Strand = Plus / Minus
+
+                                                                        
+Query: 1    tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+            ||||||||||||  |||   |        ||||| | |||||||||||  ||||||||||
+Sbjct: 2736 tatccggcctacacatgcgtcccc-----gtaggtcggataagacgcgccagcgtcgcat 2682
+
+                     
+Query: 61   caggcatct 69
+            | | ||| |
+Sbjct: 2681 ccgacattt 2673
+
+
+ Score = 38.7 bits (131), Expect = 5e-004
+ Identities = 31/37 (83%)
+ Strand = Plus / Minus
+
+                                                 
+Query: 64   gcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||| ||  ||| | ||||||||||||||| ||||||
+Sbjct: 2774 gcatttggacaccattgccggatgcggcgtaaacgcc 2738
+
+
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Plus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             | ||||||||||||||||||||||
+Sbjct: 10030 agtgccggatgcggcgtgaacgcc 10053
+
+
+>gb|AE000497|ECAE000497 Escherichia coli , yjgP, yjgQ, yjgR, yjgS, yjgT, yjgU, yjgV, gntV,
+            yjgB genes from bases 4483591 to 4493924 (section 387 of
+            400) of the complete genome
+            Length = 10334
+            
+ Score = 43.7 bits (149), Expect = 2e-005
+ Identities = 33/37 (89%)
+ Strand = Plus / Plus
+
+                                                 
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggca 66
+            || ||| ||||||||||||  ||||||||||||||||
+Sbjct: 2483 gtgggcatgataagacgcgccagcgtcgcatcaggca 2519
+
+
+>gb|AE000487|ECAE000487 Escherichia coli , yjeH, mopB, mopA, yjeJ, yjeK, efp, sugE, blc,
+            ampC, frdD, frdC, frdB, frdA genes from bases 4366089 to
+            4379977 (section 377 of 400) of the complete genome
+            Length = 13889
+            
+ Score = 42.9 bits (146), Expect = 3e-005
+ Identities = 42/54 (77%), Gaps = 2/54 (3%)
+ Strand = Plus / Plus
+
+                                                                  
+Query: 14   gatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+            ||  ||  | ||||||||||||| ||||||  |||||  || |||||| |||||
+Sbjct: 4736 gaatgcttgagaatttgtaggccggataag--gcgtttacgccgcatccggcat 4787
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 4786 tgccggatgcggcgtaaacgcc 4765
+
+
+>gb|AE000461|ECAE000461 Escherichia coli , rrlA, rrfA, mobA, yihD, yihE, dsbA, yihF, yihG,
+            polA, spf genes from bases 4034982 to 4047705 (section
+            351 of 400) of the complete genome
+            Length = 12724
+            
+ Score = 42.9 bits (146), Expect = 3e-005
+ Identities = 34/40 (85%)
+ Strand = Plus / Minus
+
+                                                    
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcatct 69
+            ||||||  |||||||||||  ||||||||||| ||||| |
+Sbjct: 3498 gtaggctggataagacgcgccagcgtcgcatccggcattt 3459
+
+
+>gb|AE000278|ECAE000278 Escherichia coli , holE, ptrB, yebE, yebF, yebG genes from bases
+            1918175 to 1928866 (section 168 of 400) of the complete
+            genome
+            Length = 10692
+            
+ Score = 41.8 bits (142), Expect = 6e-005
+ Identities = 34/41 (82%)
+ Strand = Plus / Minus
+
+                                                     
+Query: 26   atttgtaggcctgataagacgcgttagcgtcgcatcaggca 66
+            | | |||||||||| |||||||   ||||||||||| ||||
+Sbjct: 9812 aatcgtaggcctgagaagacgcaacagcgtcgcatcgggca 9772
+
+
+>gb|AE000191|ECAE000191 Escherichia coli , lrp, ftsK, lolA, ycaJ, serS, dmsA, dmsB, dmsC,
+            ycaC genes from bases 931516 to 944965 (section 81 of
+            400) of the complete genome
+            Length = 13450
+            
+ Score = 41.5 bits (141), Expect = 8e-005
+ Identities = 33/39 (84%)
+ Strand = Plus / Plus
+
+                                                   
+Query: 28   ttgtaggcctgataagacgcgttagcgtcgcatcaggca 66
+            | ||| ||| |||||| |||| |||||||||||| ||||
+Sbjct: 4930 tcgtatgccggataaggcgcggtagcgtcgcatccggca 4968
+
+
+>gb|AE000435|ECAE000435 Escherichia coli , yiaJ, yiaL, yiaM, yiaN, yiaO, lyxK, yiaQ, yiaR,
+           yiaS genes from bases 3738593 to 3748612 (section 325 of
+           400) of the complete genome
+           Length = 10020
+           
+ Score = 41.5 bits (141), Expect = 8e-005
+ Identities = 37/44 (84%), Gaps = 2/44 (4%)
+ Strand = Plus / Plus
+
+                                                       
+Query: 24  gaatttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+           ||||||||||||| ||||||  |||||  || |||||| |||||
+Sbjct: 59  gaatttgtaggccggataag--gcgtttacgccgcatctggcat 100
+
+
+>gb|AE000200|ECAE000200 Escherichia coli , appA, yccC, insB_4 genes from bases 1039718 to
+          1050501 (section 90 of 400) of the complete genome
+          Length = 10784
+          
+ Score = 41.2 bits (140), Expect = 9e-005
+ Identities = 32/37 (86%)
+ Strand = Plus / Plus
+
+                                               
+Query: 30 gtaggcctgataagacgcgttagcgtcgcatcaggca 66
+          |||||||||||  | ||| ||||| ||||||||||||
+Sbjct: 49 gtaggcctgatgcggcgcattagcatcgcatcaggca 85
+
+
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 21/21 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 80   gccggatgcggcgtgaacgcc 100
+            |||||||||||||||||||||
+Sbjct: 1524 gccggatgcggcgtgaacgcc 1504
+
+
+>gb|AE000429|ECAE000429 Escherichia coli , yhjE, yhjH, kdgK, yhjJ, dctA, yhjK genes from
+            bases 3672145 to 3683300 (section 319 of 400) of the
+            complete genome
+            Length = 11156
+            
+ Score = 40.9 bits (139), Expect = 1e-004
+ Identities = 39/49 (79%), Gaps = 2/49 (4%)
+ Strand = Plus / Plus
+
+                                                             
+Query: 19   cgcgggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+            |||  | ||||||||||| ||||||  |||||  || |||||| |||||
+Sbjct: 1659 cgcaaggatttgtaggccggataag--gcgttcacgccgcatccggcat 1705
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 1704 tgccggatgcggcgtgaacgcc 1683
+
+
+>gb|AE000170|ECAE000170 Escherichia coli , ybeJ, yi52_3, lnt, glnX, glnV, metU, glnW, glnU,
+            leuW, metT genes from bases 685948 to 696574 (section 60
+            of 400) of the complete genome
+            Length = 10627
+            
+ Score = 40.1 bits (136), Expect = 2e-004
+ Identities = 32/38 (84%)
+ Strand = Plus / Plus
+
+                                                  
+Query: 30   gtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+            ||||| | |||||||||||  ||||||||||| | |||
+Sbjct: 9583 gtaggtcggataagacgcggcagcgtcgcatccgacat 9620
+
+
+>gb|AE000493|ECAE000493 Escherichia coli , ytfJ, ytfK, ytfL, msrA, ytfM, ytfN, ytfP, yjfA
+            genes from bases 4435130 to 4445948 (section 383 of 400)
+            of the complete genome
+            Length = 10819
+            
+ Score = 39.0 bits (132), Expect = 4e-004
+ Identities = 36/44 (81%), Gaps = 2/44 (4%)
+ Strand = Plus / Plus
+
+                                                        
+Query: 24   gaatttgtaggcctgataagacgcgttagcgtcgcatcaggcat 67
+            || |||||||||||| ||||   ||||  || ||||||||||||
+Sbjct: 3899 gattttgtaggcctggtaag--tcgtttacgccgcatcaggcat 3940
+
+
+>gb|AE000141|ECAE000141 Escherichia coli , cynR, cynT, cynS, cynX, lacA, lacY, lacZ, lacI
+           genes from bases 356817 to 367824 (section 31 of 400) of
+           the complete genome
+           Length = 11008
+           
+ Score = 38.7 bits (131), Expect = 5e-004
+ Identities = 51/66 (77%), Gaps = 8/66 (12%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   tatccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcat 60
+           ||||||||||||| |  || |  ||| | |||||||||||||| ||   |||   |||||
+Sbjct: 114 tatccggcctacgtagagcac-tgaactcgtaggcctgataag-cg---tag---cgcat 165
+
+                 
+Query: 61  caggca 66
+           ||||||
+Sbjct: 166 caggca 171
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 91  tgccggatgcggcgtgaacgcc 112
+
+
+ Score = 29.9 bits (99), Expect = 0.24
+ Identities = 47/65 (72%), Gaps = 8/65 (12%)
+ Strand = Plus / Plus
+
+                                                                        
+Query: 2    atccggcctacggatggcgcgggaatttgtaggcctgataagacgcgttagcgtcgcatc 61
+            || ||||  | | |   ||| | || |||||||||||||||| |||   |||||   |||
+Sbjct: 3589 atgcggctaatgtagatcgctg-aacttgtaggcctgataag-cgc---agcgt---atc 3640
+
+                 
+Query: 62   aggca 66
+            |||||
+Sbjct: 3641 aggca 3645
+
+
+>gb|AE000456|ECAE000456 Escherichia coli , aslB, aslA, hemY, hemX, hemD, hemC, cyaA, cyaY,
+            o161 genes from bases 3980472 to 3992039 (section 346 of
+            400) of the complete genome
+            Length = 11568
+            
+ Score = 35.7 bits (120), Expect = 0.004
+ Identities = 28/33 (84%)
+ Strand = Plus / Plus
+
+                                             
+Query: 68   ctgcgcacgactgccggatgcggcgtgaacgcc 100
+            |||||   || ||||||||||||||| ||||||
+Sbjct: 1350 ctgcggttgattgccggatgcggcgtaaacgcc 1382
+
+
+>gb|AE000165|ECAE000165 Escherichia coli , entC, entE, entB, entA, ybdB, ybdH genes from
+            bases 623891 to 635893 (section 55 of 400) of the
+            complete genome
+            Length = 12003
+            
+ Score = 35.1 bits (118), Expect = 0.006
+ Identities = 26/29 (89%)
+ Strand = Plus / Minus
+
+                                         
+Query: 72   gcacgactgccggatgcggcgtgaacgcc 100
+            | | || ||||||||||||||||||||||
+Sbjct: 7489 gaaagagtgccggatgcggcgtgaacgcc 7461
+
+
+>gb|AE000169|ECAE000169 Escherichia coli , ybeL, ybeK, gltL, gltK, gltJ genes from bases
+            674094 to 686005 (section 59 of 400) of the complete
+            genome
+            Length = 11912
+            
+ Score = 34.9 bits (117), Expect = 0.008
+ Identities = 25/27 (92%)
+ Strand = Plus / Minus
+
+                                       
+Query: 73   cacgactgccggatgcggcgtgaacgc 99
+            |||| |||||||||||||||| |||||
+Sbjct: 6851 cacggctgccggatgcggcgtaaacgc 6825
+
+
+>gb|AE000171|ECAE000171 Escherichia coli , asnB, nagD, nagC, nagA, nagB, nagE, glnS genes
+            from bases 696517 to 707296 (section 61 of 400) of the
+            complete genome
+            Length = 10780
+            
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 27/33 (81%)
+ Strand = Plus / Plus
+
+                                             
+Query: 29   tgtaggcctgataagacgcgttagcgtcgcatc 61
+            | || |||||||  ||||| | |||||||||||
+Sbjct: 8603 tttatgcctgatgcgacgcttgagcgtcgcatc 8635
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 2131 tgccggatgcggcgtgaacgcc 2152
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||
+Sbjct: 10642 tgccggatgcggcgtgaacgcc 10621
+
+
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 25/30 (83%)
+ Strand = Plus / Minus
+
+                                          
+Query: 38   gataagacgcgttagcgtcgcatcaggcat 67
+            |||  |||||   |||||||||||||||||
+Sbjct: 8635 gatgcgacgctcaagcgtcgcatcaggcat 8606
+
+
+ Score = 27.9 bits (92), Expect = 0.91
+ Identities = 20/22 (90%)
+ Strand = Plus / Minus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||| ||| ||||||
+Sbjct: 10511 tgccggatgcgacgtaaacgcc 10490
+
+
+>gb|AE000463|ECAE000463 Escherichia coli , yihM, yihN, yihP, yihQ, yihR genes from bases
+            4057921 to 4068079 (section 353 of 400) of the complete
+            genome
+            Length = 10159
+            
+ Score = 33.2 bits (111), Expect = 0.024
+ Identities = 23/24 (95%)
+ Strand = Plus / Minus
+
+                                    
+Query: 77   actgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||| ||||||
+Sbjct: 3255 actgccggatgcggcgtaaacgcc 3232
+
+
+>gb|AE000376|ECAE000376 Escherichia coli , fba, pgk, epd, yggC, yggD, yggF, cmtA, cmtB,
+           tktA genes from bases 3067977 to 3079757 (section 266 of
+           400) of the complete genome
+           Length = 11781
+           
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 46  tgccggatgcggcgtgaacgcc 67
+
+
+>gb|AE000425|ECAE000425 Escherichia coli , yhiJ, yhiK, yhiL, yhiM, yhiN, pitA, yhiO, uspA
+            genes from bases 3628370 to 3638389 (section 315 of 400)
+            of the complete genome
+            Length = 10020
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 8469 tgccggatgcggcgtgaacgcc 8490
+
+
+>gb|AE000447|ECAE000447 Escherichia coli , gyrB, recF, dnaN, dnaA, rpmH, rnpA, yidC, thdF
+           genes from bases 3874616 to 3885970 (section 337 of 400)
+           of the complete genome
+           Length = 11355
+           
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 598 tgccggatgcggcgtgaacgcc 619
+
+
+>gb|AE000490|ECAE000490 Escherichia coli , purA, yjeB, vacB, yjfH, yjfI, yjfJ, yjfK, yjfL,
+            yjfM, yjfC, aidB, yjfN genes from bases 4401895 to
+            4413970 (section 380 of 400) of the complete genome
+            Length = 12076
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 4836 tgccggatgcggcgtgaacgcc 4857
+
+
+ Score = 28.2 bits (93), Expect = 0.75
+ Identities = 21/24 (87%)
+ Strand = Plus / Minus
+
+                                     
+Query: 77    actgccggatgcggcgtgaacgcc 100
+             | |||||||||||||| || ||||
+Sbjct: 11678 aatgccggatgcggcgcgagcgcc 11655
+
+
+>gb|AE000467|ECAE000467 Escherichia coli , yiiS, yiiT, fpr, glpX, glpK, glpF, yiiU, menG, menA,
+             hslU, hslV, ftsN, cytR, priA, rpmE, yiiX, metJ genes from
+             bases 4110455 to 4126087 (section 357 of 400) of the
+             complete genome
+             Length = 15633
+             
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||||||||
+Sbjct: 15077 tgccggatgcggcgtgaacgcc 15098
+
+
+ Score = 28.2 bits (93), Expect = 0.75
+ Identities = 21/24 (87%)
+ Strand = Plus / Plus
+
+                                    
+Query: 76   gactgccggatgcggcgtgaacgc 99
+            |||| ||||||||||| | |||||
+Sbjct: 2799 gactaccggatgcggcataaacgc 2822
+
+
+>gb|AE000340|ECAE000340 Escherichia coli , csiE genes from bases 2662295 to 2677463 (section
+            230 of 400) of the complete genome
+            Length = 15169
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9501 tgccggatgcggcgtgaacgcc 9522
+
+
+>gb|AE000464|ECAE000464 Escherichia coli , yihS, yihT, yihU, yihV, yihW, yihX, yihY, yihZ,
+            yiiD, yiiE, yiiF, fdhE, fdoI, fdoH, fdoG genes from bases
+            4068022 to 4083461 (section 354 of 400) of the complete
+            genome
+            Length = 15440
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9578 tgccggatgcggcgtgaacgcc 9599
+
+
+>gb|AE000268|ECAE000268 Escherichia coli , katE, ydjC, celF, celD, celC, celB genes from
+            bases 1808118 to 1819308 (section 158 of 400) of the
+            complete genome
+            Length = 11191
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 6091 tgccggatgcggcgtgaacgcc 6112
+
+
+>gb|AE000183|ECAE000183 Escherichia coli , glnQ, glnP, glnH, dps, ybiF, ompX genes from bases
+            840857 to 851885 (section 73 of 400) of the complete
+            genome
+            Length = 11029
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 3997 tgccggatgcggcgtgaacgcc 4018
+
+
+>gb|AE000122|ECAE000122 Escherichia coli , gcd, hpt, yadF, yadG, yadH, yadI, yadE, panD,
+           yadD, panC, panB genes from bases 138705 to 149686
+           (section 12 of 400) of the complete genome
+           Length = 10982
+           
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 93  tgccggatgcggcgtgaacgcc 72
+
+
+>gb|AE000206|ECAE000206 Escherichia coli , mdoG, mdoH, yceK, msyB, yceE, htrB genes from
+            bases 1104966 to 1115945 (section 96 of 400) of the
+            complete genome
+            Length = 10980
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 7773 tgccggatgcggcgtgaacgcc 7752
+
+
+>gb|AE000449|ECAE000449 Escherichia coli , yieK, yieL, yieC, bglB, bglF, bglG, phoU, pstB,
+            pstA, pstC, pstS genes from bases 3896245 to 3909233
+            (section 339 of 400) of the complete genome
+            Length = 12989
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9835 tgccggatgcggcgtgaacgcc 9814
+
+
+>gb|AE000341|ECAE000341 Escherichia coli , glyA, hmpA, glnB, yfhA, yfhG genes from bases
+            2677406 to 2687636 (section 231 of 400) of the complete
+            genome
+            Length = 10231
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 4830 tgccggatgcggcgtgaacgcc 4809
+
+
+>gb|AE000503|ECAE000503 Escherichia coli , uxuA, uxuB, uxuR, yjiC, yjiD, yjiE, iadA, yjiG,
+            yjiH, yjiI, yjiJ genes from bases 4549030 to 4560306
+            (section 393 of 400) of the complete genome
+            Length = 11277
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 3079 tgccggatgcggcgtgaacgcc 3058
+
+
+>gb|AE000414|ECAE000414 Escherichia coli , yhfY, yhfZ, trpS, gph, rpe, dam, damX, aroB, aroK,
+            hofQ, yrfA, yrfB, yrfC, yrfD genes from bases 3508627 to
+            3520478 (section 304 of 400) of the complete genome
+            Length = 11852
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 1613 tgccggatgcggcgtgaacgcc 1592
+
+
+>gb|AE000344|ECAE000344 Escherichia coli , nadB, yfiC, srmB, yfiE, yfiK, yfiD, ung, yfiF,
+            yfiG genes from bases 2708207 to 2720716 (section 234 of
+            400) of the complete genome
+            Length = 12510
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 4195 tgccggatgcggcgtgaacgcc 4174
+
+
+>gb|AE000365|ECAE000365 Escherichia coli , mltA, metZ, metW, metV, argA, recD, recB, ptr
+           genes from bases 2943954 to 2957022 (section 255 of 400)
+           of the complete genome
+           Length = 13069
+           
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||||||||||
+Sbjct: 62  tgccggatgcggcgtgaacgcc 41
+
+
+>gb|AE000163|ECAE000163 Escherichia coli , ybdG, nfnB, ybdF, yi81_2, entD, fepA, fes genes
+            from bases 602569 to 613299 (section 53 of 400) of the
+            complete genome
+            Length = 10731
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 6870 tgccggatgcggcgtgaacgcc 6849
+
+
+>gb|AE000309|ECAE000309 Escherichia coli , narP, ccmH, dsbE, ccmF, ccmE, ccmD, ccmC, ccmB,
+            ccmA, napC, napB, napH, napG, napA, yojF, napF genes from
+            bases 2288297 to 2301749 (section 199 of 400) of the
+            complete genome
+            Length = 13453
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 1023 tgccggatgcggcgtgaacgcc 1002
+
+
+>gb|AE000172|ECAE000172 Escherichia coli , fur, fldA, seqA, pgm, ybfG, ybfH, potE, speF genes
+            from bases 707239 to 720009 (section 62 of 400) of the
+            complete genome
+            Length = 12771
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 7347 tgccggatgcggcgtgaacgcc 7326
+
+
+>gb|AE000180|ECAE000180 Escherichia coli , ybhC, ybhB, bioA, bioB, bioF, bioC, bioD, uvrB
+            genes from bases 805075 to 816096 (section 70 of 400) of
+            the complete genome
+            Length = 11022
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9831 tgccggatgcggcgtgaacgcc 9810
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           ||||||||||||||| ||||||
+Sbjct: 131 tgccggatgcggcgtaaacgcc 110
+
+
+>gb|AE000244|ECAE000244 Escherichia coli , narU, yddG, fdnG, fdnH, fdnI genes from bases
+            1540626 to 1550846 (section 134 of 400) of the complete
+            genome
+            Length = 10221
+            
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9469 tgccggatgcggcgtgaacgcc 9490
+
+
+ Score = 32.9 bits (110), Expect = 0.029
+ Identities = 22/22 (100%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||||||
+Sbjct: 9647 tgccggatgcggcgtgaacgcc 9668
+
+
+>gb|AE000468|ECAE000468 Escherichia coli , metB, metL, metF, katG, yijE, yijF, gldA, talC,
+            ptsA, yijI genes from bases 4126030 to 4139869 (section
+            358 of 400) of the complete genome
+            Length = 13840
+            
+ Score = 32.1 bits (107), Expect = 0.052
+ Identities = 23/25 (92%)
+ Strand = Plus / Plus
+
+                                     
+Query: 76   gactgccggatgcggcgtgaacgcc 100
+            || |||||||||||| |||||||||
+Sbjct: 9336 gagtgccggatgcggagtgaacgcc 9360
+
+
+>gb|AE000308|ECAE000308 Escherichia coli , bcr, yejD, yejH, rplY, yejK, yejL, yejM, proL,
+            yejO, yi52_8 genes from bases 2276394 to 2288354 (section
+            198 of 400) of the complete genome
+            Length = 11961
+            
+ Score = 32.1 bits (107), Expect = 0.052
+ Identities = 23/25 (92%)
+ Strand = Plus / Minus
+
+                                     
+Query: 76   gactgccggatgcggcgtgaacgcc 100
+            || |||| |||||||||||||||||
+Sbjct: 4551 gaatgccagatgcggcgtgaacgcc 4527
+
+
+>gb|AE000269|ECAE000269 Escherichia coli , celA, osmE, nadE genes from bases 1819251 to
+            1830257 (section 159 of 400) of the complete genome
+            Length = 11007
+            
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 21/21 (100%)
+ Strand = Plus / Plus
+
+                                 
+Query: 80   gccggatgcggcgtgaacgcc 100
+            |||||||||||||||||||||
+Sbjct: 2105 gccggatgcggcgtgaacgcc 2125
+
+
+>gb|AE000330|ECAE000330 Escherichia coli , cysU, cysP, yfeF genes from bases 2539457 to
+            2550348 (section 220 of 400) of the complete genome
+            Length = 10892
+            
+ Score = 31.5 bits (105), Expect = 0.076
+ Identities = 21/21 (100%)
+ Strand = Plus / Minus
+
+                                 
+Query: 80   gccggatgcggcgtgaacgcc 100
+            |||||||||||||||||||||
+Sbjct: 8127 gccggatgcggcgtgaacgcc 8107
+
+
+>gb|AE000202|ECAE000202 Escherichia coli , yccD, cbpA, yccE, agp, yccJ, wrbA genes from bases
+            1061668 to 1073377 (section 92 of 400) of the complete
+            genome
+            Length = 11710
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 6008 tgccggatgcggcgtaaacgcc 5987
+
+
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                 
+Query: 79  tgccggatgcggcgtgaacgcc 100
+           |||||||||||||||||||| |
+Sbjct: 13  tgccggatgcggcgtgaacgtc 34
+
+
+>gb|AE000113|ECAE000113 Escherichia coli , rpsT, yaaC, ileS, lspA, yaaD, lytB, yaaF, dapB,
+            carA, carB genes from bases 20660 to 34144 (section 3 of
+            400) of the complete genome
+            Length = 13485
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 5137 tgccggatgcggcgtaaacgcc 5116
+
+
+>gb|AE000438|ECAE000438 Escherichia coli , mtlA, mtlD, mtlR, yibL, lldP, lctR, lctD, yibK,
+            cysE genes from bases 3769832 to 3780257 (section 328 of
+            400) of the complete genome
+            Length = 10426
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||||||| ||
+Sbjct: 4894 tgccggatgcggcgtgaacacc 4873
+
+
+>gb|AE000243|ECAE000243 Escherichia coli , ydcC, ydcE, yddE, narV, narW, narY, narZ genes
+            from bases 1528490 to 1540683 (section 133 of 400) of the
+            complete genome
+            Length = 12194
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 4417 tgccggatgcggcgtaaacgcc 4438
+
+
+>gb|AE000285|ECAE000285 Escherichia coli , fliZ, fliA, fliC, fliD, fliS, fliT, amyA, yedD,
+            yedE, yedF, yedG genes from bases 1998423 to 2008587
+            (section 175 of 400) of the complete genome
+            Length = 10165
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 1568 tgccggatgcggcgtaaacgcc 1589
+
+
+>gb|AE000399|ECAE000399 Escherichia coli , dacB, yhbZ, yhbE, rpmA, rplU, ispB, nlp, murA,
+            yrbA, yrbB, yrbC, yrbE, yrbG, yrbH, yrbI, yrbK, yhbN,
+            yhbG, rpoN, yhbH genes from bases 3326369 to 3344169
+            (section 289 of 400) of the complete genome
+            Length = 17801
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 1732 tgccggatgcggcgtaaacgcc 1753
+
+
+>gb|AE000478|ECAE000478 Escherichia coli , yjbK, yjbL, yjbM, yjbN, yjbO, qor, dnaB, alr, tyrB
+            genes from bases 4256741 to 4266671 (section 368 of 400)
+            of the complete genome
+            Length = 9931
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            |||||||||||||||||| |||
+Sbjct: 7726 tgccggatgcggcgtgaatgcc 7747
+
+
+>gb|AE000421|ECAE000421 Escherichia coli , yrhB, ggt, yhhA, ugpQ, ugpC, ugpE, ugpA, ugpB,
+            livF, livG, livM, livH, livK genes from bases 3582079 to
+            3595569 (section 311 of 400) of the complete genome
+            Length = 13491
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 8116 tgccggatgcggcgtaaacgcc 8137
+
+
+>gb|AE000187|ECAE000187 Escherichia coli , grxA, ybjC, mdaA, rimK, potF, potG, potH, potI genes
+             from bases 887240 to 898995 (section 77 of 400) of the
+             complete genome
+             Length = 11756
+             
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||| ||||||
+Sbjct: 11679 tgccggatgcggcgtaaacgcc 11700
+
+
+>gb|AE000152|ECAE000152 Escherichia coli , ybaA, hha, ybaJ, acrB, acrA, acrR genes from bases
+             475811 to 489256 (section 42 of 400) of the complete
+             genome
+             Length = 13446
+             
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                   
+Query: 79    tgccggatgcggcgtgaacgcc 100
+             ||||||||||||||||| ||||
+Sbjct: 13372 tgccggatgcggcgtgaccgcc 13393
+
+
+>gb|AE000362|ECAE000362 Escherichia coli , mazG, chpA, chpR, relA, ygcA, barA genes from
+            bases 2907773 to 2920367 (section 252 of 400) of the
+            complete genome
+            Length = 12595
+            
+ Score = 30.4 bits (101), Expect = 0.16
+ Identities = 21/22 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 79   tgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| ||||||
+Sbjct: 8137 tgccggatgcggcgttaacgcc 8158
+
+
+>gb|AE000281|ECAE000281 Escherichia coli , bisZ, cutC, argS, flhA genes from bases
+          1952490 to 1964344 (section 171 of 400) of the complete
+          genome
+          Length = 11855
+          
+ Score = 30.2 bits (100), Expect = 0.20
+ Identities = 36/48 (75%), Gaps = 7/48 (14%)
+ Strand = Plus / Plus
+
+                                                          
+Query: 22 gggaatttgtaggcctgataagacgcgttagcgtcgcatcaggcatct 69
+          |||| | |||||||||||||||      |||   ||||||||||| ||
+Sbjct: 25 gggactatgtaggcctgataag----catag---cgcatcaggcagct 65
+
+
+>gb|AE000444|ECAE000444 Escherichia coli , yicM, yicN, yicO, yicP, uhpT, uhpC, uhpB, uhpA,
+            ilvN, ilvB genes from bases 3837814 to 3850510 (section
+            334 of 400) of the complete genome
+            Length = 12697
+            
+ Score = 29.9 bits (99), Expect = 0.24
+ Identities = 23/27 (85%)
+ Strand = Plus / Plus
+
+                                       
+Query: 74   acgactgccggatgcggcgtgaacgcc 100
+            | || | |||||||||||||||||| |
+Sbjct: 1684 aagattaccggatgcggcgtgaacgtc 1710
+
+
+>gb|AE000351|ECAE000351 Escherichia coli , ygaF, gabD, gabT, gabP, ygaE, stpA genes from
+            bases 2786299 to 2796878 (section 241 of 400) of the
+            complete genome
+            Length = 10580
+            
+ Score = 29.6 bits (98), Expect = 0.29
+ Identities = 22/25 (88%)
+ Strand = Plus / Minus
+
+                                     
+Query: 76   gactgccggatgcggcgtgaacgcc 100
+            || || |||||||||||| ||||||
+Sbjct: 5829 gattgtcggatgcggcgtaaacgcc 5805
+
+
+>gb|AE000302|ECAE000302 Escherichia coli , yehV, yehW, yehX, yehY, yehZ, bglX, dld, pbpG
+            genes from bases 2212746 to 2223009 (section 192 of 400)
+            of the complete genome
+            Length = 10264
+            
+ Score = 29.3 bits (97), Expect = 0.35
+ Identities = 21/23 (91%)
+ Strand = Plus / Plus
+
+                                   
+Query: 78   ctgccggatgcggcgtgaacgcc 100
+            ||||||||||||||| || ||||
+Sbjct: 4898 ctgccggatgcggcgcgagcgcc 4920
+
+
+>gb|AE000412|ECAE000412 Escherichia coli , argD, pabA, fic, yhfG, ppiA, yhfC, nirB, nirD,
+           nirC, cysG genes from bases 3486534 to 3496989 (section
+           302 of 400) of the complete genome
+           Length = 10456
+           
+ Score = 29.1 bits (96), Expect = 0.42
+ Identities = 28/39 (71%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 62  aggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+           | ||||| |   |    || ||||||||||||||| |||
+Sbjct: 58  aagcatcaggcaaaagatgtcggatgcggcgtgaatgcc 20
+
+
+>gb|AE000411|ECAE000411 Escherichia coli , slyX, slyD, kefB, yheR, yheS, yheT, yheU, prkB, crp,
+             yhfK genes from bases 3475137 to 3486591 (section 301 of
+             400) of the complete genome
+             Length = 11455
+             
+ Score = 29.1 bits (96), Expect = 0.42
+ Identities = 28/39 (71%)
+ Strand = Plus / Minus
+
+                                                    
+Query: 62    aggcatctgcgcacgactgccggatgcggcgtgaacgcc 100
+             | ||||| |   |    || ||||||||||||||| |||
+Sbjct: 11455 aagcatcaggcaaaagatgtcggatgcggcgtgaatgcc 11417
+
+
+  Database: c:\school\cs290i\dna\blast\exe\ecoli.nt
+    Posted date:  Dec 3, 1999  7:19 AM
+  Number of letters in database: 4,662,239
+  Number of sequences in database:  400
+  
+Lambda     K      H
+   0.192    0.173    0.357 
+
+Gapped
+Lambda     K      H
+   0.192    0.173    0.357 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 16, Extension: 4
+Number of Hits to DB: 1039
+Number of Sequences: 400
+Number of extensions: 1039
+Number of successful extensions: 557
+Number of sequences better than  2.0: 165
+length of query: 100
+length of database: 4,662,239
+effective HSP length: 49
+effective length of query: 51
+effective length of database: 4,642,639
+effective search space: 236774589
+effective search space used: 236774589
+T: 0
+A: 0
+X1: 37 (10.2 bits)
+X2: 180 (49.7 bits)
+S1: 81 (24.9 bits)
+S2: 88 (26.8 bits)
+Current time is 11:00:30.39p
+Enter new time: 

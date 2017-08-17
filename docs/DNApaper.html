@@ -1,0 +1,2501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>DNA Sequence Databases</TITLE>
+<META name="generator" content="NoteTab 4.6a">
+<META NAME="keywords" CONTENT="database indexing DNA alignment">
+</HEAD>
+
+<BODY TEXT="#000000" BGCOLOR="#CCCCCC" LINK="#0000CC" VLINK="#660066"
+ALINK="#660066">
+
+<H1 ALIGN=CENTER>DNA Sequence Databases</H1>
+
+<H2>1. Introduction</H2>
+<P>
+This paper examines techniques used to implement DNA sequence databases.
+Specifically, we consider will the following issues:
+</P>
+
+<UL>
+<LI><A HREF="#aligning">Alignment of DNA sequences</A></LI>
+<LI><A HREF="#scoring">Scoring of similarity between sequences</A></LI>
+<LI><A HREF="#searching">Performing similarity searches against the data sets
+</A></LI>
+</UL>
+
+<P>
+For each of these areas we will discuss the issues involved.  We will compare
+the techniques used in terms of complexity, resource utilization, and results
+returned.  Existing biological databases will be used to determine the
+accuracy of the results returned.  Our comparison will center around three
+popular DNA sequence search methods: <A HREF="#ssearch">Smith-Waterman</A>
+dynamic programming alignment, <A HREF="#blast">BLAST</A> (Basic Local
+Alignment Search), and <A HREF="#fasta">FastA</A> (Fast Alignment).  We will
+also examine a few other techniques which have demonstrate limited success,
+but have not become broadly accepted.
+</P>
+
+<P>
+A glossary of the terms used in this paper and the papers referenced herein
+may be found at <A HREF="http://www.cs.ucsb.edu/~mdipper/dna/terms.html">
+http://www.cs.ucsb.edu/~mdipper/dna/terms.html</A>
+</P>
+
+<H3>1.1 Why DNA Sequences?</H3>
+<P>
+Proteins are a basic building blocks of life.  The majority of a cell's
+structure is composed of proteins.  Proteins (more specifically enzymes) are
+also responsible for all chemical transformations that a cell is capable of.
+Proteins are composed of a series of amino acids.  There are 20 types of amino
+acids, the order in which they appear in a protein determines both its shape
+and function.
+</P>
+
+<P>
+Though much of an organism's biochemically important information may be
+learned from the study of proteins, it is difficult to chemically determine
+the sequence of amino acids that make up a protein.  The proteins of a cell
+are built from the cell's RNA.  RNA is a single strand of nucleotides which
+is transcribed from the cell's DNA.  Using present day biological techniques,
+it is a much simpler task to determine the nucleotides that form a DNA
+strand, then RNA nucleotides or protein amino acids.
+</P>
+
+<H3>1.2 About DNA Sequences</H3>
+<P>
+DNA is composed of two complementary sequences of nucleotides.  If one of the
+two sequences is known, it is a trivial task to compute it's complement.  The
+nucleotides which make up a DNA strand are:
+</P>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Nucleotide</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Referred to as</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Abbreviation</B></TD>
+</TR>
+
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">deoxyAdenosine monophosphate</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Adenosine</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">A</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">deoxyCytidine monophosphate</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Cytidine</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">C</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">deoxyGuanosine monophosphate</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Guanosine</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">G</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">deoxyThymidine monophosphate</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Thymidine</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">T</TD>
+</TR>
+</TABLE>
+
+<P>
+Adenosine and Thymidine monophosphate are complements of each other as are
+Guanosine and Cytidine.  If a single DNA subsequence is known to be, CGATGATC,
+The double stranded subsequence would be formed as follows:
+</P>
+
+<PRE>
+CGATGATC
+||||||||
+GCTACTAG
+</PRE>
+
+<P>
+Nucleotide triples in a DNA sequence are known as codons.  Codons encode a
+single amino acid on a protein.  Since there are four DNA nucleotides, there
+are 64 (4<SUP>3</SUP>) possible nucleotide triples, yet there are only 20
+amino acids.  The mapping of triples to amino acids is a many to one
+function, with some triples also mapping to an end of sequence marker.  The
+following table lists the codon mappings.
+</P>
+
+<TABLE  ALIGN="CENTER" BORDER="5" CELLPADDING="3">
+
+<TR ALIGN="CENTER">
+<TD></TD>
+<TD></TD>
+
+<TD COLSPAN="4"><B>Second Position of Codon</B></TD>
+
+<TD></TD>
+<TD></TD>
+</TR>
+
+<TR ALIGN="CENTER">
+<TD></TD>
+<TD></TD>
+
+<TD><B>T</B></TD>
+<TD><B>C</B></TD>
+<TD><B>A</B></TD>
+<TD><B>G</B></TD>
+
+<TD></TD>
+<TD></TD>
+</TR>
+
+<TR ALIGN="CENTER">
+<TD ROWSPAN=4>
+<B>F<BR>i<BR>r<BR>s<BR>t<BR> <BR>P<BR>o<BR>s<BR>i<BR>t<BR>i<BR>o<BR>n<BR></B>
+</TD>
+
+<TD><B>T</B></TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>TTT</TD><TD>Phe</TD><TD>[F]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TTC</TD><TD>Phe</TD><TD>[F]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TTA</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TTG</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>TCT</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TCC</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TCA</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TCG</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>TAT</TD><TD>Tyr</TD><TD>[Y]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TAC</TD><TD>Tyr</TD><TD>[Y]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TAA</TD><TD><I>Ter</I></TD><TD>[*]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TAG</TD><TD><I>Ter</I></TD><TD>[*]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>TGT</TD><TD>Cys</TD><TD>[C]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TGC</TD><TD>Cys</TD><TD>[C]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TGA</TD><TD><I>Ter</I></TD><TD>[*]</TD></TR>
+  <TR ALIGN="CENTER"><TD>TGG</TD><TD>Trp</TD><TD>[W]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD><B>T</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>C</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>A</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>G</B></TD></TR>
+  </TABLE>
+</TD>
+
+<TD ROWSPAN="4">
+<B>T<BR>h<BR>i<BR>r<BR>d<BR> <BR>P<BR>o<BR>s<BR>i<BR>t<BR>i<BR>o<BR>n<BR></B>
+</TD>
+
+</TR>
+
+<TR>
+
+<TD><B>C</B></TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>CTT</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CTC</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CTA</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CTG</TD><TD>Leu</TD><TD>[L]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>CCT</TD><TD>Pro</TD><TD>[P]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CCC</TD><TD>Pro</TD><TD>[P]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CCA</TD><TD>Pro</TD><TD>[P]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CCG</TD><TD>Pro</TD><TD>[P]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>CAT</TD><TD>His</TD><TD>[H]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CAC</TD><TD>His</TD><TD>[H]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CAA</TD><TD>Gln</TD><TD>[Q]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CAG</TD><TD>Gln</TD><TD>[Q]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>CGT</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CGC</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CGA</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  <TR ALIGN="CENTER"><TD>CGG</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD><B>T</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>C</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>A</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>G</B></TD></TR>
+  </TABLE>
+</TD>
+
+</TR>
+
+<TR>
+<TD><B>A</B></TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>ATT</TD><TD>Ile</TD><TD>[I]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ATC</TD><TD>Ile</TD><TD>[I]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ATA</TD><TD>Ile</TD><TD>[I]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ATG</TD><TD>Met</TD><TD>[M]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>ACT</TD><TD>Thr</TD><TD>[T]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ACC</TD><TD>Thr</TD><TD>[T]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ACA</TD><TD>Thr</TD><TD>[T]</TD></TR>
+  <TR ALIGN="CENTER"><TD>ACG</TD><TD>Thr</TD><TD>[T]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>AAT</TD><TD>Asn</TD><TD>[N]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AAC</TD><TD>Asn</TD><TD>[N]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AAA</TD><TD>Lys</TD><TD>[K]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AAG</TD><TD>Lys</TD><TD>[K]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>AGT</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AGC</TD><TD>Ser</TD><TD>[S]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AGA</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  <TR ALIGN="CENTER"><TD>AGG</TD><TD>Arg</TD><TD>[R]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD><B>T</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>C</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>A</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>G</B></TD></TR>
+  </TABLE>
+</TD>
+
+</TR>
+
+<TR>
+
+<TD><B>G</B></TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>GTT</TD><TD>Val</TD><TD>[V]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GTC</TD><TD>Val</TD><TD>[V]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GTA</TD><TD>Val</TD><TD>[V]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GTG</TD><TD>Val</TD><TD>[V]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>GCT</TD><TD>Ala</TD><TD>[A]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GCC</TD><TD>Ala</TD><TD>[A]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GCA</TD><TD>Ala</TD><TD>[A]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GCG</TD><TD>Ala</TD><TD>[A]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>GAT</TD><TD>Asp</TD><TD>[D]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GAC</TD><TD>Asp</TD><TD>[D]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GAA</TD><TD>Glu</TD><TD>[E]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GAG</TD><TD>Glu</TD><TD>[E]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD>GGT</TD><TD>Gly</TD><TD>[G]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GGC</TD><TD>Gly</TD><TD>[G]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GGA</TD><TD>Gly</TD><TD>[G]</TD></TR>
+  <TR ALIGN="CENTER"><TD>GGG</TD><TD>Gly</TD><TD>[G]</TD></TR>
+  </TABLE>
+</TD>
+
+<TD>
+  <TABLE BORDER="0">
+  <TR ALIGN="CENTER"><TD><B>T</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>C</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>A</B></TD></TR>
+  <TR ALIGN="CENTER"><TD><B>G</B></TD></TR>
+  </TABLE>
+</TD>
+</TR>
+
+<CAPTION  ALIGN="BOTTOM">Codon to Amino Acid Mapping</CAPTION>
+
+</TABLE>
+
+<H3>1.3 Information Gained from Matching Sequences</H3>
+<P>
+A goal a of sequence matching databases is to determine if there are any
+sequences known by the database similar to a query sequence.  If two
+sequences are very similar, it is likely that:
+</P>
+<OL>
+<LI>
+The sequences have a related structure or function.<BR>
+In most cases, there is some available information on the structure and
+function of the sequences in the database.  A researcher with a sequence
+similar to a known sequence may be able to gain information about the form and
+function of the new sequence by studying similar known sequences.
+</LI>
+<LI>
+The sequences may have a common ancestor sequence.<BR>
+If two sequences are reasonably similar, it is likely that both sequences
+evolved from a common ancestor and an evolutionary relationship may exist
+between the source of each sequence.
+</LI>
+</OL>
+
+<P>
+If the query sequence is a partial sequence, it may also be possible to gain
+information about the sequence's position and role in the sequence it came
+from.
+</P>
+
+<P>
+In <A HREF="#scoring">section 3</A>, we will discuss techniques used to measure
+the similarity of two DNA sequences.
+</P>
+
+<H3>1.4 Sequence Alignment Issues</H3>
+<P>
+A DNA strand may be thought of as a string of four nucleotides in any order
+(e.g. <TT>ATGCCATT</TT>).  A simple approach towards aligning two DNA
+sequences would be to search for an exact match of one string within another.
+Reasonably fast techniques for performing exact matches of strings are well
+known.
+</P>
+
+<P>
+There are a few problems with using exact matches to align two DNA sequences.
+</P>
+<UL>
+<LI>
+Much of the DNA studied is derived from cloned copies.<BR>
+In the cloning process, some mutation may occur.  In addition, lab errors are
+made in determining the exact sequencing.  The alignment method needs to be
+tolerant of these mutations and errors.
+</LI>
+<LI>
+A large number of nucleotides on a DNA strand are &quot;dead code&quot;.<BR>
+These sections of &quot;dead code&quot; do not create any amino acids.  It
+would be desirable not to rule out alignments based on dead code.
+</LI>
+<LI>
+DNA from related life forms is not an exact match.<BR>
+DNA within species and between species has variations.  In general, the more
+similarity there is between two DNA strands, the more closely related its
+sources are.
+</LI>
+</UL>
+
+<P>
+In order for more meaningful alignments to be formed inexact alignments must
+be allowed.  We will discuss some of these alignment techniques the section
+which follows.
+</P>
+
+<H3>1.5 Nucleotide Data Sets</H3>
+<P>
+The largest publicly accessible nucleotide data sets are maintained in:
+GenBank (National Center for Biotechnology Information Genetic Databank), EMBL
+(European Molecular Biology Laboratory), and DDJB (DNA Database of Japan).
+Each of these three databases shares their information.  In October 1999
+GenBank reported that there were approximately 3,841,000,000 bases in 4,865,000
+sequence records in the GenBank database.
+</P>
+
+<A NAME="aligning"></A>
+<H2>2. Aligning DNA sequences</H2>
+<P>
+Nucleotide and amino acid databases traditionally perform nearest neighbor and
+range queries based upon the scores of gapped local alignments.  In this
+section we will discuss the differences between gapped and ungapped alignments
+as well as local and global alignments. <A HREF="#scoring">Section 3</A>
+discusses the scoring of such alignments.
+</P>
+
+<H3>2.1 Gapped Alignments vs. Ungapped Alignments</H3>
+<P>
+In the ungapped alignment model, only nucleotides (or amino acids) may be
+aligned with each other.  In such alignments, nucleotides must be inserted or
+deleted to correct length differences or allow for breaks in the alignment
+sequences.  Gapped alignments have all the features of an ungapped alignment,
+plus they allow for sequences to be extended by the insertion of gaps.
+Algorithms which allow for gaps generally have a penalty associated with
+opening the gap and another for extending it.  See <A HREF="#gaps">Section
+3.3</A> for the scoring of gaps.
+</P>
+
+<H3>2.2 Local vs. Global</H3>
+<P>
+In the local alignment model, portions of two sequences are aligned with
+each other, while portions which are not similar are not used in the alignment.
+Global alignment, differs in that two sequences are aligned from beginning to
+end.  While global alignments are useful for comparing two complete, closely
+related sequences, they are not very useful when searching for sequences that
+contain near matching subsequences or more distantly related sequences.
+</P>
+
+<A NAME="scoring"></A>
+<H2>3. Scoring of Similarity Between Sequences</H2>
+<P>
+Alignment of two nucleotide sequences is traditionally scored using values
+which may be looked up in a weighted scoring matrix.  Several biologically
+significant matrices exist.  The matrices most frequently used for scoring
+alignments of amino acid and nucleotide sequences come from the
+<A HREF="#pam">PAM</A> (Percent Accepted Mutation) and
+<A HREF="#blosum">BLOSUM</A> (Blocks Substitution Matrices) families.
+</P>
+
+<A NAME="pam"></A>
+<H3>3.1 PAM</H3>
+<P>
+The PAM matrices are constructed so that the highest scoring alignments using
+PAMn will be within n PAM units of each other.  PAM1 is the base PAM matrix.
+It is constructed so that maximal scores are produced for alignments with only
+1% mutation (99% conservation).  To construct the PAMn matrix from PAM1
+(M<SUB>1</SUB>), the following formula is used[28]:
+</P>
+
+<BLOCKQUOTE>
+<FONT SIZE="5">M<FONT SIZE="3"><SUB>n</SUB></FONT> = (M<FONT SIZE="3"><SUB>1</SUB></FONT>)
+<FONT SIZE="3"><SUP>n</SUP></FONT></FONT>
+</BLOCKQUOTE>
+
+<P>
+The following matrix is a representation of PAM100.
+</P>
+
+<A NAME="PAM100"></A>
+<PRE>
+#
+# This matrix was produced by "pam" Version 1.0.6 [28-Jul-93]
+#
+# PAM 100 substitution matrix, scale = ln(2)/2 = 0.346574
+#
+# Expected score = -1.99, Entropy = 1.18 bits
+#
+# Lowest score = -9, Highest score = 12
+#
+   A  R  N  D  C  Q  E  G  H  I  L  K  M  F  P  S  T  W  Y  V  B  Z  X  *
+A  4 -3 -1 -1 -3 -2  0  1 -3 -2 -3 -3 -2 -5  1  1  1 -7 -4  0 -1 -1 -1 -9
+R -3  7 -2 -4 -5  1 -3 -5  1 -3 -5  2 -1 -6 -1 -1 -3  1 -6 -4 -3 -1 -2 -9
+N -1 -2  5  3 -5 -1  1 -1  2 -3 -4  1 -4 -5 -2  1  0 -5 -2 -3  4  0 -1 -9
+D -1 -4  3  5 -7  0  4 -1 -1 -4 -6 -1 -5 -8 -3 -1 -2 -9 -6 -4  4  3 -2 -9
+C -3 -5 -5 -7  9 -8 -8 -5 -4 -3 -8 -8 -7 -7 -4 -1 -4 -9 -1 -3 -6 -8 -5 -9
+Q -2  1 -1  0 -8  6  2 -3  3 -4 -2  0 -2 -7 -1 -2 -2 -7 -6 -3  0  5 -2 -9
+E  0 -3  1  4 -8  2  5 -1 -1 -3 -5 -1 -4 -8 -2 -1 -2 -9 -5 -3  3  4 -2 -9
+G  1 -5 -1 -1 -5 -3 -1  5 -4 -5 -6 -3 -4 -6 -2  0 -2 -9 -7 -3 -1 -2 -2 -9
+H -3  1  2 -1 -4  3 -1 -4  7 -4 -3 -2 -4 -3 -1 -2 -3 -4 -1 -3  1  1 -2 -9
+I -2 -3 -3 -4 -3 -4 -3 -5 -4  6  1 -3  1  0 -4 -3  0 -7 -3  3 -3 -3 -2 -9
+L -3 -5 -4 -6 -8 -2 -5 -6 -3  1  6 -4  3  0 -4 -4 -3 -3 -3  0 -5 -4 -3 -9
+K -3  2  1 -1 -8  0 -1 -3 -2 -3 -4  5  0 -7 -3 -1 -1 -6 -6 -4  0 -1 -2 -9
+M -2 -1 -4 -5 -7 -2 -4 -4 -4  1  3  0  9 -1 -4 -3 -1 -6 -5  1 -4 -2 -2 -9
+F -5 -6 -5 -8 -7 -7 -8 -6 -3  0  0 -7 -1  8 -6 -4 -5 -1  4 -3 -6 -7 -4 -9
+P  1 -1 -2 -3 -4 -1 -2 -2 -1 -4 -4 -3 -4 -6  7  0 -1 -7 -7 -3 -3 -1 -2 -9
+S  1 -1  1 -1 -1 -2 -1  0 -2 -3 -4 -1 -3 -4  0  4  2 -3 -4 -2  0 -2 -1 -9
+T  1 -3  0 -2 -4 -2 -2 -2 -3  0 -3 -1 -1 -5 -1  2  5 -7 -4  0 -1 -2 -1 -9
+W -7  1 -5 -9 -9 -7 -9 -9 -4 -7 -3 -6 -6 -1 -7 -3 -7 12 -2 -9 -6 -8 -6 -9
+Y -4 -6 -2 -6 -1 -6 -5 -7 -1 -3 -3 -6 -5  4 -7 -4 -4 -2  9 -4 -4 -6 -4 -9
+V  0 -4 -3 -4 -3 -3 -3 -3 -3  3  0 -4  1 -3 -3 -2  0 -9 -4  5 -4 -3 -2 -9
+B -1 -3  4  4 -6  0  3 -1  1 -3 -5  0 -4 -6 -3  0 -1 -6 -4 -4  4  2 -2 -9
+Z -1 -1  0  3 -8  5  4 -2  1 -3 -4 -1 -2 -7 -1 -2 -2 -8 -6 -3  2  5 -2 -9
+X -1 -2 -1 -2 -5 -2 -2 -2 -2 -2 -3 -2 -2 -4 -2 -1 -1 -6 -4 -2 -2 -2 -2 -9
+* -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9  1
+</PRE>
+
+<A NAME="blosum"></A>
+<H3>3.2 BLOSUM</H3>
+<P>
+BLOSUM matrices are based on local multiple alignments of more distantly
+related sequences.  Unlike PAM matrices, BLOSUM matrices were created from
+real amino acid data.
+</P>
+
+</P>
+For the creation of BLOSUM matrices, a database of multiple alignments without
+gaps for short regions of related sequences was derived.  Within each
+alignment, the sequences were clustered into groups of sequences similar at
+by some threshold percent value.  Substitution frequencies for all pairs of
+amino acids were calculated between the groups, to create the Block Substitution
+Matrix for each cluster.
+</P>
+
+<P>
+The number associated with the matrix is the minimum percent of identity of the
+sequences in the block.  For example BLOSUM50 means that the sequences in this
+block are at least 50% identical.
+</P>
+
+<A NAME="gaps"></A>
+<H3>3.3 Gaps</H3>
+<P>
+In addition to the scoring matrix, if gaps are allowed in an alignment, a
+linear gap penalty is usually used.  The default gap penalty for many of the
+scoring systems is 10 points for opening the gap, and 1 point for each
+additional nucleotide the gap spans.
+</P>
+
+<P>
+Using the <A HREF="#PAM100">PAM100</A> matrix above and a 10 point gap creation
+1 point gap extension penalty, the following is and example of how two
+alignments might be scored.
+</P>
+
+<PRE>
+Sequence 1  C  T  G  A  G  A  A  T  C  A  T  A  C  G  T  C  A  G  T  A  C  C
+            |  +  |  |  |  +        |  |  |  +  |  |  |     +  |  |  +  |  |
+Sequence 2  C  A  G  A  G  T  -  -  C  A  T  G  C  G  T  -  A  G  T  A  G  C
+Score      +9 +1 +5 +4 +5 +1 -10-1 +9 +4 +5 +1 +9 +5 +5 -10+4 +5 +5 +4 -5 +9
+
+Total Score: 64                   | = Match,  + = Mutation, - = Gap
+</PRE>
+
+<A NAME="statistics"></A>
+<H2>4. Statistical Analysis of Alignments [6][10][11][12]</H2>
+
+<P>
+Just as important as having a high score in a string similarity match is its
+statistical significance. Consider the following matches:
+</P>
+
+<PRE>
+Database: ATATATATATATATATATCAAG
+Query:    ATATATATAT
+</PRE>
+
+<P>
+and
+</P>
+
+<PRE>
+Database: CAGTAGAACGGACTAGACA
+Query:    CAGTAGAA
+</PRE>
+
+<P>
+In the first case the match is practically irrelevant. It can be made
+several places on the string. It can be considered a chance occurrence that
+it is aligned the way it is. The second alignment is more significant since
+it probably will not occur elsewhere. Information theory describes the
+significance of the alignments.
+</P>
+
+<P>
+Given an independent, identical distribution (IID) the probability of
+seeing a particular sequence of letters a<SUB>1</SUB>, a<SUB>2</SUB>, ...
+a<SUB>n</SUB> is simply P<SUB>1</SUB> &times; P<SUB>2</SUB> &times; ...
+&times; P<SUB>n</SUB> for a probability distribution P<SUB>i'</SUB>.
+</P>
+
+<P>
+As an alternative to multiplication, the logarithm is taken and probabilities
+are summed as log(P<SUB>1</SUB>) + log(P<SUB>2 </SUB>) + ...
++ log(P<SUB>n</SUB>). This is call the <B>log odds</B> and actual probability
+would be computed by taking the log base to this power. Log probabilities are
+measures of information and their units are related to the log base. Log base
+2 units are bits. Natural log units are called nats.  Bits are related to
+nats by the factor ln(2).
+
+<H3>4.1 Shannon's Entropy</H3>
+<P>
+Shannon's entropy (I) is a measure of information stored in a string in bits
+per symbol and is given by the equation:
+</P>
+
+<P>
+<BLOCKQUOTE>
+<FONT SIZE=5>I = -(</FONT><FONT FACE="Symbol" SIZE=6>S</FONT>
+<FONT SIZE=5><SUB>i</SUB> P<SUB>i</SUB> &times; log(P<SUB>i'</SUB>))</FONT>
+</BLOCKQUOTE>
+</P>
+
+<P>
+If a message is 200 symbols long, the amount of information stored in it
+is 200 &times; I, and in theory there is no shorter encoding of this message.
+For a uniform probability distribution of nucleotide sequences P<SUB>A</SUB> =
+P<SUB>T</SUB> = P<SUB>G</SUB> = P<SUB>C</SUB> = 0.25. This means that each
+character takes 2 bits to encode. For a nonuniform distribution where
+P<SUB>A</SUB> = P<SUB>G</SUB> = 0.05 and P<SUB>A</SUB> = P<SUB>G</SUB> =
+0.45,  the average is about 1.47 bits per letter. If a Huffman code for the
+this distribution is used the symbols may be represented by the following
+bit pattern:
+</P>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0">
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Nucleotide</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Pattern</B></TD>
+</TR>
+
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">G</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">T</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">A</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">110</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">C</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">111</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P>
+The Huffman Entropy is 1 &times; 0.45 + 2 &times; 0.45 + 3 &times 0.05 +
+3 &times; 0.05 = 1.65 bits per letter. While the Huffman code is simpler to
+implement, there is a small cost (1.65 vs. 1.47) for using a slightly
+different probability distribution.
+</P>
+
+<P>
+If the true distribution is not P<SUB>A</SUB> = P<SUB>G</SUB> = 0.05 the
+encoding could take more than 2 bits per nucleotide. In general if a bias of
+a distribution is unknown, the conservative use of the uniform distribution
+may be longer than if the bias were known but is the best for that situation.
+</P>
+
+<H3>4.2 Relative Entropy</H3>
+<P>
+Relative entropy, H, is a measure of the expected inefficiency per letter for
+a message with an assume distribution P and an actual distribution Q.
+Relative Entropy is sometimes called Kullback Leibler distance between
+distributions, and is always positive or zero if P = Q.  Relative entropy is
+given by the equation:
+</P>
+
+<BLOCKQUOTE>
+<FONT SIZE=5> H = </FONT><FONT FACE="Symbol" SIZE=6>S</FONT>
+<FONT SIZE=5><SUB>i</SUB> Q<SUB>i</SUB> &times
+log (Q<SUB>i</SUB> / P<SUB>i</SUB>)</FONT>
+</BLOCKQUOTE>
+
+<P>
+Given a scoring matrix such as PAM62 and a null model sequence generated
+independent, identical distribution using some background distribution, P,
+and a query to be aligned BLAST and FastA find maximal scoring pair (MSP).
+The distribution of the letters in MSP is called the target distribution and
+is related to the background distribution by the scoring matrix. If the
+letters in the MSP are described using the optimal Shannon code for the
+background distribution, it is expected that this would be longer than if the
+MSP is described with a Shannon code on its own distribution, the target
+distribution. The extra bits describe the odds that the alignment is by
+chance alone.
+</P>
+
+<H3>4.3 Karlin-Altschul Statistics</H3>
+<P>
+Karlin-Altschul statistics show that given two sequences IID, effectively
+long, and not too dissimilar in size with X and Y with background
+distributions of P<SUB>X</SUB> and P<SUB>Y</SUB>, if the sequences are
+respectively searched using a scoring matrix S(i,j), and the total
+pairwise score sum is expected to be negative while some positive score is
+possible for some letters i and j, P<SUB>X</SUB>(i) &times; P<SUB>Y</SUB>(j)
+&times; S(i,j) &gt; 0 that:
+</P>
+
+<BLOCKQUOTE>
+<FONT SIZE=5>
+S(i,j) = log(Q(i,j) / P<SUB>X</SUB>(i) &times; P<SUB>Y</SUB>(j)) /</FONT>
+<FONT FACE="Symbol" SIZE=5>l</FONT>
+</BLOCKQUOTE>
+
+<P>
+Q(i,j) is the limiting target distribution of letter pairs (i,j) in the
+MSP and <FONT FACE="Symbol">l</FONT> can be thought of as a scale of the
+scoring matrix and is the solution to:
+</P>
+
+<BLOCKQUOTE>
+<FONT FACE="Symbol" SIZE=6>S</FONT><FONT SIZE=5><SUB>i,j</SUB>
+P<SUB>X</SUB>(i) &times; P<SUB>Y</SUB>(j) &times; e<SUP></FONT>
+<FONT FACE="Symbol" SIZE=3>l</FONT><FONT SIZE=3>S(i,j)</SUP></FONT>
+<FONT SIZE=5> = 1</FONT>
+</BLOCKQUOTE>
+
+<P>
+The expected frequency E of chance occurrence that the MSP has a score S or
+greater is:
+</P>
+
+<BLOCKQUOTE>
+<FONT SIZE=5>E = K &times; M &times; N &times; e</FONT><SUP>
+<FONT FACE="Symbol" SIZE=3>-l</FONT><FONT SIZE=3>S</SUP></FONT>
+</BLOCKQUOTE>
+
+<P>
+Where N is the size of the database string and M is the size of the query
+string. MN is the size of the search space. K is a measure of the relative
+interdependence of this space.
+</P>
+
+<P>
+There is less of a chance that sequences will align on the edges of the
+search space since an MSP would run over the edge and the area over the edge
+does not generate any score. These effects on the expected frequency E are
+modeled by showing a slightly reduced search space.
+</P>
+
+<P>
+E represents the expected number of answers given the search space and the
+distributions and 5 - 10 is generally used as a cutoff for an answer. E is a
+fundamental measure for an alignment. An alignment with a high E is
+considered irrelevant.
+</P>
+
+<A NAME="searching"></A>
+<H2>5. Exhaustively Searching DNA Databases</H2>
+<P>
+In this section we will discuss 3 popular algorithms for exhaustively
+searching DNA databases: <A HREF="#ssearch">SSearch</A>,
+<A HREF="#fasta">FastA</A>, and <A HREF="#blast">BLAST</A>. Each of these
+algorithms may be used for both nearest neighbor and range searches of
+nucleotide data bases against a nucleotide query string.  A fourth,
+algorithm, <A HREF="#salsa">SALSA</A> is also discussed, because we believe
+that it demonstrates the potential for an increased sensitivity, rapid search
+algorithm.
+</P>
+
+<A NAME="ssearch"></A>
+<H3>5.1 SSearch (Smith-Waterman Algorithm) [24][28]</H3>
+<P>
+SSearch is a rigorous local alignment program written by William Pearson as
+an implementation of the of <B>Smith and Waterman</B> method which will
+always find a maximal scoring alignment of two sequences.  Although it can be
+very slow compared to FastA and BLAST, it is considered the most sensitive
+method of searching and will generally find all similar and statistically
+significant alignments. For this reason it is an essential tool for doing
+exhaustive searching and is distributed with other tools such as FastA. The
+program can also be run on multiprocessors for faster search times.
+</P>
+
+<P>
+SSearch can be used to search for nucleotide or amino acid sequences against
+a FastA formatted database.  It uses standard scoring matrices such as PAM or
+BLOSUM and a gap creation penalty plus a gap extension penalty. It is based
+on the idea of dynamic programming.
+</P>
+
+<P>
+On brute force search method this problem would take O(n<SUP>2</SUP>m
+<SUP>2</SUP>) time, where n is the size of the database string and m is the
+size of the query string. If no gaps are allowed this is O(nm) since worst
+every symbol on the database must be compared with every symbol on the query.
+With gaps there are a factor of n permutations on the database and a factor of
+m permutation on the query string, hence O(n<SUP>2</SUP>m<SUP>2</SUP>) time.
+The most widely accepted remedy is to use dynamic programming to remember
+substring comparisons once we have made them. The SSearch algorithm works as
+follows.  Create a matrix (n + 1) &times; (m + 1). In the first row and
+first column put all zeros. For all rows and columns compute the
+i<SUP>th</SUP> column and j<SUP>th</SUP> row as the follows:
+</P>
+
+<PRE>
+    cell(i, j) = maximum {
+        cell(i - 1, j - 1) + score(ai,bj),      // Describes a match or mismatch
+        max(cell(i - k, j) + Wk),               // Describes a gap of length k on query
+        max(cell(i, j - p) + Wp),               // Describes a gap of length p on database
+        0}                                      // Describes a new start
+</PRE>
+
+<P>
+The score is computed from a given matrix such as PAM62 or BLOSUM50 for
+amino acids and usually by +5 for a match, -4 for a mismatch for nucleotides.
+PAM and BLOSUM describe the amount of expected mutations (mismatches).
+W<SUB>k</SUB> and W<SUB>p</SUB> are gap penalties computed with as:
+</P>
+
+<BLOCKQUOTE>
+W<SUB>k</SUB> =
+Creation_Penalty_for_query + Extension_Penalty_for_query &times; k<BR>
+
+W<SUB>p</SUB> =
+Creation_Penalty_for_database + Extension_Penalty_for_database &times; p
+</BLOCKQUOTE>
+
+<P>
+Normally a gap creation and extension for a database is given a much higher
+penalty than for a query because it is assume that the database has been
+filled to a greater degree. The maximal score is highest number in the last
+row of the table where all of the query string has be processed. Other high
+scores can also be analyzed to give range or nearest neighbor type searches.
+SSearch uses a simple linear regression against the natural log of the search
+set sequence length to calculate a normalized <I>z-score</I> for the sequence
+pair. The statistical significance is also computed and compared against the
+Statistical Expectation. The table does not give the alignment only the
+score. In order to find the alignment a directed graph must be kept of the
+path of the score.
+</P>
+
+<H4>Example</H4>
+<P>
+Use a scoring matrix of +5 for a match and -4 for a mismatch.<BR>
+Gap creation penalty = -4 for both database and query.<BR>
+Gap extension penalty = -1 for both database and query.
+</P>
+
+<PRE>
+Database String: AGCTATATACGGTAACGTA
+Query String:    GCTTA
+</PRE>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>*</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>*</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">4</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">3</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">15</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">11</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">9</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">8</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">7</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">4</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">11</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">11</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">16</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">12</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">14</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">9</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">8</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">7</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">9</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">4</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">3</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">5</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">4</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">16</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">12</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">21</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">17</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">19</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">15</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">14</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">13</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">12</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">14</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">9</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">8</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">7</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">10</TD>
+</TR>
+
+</TABLE>
+
+<P>
+The highest score in the last row is 21. An alignment is:
+</P>
+
+<PRE>
+AGCTATATACGGTAACGTA
+ ||| ||
+ GCT-TA
+</PRE>
+
+<P>
+Another type of searching table is a dot matrix table which puts a dot wherever
+there is a match and nothing for a mismatch. The idea is to look for the
+longest diagonals (longest substring match) and then to connect the ends using
+the smallest distance (allowing for gaps). This can be used for visually seeing
+matches.
+</P>
+
+<P>
+The output of SSearch is a file containing a histogram showing the
+distributions of the z-scores between the query and the database sequences.
+Below the histogram, SSearch display a list of the best scores and the protein
+strings where they were found. Finally the output shows the actual alignments
+for the highest scores.
+</P>
+
+<P>
+Other algorithms for speeding up the search are possible. To save space only
+one line of the table needs to be stored. It will be updated by subsequent
+symbols of the query string. For this method the algorithm looks like a Turing
+Machine with the database on every other spot on the tape and the query string
+being fed in as input.
+</P>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>T</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">*</TD>
+</TR>
+
+</TABLE>
+
+<A NAME="fasta"></A>
+<H3>5.2 FastA</H3>
+
+<P>
+FastA is an algorithm [18] that attempts to speed up string matching over the
+standard optimal alignment. Optimal alignment techniques such as Smith-Waterman
+[28] are based on dynamic programming. String matching using dynamic
+programming run in quadratic time. FastA uses <I>direct addressing or k-tuple
+preprocessing </I>to cut down the dynamic programming search space
+significantly. This results in reduced search time at the expense of some
+sensitivity.
+</P>
+
+<H4>5.2.1 FastA Algorithm</H4>
+<P>
+The FastA algorithm is implemented in the following 6 stages:
+</P>
+
+<UL>
+<LI>Locate hot spots</LI>
+<LI>Find the 10 best regions in the matrix</LI>
+<LI>Score using a substitution matrix</LI>
+<LI>Combine initial regions from different diagonals</LI>
+<LI>Optimal alignment</LI>
+<LI>Presentation</LI>
+</UL>
+
+<H5>5.2.1.1 Locating Hot spots</H5>
+<P>
+FastA allows the specification of a parameter called ktup (short for k
+<I>respective tuples</I>). The ktup sets the basis word length for the
+comparisons between the query string and a given string in the database. ktup
+values are typically six for DNA sequences and two for protein sequences.
+</P>
+
+<P>
+The matching ktup-length substrings are referred to as <I>hot spots</I>.  To
+locate the hot spots, FastA creates a dictionary of all possible words of
+length ktup that occurs in the query sequence. For DNA sequences this means
+4<SUP>6</SUP> or 4096 possible entries in the table. For amino acid sequences
+we have as many as 20<SUP>2</SUP> or 400 possible entries because the amino
+acid alphabet has 20 symbols. For the DNA case each word is represented as a
+base 4 number that is also the index into the table. Each entry contains the
+offsets where this particular combination of 6 letters occur in the query
+sequence. In this way, for each word in the searched string, only the
+dictionary need be consulted to determine if and where the word occurs in the
+query string. Consecutive hot spots (regions) are located along the dynamic
+programming matrix diagonals.
+</P>
+
+<H5>5.2.1.2 Finding the 10 Best Regions</H5>
+<P>
+A region is a sequence of consecutive hot spots on the same diagonal. Spaces
+between the hot spots are permitted. FastA ranks regions by giving each hot
+spot a positive score. The intervening space between consecutive hot spots in
+is given a negative score. The larger the gap the more severe the penalty.
+The score of the diagonal run is the sum of the hot spots scores and the
+interspot penalties.  If a word match overlaps another word on the same
+diagonal, only the scores of the non-overlapping symbols are added to the
+score of the diagonal. A region does not contain any <I>indels</I> (insertions
+or deletions) because it is derived from a single diagonal.
+</P>
+
+<H5>5.2.1.3 Scoring with Substitution Matrix</H5>
+<P>
+FastA next applies a substitution matrix to the 10 best regions found above.
+The substitution matrix may be an amino acid or nucleotide based. This step
+allows different  matches to be weighted differently. It also allows for
+conservative amino acid replacements. Words containing relatively immutable
+amino acids will contribute a larger score to the diagonal than a word which
+contains amino acids which are less stable. The matrix encapsulates the
+biological significance of  word matches.  The single best subalignment found
+after the application of the substitution matrix is termed <I>init1</I>.
+</P>
+
+<H5>5.2.1.4 Combining Initial Regions from Different Diagonals</H5>
+<P>
+In this step, FastA checks to see if any of the initial regions from
+different diagonals may be combined to form a new higher scoring region. The
+score for the combined regions is the sum of the scores of the contributing
+regions less a joining penalty for each join. Regions that overlap cannot be
+joined together. In order to make the joins the indels are introduced in this
+step.  The score for the highest scoring region after this step is termed
+<I>initn</I>.
+</P>
+
+<P>
+This step can be implemented using directed weighted graphs where the vertices
+are the subalignments from the last stage.[24] The weight in each
+vertex is its score.  An edge is drawn from vertex u to vertex v if v begins
+beneath where u ends. The edge is negatively weighted based on the number of
+gaps it would introduce. The maximum weight path gives the <I>initn</I>
+alignment.
+</P>
+
+<H5>5.2.1.5 Optimal Alignment</H5>
+<P>
+In addition to <I>initn</I>, FastA computes an alternative local alignment
+score <I>opt</I>. This score is obtained by considering a narrow diagonal
+band in the dynamic programming matrix, centered along the init1 diagonal.
+Using the ordinary dynamic programming, the optimal local alignment in this
+band is computed.
+</P>
+
+<H5>5.2.1.6 Presentation</H5>
+<P>
+Finally the database is ordered by either the opt or initn scores and the
+highest ranking result sequences are run thorough a full Smith-Waterman
+alignment. The number of alignments done this way depends on the user defined
+scope of the search.
+</P>
+
+<H4>5.2.2 Statistics</H4></B>
+<P>
+Starting with version 2.0 of FastA, a measure of the significance of the
+match is provided along with the raw scores.
+</P>
+
+<P>
+FastA uses a simple linear regression against the natural log of the search
+set sequence length to calculate a normalized <I>z-score</I> for the sequence
+pair.[19]  The idea is that longer sequences in the search set can get
+artificially high scores because of the increased likelihood of random matches.
+The z-score is typically calculated from the opt score but FastA can be made
+to calculate it from the <I>initn </I>score instead.
+</P>
+
+<P>
+The distribution of the z-scores tends to closely approximate an
+extreme-value distribution. As such FastA can report an E() score. This is an
+estimate of the expected number of sequences that would (from pure chance)
+have a z-score greater than or equal to the z-score obtained in the search.
+</P>
+
+<H4>5.2.3 FastA Variants</H4>
+<P>
+The following variants of FastA exist for searching with different query
+types or data sets.
+</P>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Program</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Query Type</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Database Type</B></TD>
+</TR>
+
+<TR></TR>
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">FastA</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide/Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide/Amino Acid</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">FastAX</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">TFastX</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+</TR>
+
+</TABLE>
+</CENTER>
+
+<P>
+For the purposes of comparing algorithms we used FastA to perform a DNA
+query against a DNA database.
+</P>
+
+<A NAME="blast"></A>
+<H3>5.3 BLAST[3][4][10][30]</H3>
+<P>
+The Basic Local Alignment Search Tool (BLAST) program uses a heuristic
+algorithm to search for local alignments of a query string on a BLAST
+formatted database. It is reported to run 100 times faster than a
+Smith-Waterman serial search and although it is not as sensitive as a
+rigorous search, it generally is a good place to start a search and will
+return all high scoring matches. For this reason it is the most popular
+search program. There is a different BLAST version for each of the combinations
+of query types and database types.
+</P>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Program</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Query Type</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Database Type</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Frames</B></TD>
+</TR>
+
+<TR></TR>
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">BLASTP</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">BLASTN</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">BLASTX</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">TBLASTN</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Amino Acid</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">6</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">TBLASTX</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">Nucleotide</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">36</TD>
+</TR>
+
+</TABLE>
+
+<P>
+The BLAST database consists of three files for every FastA file input.[10] The
+first contains all of the sequence headers, textual information about the
+amino acid or nucleotide sequence. The second contains the compressed sequences
+(2 bits for each nucleotide, 5 bits for each amino acid). The third file
+contains an index of the compressed sequences so that they can be matched with
+the corresponding headers. The formats are slightly different between BLAST 1.4
+and BLAST 2.0 but the compression gives small I/O speed advantage over programs
+that use the FastA format.
+</P>
+
+<P>
+The program runs in 3 rounds.
+</P>
+
+<OL>
+<LI>Database Scanning</LI>
+<LI>Seed Growing</LI>
+<LI>Combining Alignments</LI>
+</OL>
+
+<H4>5.3.1 Database Scanning</H4>
+<P>
+BLAST searches the database using sequential search for short words (k-tups)
+of length <B>W (Word Size)</B> in the query string which score higher than
+<B>T (Neighborhood Word Score Threshold</B> also called the threshold or
+cutoff score). In BLAST 1.4, W is usually 3 amino acids or 11 nucleotides, and
+in BLAST 2.0 this is usually 2 amino acids or 2 sets of 5 nucleotides that
+are not contiguous.
+</P>
+
+<P>
+Once the tuple size has been selected, scanning may be accomplished in either
+of two ways.  The first maps all k-tups of length W into a unique integer.  An
+array (indexed with this integer) pointing to lists of places in the database
+that will give a score of T or greater when compared with W long sequence is
+constructed.  For nucleotide sequences where W = 5, this array would be of size
+5<SUP>4</SUP> or 1024.  Using a k-tup as an index into the array would give an
+immediate list of corresponding hits.
+</P>
+
+<P>
+The second approach for scanning a database is to construct a deterministic
+finite automata (DFA) based on the query word to scan the database.  A special
+feature is a construction which allows acceptance on transitions as opposed to
+states. This second approach was chosen since it saved on time and space (BLAST
+scans a protein database at approximately 500,000 residues/sec).
+</P>
+
+<P>
+The list of successful words is called the neighborhood.  This information is
+stored in an index for the next round.
+</P>
+
+<H4>5.3.2 Seed Growing</H4>
+<P>
+In this round the matches found in the first round are used as
+&quot;seeds&quot; to &quot;grow&quot; the alignment in both directions.  When
+a growing match falls off by the quantity <B>X (Maximum Permissible
+Drop-off)</B> from its maximum achievable score or the score becomes zero
+after too many negative scores, this seed is halted and another is tested.
+This will also terminate in one direction if the end of either sequence is
+reached.  For each alignment a score is a calculated.  For nucleotide sequences
+a positive score is given to a match using <B>M (Single-Letter Match)</B> and
+a negative score is given to a mismatch using <B>N (Single-Letter
+Mismatch)</B>.  For each alignment the probability of attaining a match is
+calculated using Poisson or sum [15] statistics.  These results are sorted by
+score are those higher than <B>S2 (Secondary Cutoff Score)</B> and with
+statistical significance greater than <B>E2 (Secondary Expectation)</B> are
+further analyzed.  The passing alignments are called High Scoring Pairs (HSPs).
+</P>
+
+<H4>5.3.3 Combining Alignments</H4>
+<P>
+Now the program attempts to combine multiple alignments. If the
+calculated statistics are less than <B>E (Statistical Expectation)</B> the
+result is not report. By default E is set to 10 which means that we expect at
+least 10 sequences to be reported by chance alone.  Finally all significant
+alignments with scores greater than <B>S (Cutoff Score)</B> are reported.
+</P>
+
+<A NAME="salsa"></A>
+<H3>5.4 SALSA</H3>
+<P>
+Even though SALSA [20] (Searching with Assembly of Local Alignments) has
+only been implemented as a protein sequence alignment and search algorithm,
+we have included it in our survey, because we believe that the algorithm may be
+adapted to nucleotide sequences with a reasonable amount of effort.  We also
+believe that SALSA provides a unique approach towards increasing the
+sensitivity of searches without greatly increasing the time requirements.
+</P>
+
+<P>
+SALSA uses a three stage heuristic algorithm to approximate the optimal
+alignment between sequences.  Though it does not always produce the score of
+the optimal alignment, its authors claim that SALSA is more sensitive
+(accurate) than both BLAST and FastA.
+</P>
+
+<P>
+The three stages in the SALSA are heuristic are:
+</P>
+
+<OL>
+<LI>Database Scanning</LI>
+<LI>Hit Extension</LI>
+<LI>Final Score Calculation</LI>
+</OL>
+
+<H4>5.4.1 Database Scanning</H4>
+<P>
+Much like FastA and BLAST, the first stage of the SALSA heuristic attempts to
+find similarity between k-tuples in the query sequence and k-tuples in the
+database sequences.  For amino acids a k of sizes between 2 and 4 are allowed.
+This would correspond to a k of sizes between 6 and 12 for nucleotides.
+</P>
+
+<P>
+For this step, a lookup table is built containing the offset in the query
+sequence to the position where a high scoring match to each k-tuple starts.
+Only weighted matches which score above a threshold are considered.  For amino
+acids with k = 2 there are 400 (20<SUP>2</SUP>) positions in the lookup table.
+The table becomes far larger if the analogous search is done on a nucleotide
+sequence with k = 6.  There would be 4096 (4<SUP>6</SUP>) positions in
+nucleotide lookup table.
+</P>
+
+<P>
+For query sequences of size m, building the table for nucleotide sequences is
+order O((4<SUP>k</SUP>) &times; k &times; m).  This is not a cheap step,
+however, for averages sequences, this will be the most expensive step in the
+SALSA heuristic.
+</P>
+
+<P>
+Once the lookup table is built, each sequence in the database is scanned for
+exact matches with each of the k-tuples that exceeds the score threshold.
+Any sequence in the database which contains an exact match to one of the
+k-tuples that scored above the threshold will be remembered as a potential
+match candidate.  The position of the high scoring k-tuple will also be
+retained.
+</P>
+
+<H4>5.4.2 Hit Extension</H4>
+<P>
+The hit extension phase of the algorithm attempts to take each of the high
+scoring k-tuples and extend them, without gaps, in either direction.  To
+prevent the extension process from running for ever, the high scoring pairs are
+extended until a score of 0 is obtained, at which point the fragment is trimmed
+back to the length that produced the maximal score.  This produces a collection
+of high scoring, ungapped, locally aligned fragments.
+</P>
+
+<H4>5.4.3 Final Score Calculation</H4>
+<P>
+Up to this point SALSA behaves much like BLAST 2.0.  Here SALSA sacrifices
+speed for sensitivity.  While the BLAST algorithms build their final
+approximate alignment from the highest scoring fragment.  SALSA will attempt
+to chain its fragments into even higher scoring gapped alignments.
+</P>
+
+<P>
+For each sequence in the database, each of the fragments that score above a
+threshold are retained in a structure which sorts them in a double linked list
+by diagonal, and a single linked list by position in the sequence.  Eliminating
+the low scoring fragments will save computation time, though it might cause any
+high scoring alignment built around a low scoring fragment to be overlooked.
+If SALSA is to be adapted to nucleotide searches, some experimentation will be
+required to determine an appropriate threshold.
+</P>
+
+<P>
+Once all the fragments have been arranged into a sorted structure, the SALSA
+heuristic will attempt to connect the fragments to form an even higher scoring
+chain of fragments.  It is this process of connecting high scoring fragments
+together that differentiates SALSA from BLAST.
+</P>
+
+<P>
+Two fragments will only be considered for joining in a chain if the cost of the
+gap required to connect the two fragments is less than the score of either
+fragment.  This simple rule allows pruning of the combination of fragments
+considered for chaining.
+</P>
+
+<P>
+When two fragments are considered for chaining, the gap necessary to connect
+the fragments is inserted, or any overlap between the two fragments is trimmed.
+If the score of the chained fragments is greater than that of the original
+fragment, the new chained fragment and its score are added to the fragment
+list.  Once all valid chaining combinations have been considered, the highest
+scoring fragment is used as the approximation for the optimal alignment between
+the query sequence and the database entry.
+</P>
+
+<A NAME="performance"></A>
+<H2>6. Performance (Empirical Results)</H2>
+<P>
+In this section we empirically examine the performance of SSearch, FastA, and
+BLAST.  All searches described in this section were performed against three
+databases with the following attributes:
+</P>
+
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Name</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Sequences</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Nucleotides</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Average Nucleotides<BR>
+Per Sequence</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Percent A</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Percent C</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Percent G</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Percent T</B></TD>
+</TR>
+
+<TR></TR>
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">Ecoli</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">400</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">4662258</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">11655</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">24.638491</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">25.403892</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">25.346817</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">24.610800</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">Yeast</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3260</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">14686548</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">4505</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">31.108815</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">18.953712</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">18.926640</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">31.010834</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT" VALIGN="MIDDLE">HS_Chr01</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">130</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">22067529</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">169750</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">28.393451</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">21.580459</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">21.580926</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">28.445165</TD>
+</TR>
+
+</TABLE>
+
+<P>
+The ecoli database is from GenBank's collection of E. coli DNA sequences.  It
+was selected, because it is relatively small in size.  The yeast database is
+from GenBank's collection of yeast DNA.  It was selected, because it is
+substantially larger than the E. coli dataset.  The HS_Chr01 database is from
+GenBank's collection of human DNA sequences found in chromosome one.  It was
+selected because it is larger than the yeast database, but has less sequences
+than both the yeast and ecoli database.  An algorithm that is slowed by the
+number of sequences more than the number of nucleotides, should search the
+human dataset faster than the yeast database.
+</P>
+
+<P>
+All of our queries were performed on an IBM PC compatible with an 166 MHz Intel
+Pentium Processor and 48MB of RAM, running Windows 95 in safe mode.  Each of
+the search programs were executed while no other programs were running.  To
+prevent any queries gaining a performance advantage from a previously cached
+data set, no two consecutive queries were made on the same data set.  During
+early trials of the search software it was observed that the compressed
+BLAST databases for all three collections were being held in the disk cache
+together.  Since Windows 95 does not document a method for clearing it's disk
+cache, the computer was rebooted between a searches on the same database.  To
+prevent later searches with the same executable from gaining any cache benefits
+over the first execution, each search program was invoked once with no
+parameters, just to place the program in the disk cache and possibly the RAM
+cache.
+</P>
+
+<P>
+For each of the queries, we used the unmodified Win32 executables that came
+with the official distribution.  The version of SSearch and FastA used was
+3.2t06.  The version of BLAST used was 2.0.10.
+</P>
+
+<P>
+Each of the three search programs were given three query sequences for our
+testing.  Query one is a sequence of 25 nucleotides extracted from one of the
+sequences in the HS_Chr01 database.  Query two is a sequence of 50 nucleotides
+extracted from one of the sequences in the yeast database, and query three is a
+sequence of 100 nucleotides extracted from one of the sequences in the E. coli
+database.
+</P>
+
+<P>
+The results of our queries are listed in the table below.  Each query was made
+using a +5/-4 match/mismatch penalty and a -16/-4 gap/extension penalty.
+These values were chosen, because they are the default values for SSearch.
+We only report the number of sequences found with an E &lt; 2.0, again because
+this is the default SSearch value.  Time is the time to complete execution in
+seconds as reported by the MS-DOS time functions.  Our queries sequences, their
+results, and the MS-DOS batch files we used to run the queries may be found at
+<A HREF="results.zip">http://www.cs.ucsb.edu/~mdipper/dna/results.zip</A>.
+</P>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="1" CELLPADDING="1">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD COLSPAN="2"></TD>
+<TD COLSPAN="2"><B>Query 1</B></TD>
+<TD COLSPAN="2"><B>Query 2</B></TD>
+<TD COLSPAN="2"><B>Query 3</B></TD>
+<TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD COLSPAN="2"></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Time</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Sequences</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Time</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Sequences</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Time</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>Sequences</B></TD>
+</TR>
+
+<TR></TR>
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ROWSPAN="3"><B>E<BR>c<BR>o<BR>l<BR>i</B></TD>
+<TD ALIGN="LEFT"><B>SSearch</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">24.94 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">43.61 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">86.4 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>FastA</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">10.93 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">10.16 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">10.65 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">2</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>BLAST</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">2.97 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3.28 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">9.89 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">143</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ROWSPAN="3"><B>Y<BR>e<BR>a<BR>s<BR>t</B></TD>
+<TD ALIGN="LEFT"><B>SSearch</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">78.65 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">141.16 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">246.45 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>FastA</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">32.39 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">33.67 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">2</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">36.31 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">2</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>BLAST</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">5.09 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">5.49 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">6.04 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ROWSPAN="3"><B>H<BR>u<BR>m<BR>a<BR>n</B></TD>
+<TD ALIGN="LEFT"><B>SSearch</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">116.74 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">4</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">207.68 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">372.23 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">5</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>FastA</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">46.69 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">3</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">47.40 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">48.01 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="LEFT"><B>BLAST</B></TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">7.20 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">1</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">6.75 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">6.70 Sec</TD>
+<TD ALIGN="RIGHT" VALIGN="MIDDLE">0</TD>
+</TR>
+
+<CAPTION  ALIGN="BOTTOM">Database Search Results</CAPTION>
+
+</TABLE>
+
+<P>
+From this table above and are actual results we have made some observations
+about the speed and correctness of each of the algorithms.
+</P>
+
+<H4>6.1 Speed</H4>
+<P>
+Our results show FastA to be more than twice as fast as SSearch, and BLAST to
+be more than twice as fast as FastA.  In addition it can be observed that the
+size of the database is a greater impact on the performance of FastA and BLAST
+than the size of the query sequence.  This is because FastA and BLAST spend
+much of their initial processing time comparing the database to a k-tuple from
+the query sequence instead of the whole query sequence.  The size of the query
+sequence has no bearing on the initial steps of FastA and BLAST.
+</P>
+
+<P>
+Unlike FastA and BLAST, SSearch takes approximately double the time to search
+a database if the size of a query sequence is doubled.  This is because SSearch
+is a O(MN) algorithm, where M is the size of the query string.  Double the size
+of M, and the order of operations will double.
+</P>
+
+<H4>6.2 Correctness</H4>
+<P>
+An interesting thing to observe from the table is that, even though SSearch
+produces an optimal scoring for the alignment of a query sequence against
+each of the database sequences, there are times when SSearch reports less
+statistically significant alignments than either FastA or BLAST.  We believe
+that this phenomena occurs because the E values of FastA and BLAST are
+calculated from suboptimal alignments, which turn out to be less likely than
+a higher scoring optimal alignment obtained by SSearch.
+</P>
+
+<P>
+We have verified that in every case where the query sequence was a subsequence
+from the database being searched, it was matched with it's source.  However,
+there does not seem to be a clear connection between the rest of the high
+scoring sequences returned by each program.
+</P>
+
+<H4>6.3 SALSA Performance</H4>
+<P>
+SALSA was tested using 11 queries against the protein collection in SWISS-PROT
+protein database.[20]  Only sequences with a score of E &lt; 1.0 were reported
+by each program.  The results of the queries were compared against BLAST,
+FastA, and SSearch for accuracy and time. The table below attempts to summarize
+these results.  As with our earlier performance analysis, the SSearch results
+should be read for optimal alignments. The time was given as CPU cycles with no
+further clarification.
+</P>
+
+<TABLE ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD COLSPAN="4"><B>Number of Sequences Found</B></TD>
+<TD COLSPAN="4"><B>CPU Cycles Required</B></TD>
+<TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>SSearch</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>BLAST</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>FastA</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>SALSA</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>SSearch</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>BLAST</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>FastA</B></TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE"><B>SALSA</B></TD>
+</TR>
+
+<TR></TR>
+<TR></TR>
+
+<TR ALIGN="CENTER" VALIGN="MIDDLE">
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2051</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1988</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">1904</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">2029</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">7463</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">189</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">676</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">613</TD>
+</TR>
+
+<CAPTION  ALIGN="BOTTOM">Results from SALSA Study</CAPTION>
+
+</TABLE>
+
+<P>
+Though the current implementation of SALSA applies only to amino acid
+databases, there is no reason to believe, SALSA, BLAST, FastA, and SSearch
+would not scale to nucleotide databases with similar results.
+</P>
+
+<H2>7. Index Search Tools</H2>
+<P>
+SSearch, FastA and BLAST are all examples of exhaustive search tools. Each
+entry in the database is consulted before formulating an answer set to a query.
+We have chosen in or paper to concentrate on the &quot;bread and butter&quot;
+tools that are in everyday use. There has however, been work in trying to index
+genomic databases. Despite the likely benefits of indexing in reducing query
+evaluation costs, existing indexed-based systems are not favored over
+exhaustive approaches because of limitations in indexed systems.  This section
+overviews four such schemes: <A HREF="#ramdb">RAMdb</A>,
+<A HREF="#flash">FLASH</A>, <A HREF="#propsearch">PropSearch</A>, and
+<A HREF="#cafe">CAFE</A>.
+</P>
+
+<A NAME="ramdb"></A>
+<H3>7.1 RAMdb</H3>
+<P>
+Rapid Access Motif database is a system for finding short patterns in genomic
+databases.[9]  Each genomic sequence is indexed by its constituent overlapping
+intervals in a hash table structure.  For each interval, an associated list of
+sequence numbers and offsets is stored. This allows a quick lookup of any
+sequences matching a query sequence.
+</P>
+
+<P>
+RAMdb is best suited for the lookup of query sequences whose length is on the
+order the of the indexed interval length. RAMdb has been shown to result in a
+up to a 800-fold speedup in search times over comparable exhaustive approximate
+pattern matching approaches.
+</P>
+
+<H4>7.1.1 RAMdb Limitations</H4>
+<P>
+RAMdb requires a large index twice the size of the original flat-file database
+(including the textual descriptions) and suffers from lack of special-purpose
+ranking schemes designed for identifying initial match regions.  In addition,
+the non-overlapping interval means false dismissals unless the frame happens to
+coincidentally align with the start of the interval frame.
+</P>
+
+<A NAME="flash"></A>
+<H3>7.2 FLASH</H3>
+<P>
+The FLASH search tool redundantly indexes genomic data based on a probabilistic
+scheme[8].  For each interval of length n, the FLASH search structure stores,
+in a hash-table, all possible similarly-ordered contiguous and non-contiguous
+subsequences of length m that begin with the first base in the interval, where
+m &lt n. As an example, for a nucleotide sequence ACCTGATT the index terms for
+the first n = 5 bases, where m = 3, would be ACC, ACT, ACG, ACT, ACG and ATG-
+each of the permuted strings begins with the base A, the first base in the
+interval of length n = 5. The hash-table then stores each permuted m-length
+subsequence, the sequences that contain the permuted subsequences, and the
+offsets within each sequence of the permuted subsequence.  The key idea of the
+flash scheme is that the permuted scheme gives an accurate model that
+approximates a reasonable number of insertions, deletions, and substitutions in
+genomic sequences.
+<P>
+
+<P>
+The authors found that FLASH was of the order of ten times faster for a small
+test collection than BLAST and was superior in accurately and sensitively
+determining homologies in database searching.
+</P>
+
+<H4>7.2.1 FLASH Limitations</H4>
+<P>
+FLASH utilizes a redundant index, which is stored in a hash-table and is
+uncompressed, is impractically large. For a nucleotide collection of around 100
+Mb, the index requires 18 Gb on disk, around 180 times the collection size. We
+seriously doubt the 10x performance could be attained on general purpose
+hardware unless the collection was sufficiently small such that swapping the
+index in and out of memory was not an issue.
+</P>
+
+<A NAME="propsearch"></A>
+<H3>7.3 PropSearch</H3>
+<P>
+In the PROPSEARCH tool[14], the authors propose neglecting the order of amino
+acids in a sequence and representing the sequence as a vector of 144 different
+characteristics, notably residue frequency, molecular weight, average
+residue-size, average hydrophobicity, and average charge.  Characteristics such
+as hydrophobicity that are known to be stronger indicators of homology, carry
+more weight than those that are known to be lesser indicators. Query sequences
+are translated into vectors and results of a search returned as a ranked list
+of sequences in decreasing order of Euclidean distance from database sequence
+vectors.  The authors provide a tabulation of distances and estimations of
+their reliability.
+</P>
+
+<H4>7.3.1 PropSearch Limitations</H4>
+<P>
+Other studies have found [33] that experience with PROPSEARCH suggests it is
+only reliable for detecting evolutionary close similarities between highly
+homologous sequences and that subsequent alignments are required to verify
+homology.  Lack of positional information of physicochemical properties, as
+used in the exhaustive schemes, is the likely contributing factor to its poor
+retrieval effectiveness.  In addition most of the properties used by PROPSEARCH
+are not shared by the nucleotides that generate the amino acid sequences.  At
+the present there are no known set of properties which may be used to form the
+nucleotide vector.
+</P>
+
+<A NAME="cafe"></A>
+<H3>7.4 CAFE</H3>
+<P>
+CAFE is based on a partitioned search approach [33], where a coarse search using
+an inverted index is used to rank sequences by similarity to a query sequence
+and a subsequent fine search used to locally align only a subset of database
+sequences with the query. The CAFE index consists of three components: a search
+structure, which contains the index terms or distinct intervals, that is,
+fixed-length overlapping subsequences from the collection being indexed;
+inverted lists, which are a carefully compressed list of ordinal sequence
+numbers, where each list is an index of sequences containing a particular
+interval; and, a mapping table, which maps ordinal sequence numbers to the
+physical location of sequence data on disk.  Queries are evaluated by
+representing the query as a set of intervals, retrieving the list for each
+interval, and using a ranking structure to store a similarity score of each
+database sequence to the query.  Like FLASH, CAFE uses an overlapping interval.
+It uses a compression scheme to try to make the index size more manageable.
+</P>
+
+<H4>7.4.1 CAFE Limitations</H4>
+<P>
+The author notes that although it is more computationally efficient than the
+exhaustive methods, &quot;exhaustive systems generally have better retrieval
+effectiveness&quot;.
+</P>
+
+<H3>7.5 Final Thoughts on Index Based Searching</H3>
+<P>
+The motivation for indexing is to decrease the query evaluation costs through
+retrieving only a fraction of the database sequences to formulate an answer
+set.  The negative aspect of indexing is an often large uncanny index. Even so
+the problem with exhaustive search tools grows increasingly acute as the
+genomic databases increase in size. GenBank for instance is doubling in size
+every year. This is typical of genomic databases. In spite of problems with
+current indexing techniques, the need to move away from exhaustive search
+techniques will keep getting stronger. CAFE seems to be the most mature and
+developed of the indexed based techniques.
+</P>
+
+<A NAME="improvements">
+<H2>8. Possible Performance Improvements</H2>
+<P>
+Up until this point, the most successful techniques we have discussed attempt
+to improve search time by pruning the search set though attempts at smaller
+alignments and/or using a faster heuristic to approximate the optimal alignment
+of sequences.  While other less successful techniques have attempted use an
+indexing scheme to reduce the number of structures searched.  In this section
+we will discuss other techniques used to reduce the search time in other types
+of databases and examine the effects similar techniques may have on nucleotide
+databases.
+</P>
+
+<A NAME="feature"></A>
+<H3>8.1 Feature Vectors</H3>
+<P>
+Feature vectors are commonly used to compare similarity between query items and
+a search set.  The goal of a feature vector is to extract features from the
+data base objects and the query.  If the feature vectors are to be useful, the
+feature vector should be smaller than the actual object, and there should be
+a way to calculate distances between feature vectors which produces results
+similar to the distances between the actual objects.
+</P>
+
+<P>
+The only features in DNA sequences are the nucleotides that make up the
+patterns formed by the sequences.  Feature vectors consisting of counts of
+individual nucleotides or nucleotide sequences are not that useful for the
+following reasons:
+</P>
+
+<UL>
+<LI>One sequence may be a subsequence of the other.</LI>
+<LI>Order of nucleotides is important and not accounted for by feature
+vectors.</LI>
+<LI>Traditional feature vectors only count exact matches.</LI>
+</UL>
+
+<H3>8.1.1 Problems with Subsequences</H3>
+<P>
+One sequence my be a subsequence of the other, and because of that sections
+of the supersequence that are not part of the optimal alignment should not
+contribute to the feature vector.  Since it is not possible to have apriori
+knowledge of which query sequences will be used, the sections of a DNA string
+that do not contribute to the alignment cannot be kept from effecting the
+feature vector.  In many cases the contribution of features in the sections
+that are not part of an optimal alignment can cause the distance between the
+vectors to be far from the scores of the optimal alignments of the sequences.
+</P>
+
+<H3>8.1.2 Nucleotide Ordering and Exact Matches</H3>
+<P>
+The order that nucleotides appear in plays an important role in determining
+the similarity between two DNA sequences.  A feature vector based on nucleotide
+frequencies alone will not provide any ordering information.  Ordering
+information may be preserved by considering features to be k-tuples.  Since
+k-tuples in a single sequence may be overlapping, a single DNA sequence of
+size n will have n - k + 1 different k-tuples.
+</P>
+
+<P>
+Both FastA and BLAST have demonstrated that it is possible to prune list of
+sequences searched by examining nucleotide sequences of length 6 (six-tuples).
+However, they have demonstrated that it is not enough to only consider
+sequences which contain matching 6-tuples they must also consider sequences
+that contain 6-tuples that have high scoring matches with each other.
+</P>
+
+<P>
+If a 6-tuple feature vector is to be constructed, it would have 4<SUP>6</SUP>
+(or 4096) entries.  It is common to use SVD to reduce the dimensionality of
+feature vectors, that will not work for DNA.  By using SVD, there will be
+k-tuples which are not considered for alignments.  Though the k-tuples thrown
+out may not be important to distinguish database sequences from each other,
+they may be the k-tuples which optimal alignments are built from.  Unless a
+method of determining apriori which 6-tuples do not count towards queries, all
+4096 possible 6-tuples must be included in the feature vector.  Since the
+average database DNA sequences are about 1000 nucleotides long, a feature
+vector for a 6-tuple will be four times larger than its corresponding sequence.
+</P>
+
+<P>
+Aside from it's size, there are other limitations to feature vectors made from
+high scoring 6-tuples.  We will discuss these limitations in section
+<A HREF="#precomputation">8.3</A>.
+</P>
+
+<A NAME="DFT"></A>
+<H3>8.2 Frequency Domain Mapping</H3>
+<P>
+Another technique used to reduce dimensionality of sequences is to transform
+time domain sequences into the frequency domain.  A Discrete Fourier Transform
+(DFT) is used to transform a time sequence into the frequency domain.  The
+dimensionality of the transformed sequences is then reduced by throwing out
+coefficients of the resulting transform.
+<P>
+
+</P>
+A DNA sequence may be viewed as a sequence in the time domain, in which each
+nucleotide is considered to occur later in time than the nucleotide to the left
+and earlier than the nucleotide to the right.  Such a view allows a DNA
+sequence to be transformed into the frequency domain, however, since
+nucleotides may appear in any order with equal probability, the sequences
+appear as white noise in the frequency domain.  Each of the techniques which
+reduce dimensionality in the frequency domain require that there be a larger
+amount of energy in some of the frequencies than others.  One of the properties
+of white noise is that there is no substantial difference between energy over a
+range of frequencies.  Therefore, it is not possible to achieve meaningful
+reduction of dimensionality by transforming DNA sequences into the frequency
+domain.
+</P>
+
+<A NAME="precomputation"></A>
+<H3>8.3 Precomputation</H3>
+<P>
+Both FastA and BLAST use comparison of k-tuples as an initial step in the
+search process.  In section <A HREF="#feature">8.1</A> we discussed using a
+feature vector which indicates the presence or absence of high scoring
+k-tuples.  Though sizable, such a feature vector would allow both FastA and
+BLAST to quickly perform their first phase calculations.  FastA would be able
+to identify sequences containing hot spots and BLAST would be able to identify
+&quot;seeds&quot;.
+</P>
+
+<P>
+Thought precomputation offers potential for a great time savings in the initial
+phases of FastA and BLAST, there are drawbacks as well.  Precomputed feature
+vectors are large (4069 dimensions for a 6-tuple vector).  To avoid large
+feature vectors, it is possible to precomputed a lexicon of possible 6-tuples
+referencing the locations they occur in the database.  For large databases, the
+lexicon would be smaller than the feature vectors.  However either method still
+suffers from an unreasonable inflexibility.  The tuple size and the scoring
+matrix for a precomputed methods are constant, and cannot be changed at search
+time.
+</P>
+
+<A NAME="conclusion">
+<H2>9. Conclusion</H2>
+<P>
+The requirements for nearest neighbor searching of nucleotide databases make
+the problem substantially different from other common search problems.
+Searching for DNA sequences does subject itself to conventional techniques used
+to improve performance of database searching.  State of the art optimizations
+of the problem attempt to use heuristics to lessen the computation required for
+an exhaustive search.  In all cases the heuristics used sacrifice recall for
+speed.  Indexing schemes have also been attempted with limited success, they
+were either limited by the types of queries that they performed well, or the
+amount of space required by the index.
+</P>
+
+<A NAME="bibliography">
+<H2>Bibliography</H2>
+
+<P>
+[1] L. Allison, D.Powell & T.I.Dix.
+<A HREF="http://www3.oup.co.uk/computer_journal/hdb/Volume_42/Issue_01/">
+Compression and Approximate Matching</A>, The Computer Journal, Volume 42,
+Issue 1, Pages 1-10, 1999
+</P>
+
+<P>
+[2] L. Allison.
+<A HREF="http://www.csse.monash.edu.au/~lloyd/tildeStrings/Compress/1998TR98-14-align.html">
+Information-Theoretic Sequence Alignment</A>, Technical Report 98/14,
+School of Computer Science and Software Engineering, Monash University,
+Australia 3168
+</P>
+
+<P>
+[3] S. F. Altschul,  W. Gish, W. Miller, E. W. Myers, D. J. Lipman.  Basic
+Local Alignment Search Tool. National Center for Biotechnology Information,
+National Library of Medicine, National Institutes of Health, Bethesda MD,
+1990.
+</P>
+
+<P>
+[4] S. F. Altschul, T. Madden, A. Alejandro, A. Schaffer, J. Zhang, Z. Zhang,
+W. Miller, D. J. Lipman. Gapped BLAST and PSI-BLAST: a New Generation of
+Protein Database Search Programs. National Center for Biotechnology
+Information, National Library of Medicine, National Institutes of Health,
+Bethesda MD, July 1997.
+</P>
+
+<P>
+[5] Dennis A. Benson, Mark S. Boguski, David J. Lipman, James Ostell and B.F.
+Francis Ouellette. GenBank Nucleic Acids Research, Vol 26, Issue 1.
+</P>
+
+<P>
+[6] Gail Binkley.
+<A HREF="http://genome-www.stanford.edu/~gail/cshl/gish.html">
+Alignments, Algorithms and Statistics</A>.  Compiled from lectures by Warren
+Gish and William Pearson, Cold Spring Harbor Laboratory Course - Computational
+Genomics, Oct 31-Nov 5, 1996
+</P>
+
+<P>
+[7] Steven E. Brenner, Cyrus Chothia and Tim J. Hubbard. Assessing Sequence
+Comparison Methods with Reliable Structurally Identified Distant Evolutionary
+Relationships, Proc. Natl. Acad. Sci. USA  Vol. 95, pp. 6073-6078, May 1998
+Biochemistry
+</P>
+
+<P>
+[8] A. Califano and I. Rigoutsos. FLASH: A fast look-up algorithm for string
+Homology.  In International Conference on Intelligent Systems for Molecular
+Biology, pages 56-64, Bethesda, MD, 1993.
+</P>
+
+<P>
+[9] Arthur L. Delcher, Simon Kasif, Robert D. Fleischmann, Jeremy Peterson,
+Owen White, and Steven L. Salzberg. Alignment of Whole Genomes.  Nucleic Acids
+Research, Vol. 27 No. 11, pages 2369-2376, 1999.
+</P>
+
+<P>
+[9] C. Fondrat and P. Dessen.  A Rapid Access Motif Database (RAMdb) with a
+Search Algorithm for the Retrieval Patterns in Nucleic Acids or Protein
+Databanks.  Computer Applications in the Biosciences, 11(3):273-279, 1995.
+</P>
+
+<P>
+[10] B. A. Gaeta. Database Similarity Searching Using BLAST and FastA.
+Australian National Genomic Information Service, The University of Sydney,
+NSW, 1995.
+</P>
+
+<P>
+[11] W. Gish. <A HREF="http://blast.wustl.edu/doc/infotheory.html">
+Introduction to Alignment Scoring Statistics</A>. St.Louis, Missouri, last
+updated Oct 17 1999.
+</P>
+
+<P>
+[12] E. Ionides.
+<A HREF="http://www.stat.berkeley.edu/classes/s260/Week15c/week15c.html">
+Hueristic Proof of the Karlin-Altschul Theorem</A>.
+</P>
+
+<P>
+[13] C.Harger, M. Skupski, J.Bingham, A. Farmer, S. Hoisie, P. Hraber, D.
+Kiphart, L. Krakowski, M. McLeod, J. Schwertfeger, G. Seluja, A. Siepel, G.
+Singh, D. Stamper, P.Steadman, N. Thayer, R. Thompson, P. Wargo, M. Waugh,
+J.J. Zhuang and P.A. Schad. The Genome Sequence DataBase (GSDB): Improving
+Data Quality and Data Access Nucleic Acids Research, Vol 26, Issue 1.
+</P>
+
+<P>
+[14] U. Hobohm and C. Sander.  A Sequence Property Approach to Searching
+Protein Databases.  Journal of Molecular Biology, 251:390-399, 1995.
+</P>
+
+<P>
+[15] S. Karlin and S.F. Altschul. Applications and Statics for Multiple
+High-Scoring Sequence Alignemnts. Proceedings of the National Academy of
+Sciences, 90:2264-2268, 1993.
+</P>
+
+<P>
+[16] Gerhard Mehldau and Gene Myers. A System for Pattern Matching
+Applications on Biosequences CABIOS 9, 3 (1993), 299-314
+</P>
+
+<P>
+[17] Dr. David Mount and Dr. Samuel Ward.
+<A HREF="http://www.blc.arizona.edu/courses/wardbioinf/">
+MCB 416/516 BIOINFORMATICS AND
+GENOMIC ANALYSIS Class Notes</A>. Spring 1998
+</P>
+
+<P>
+[18] Pearson, W.R. and D.J. Lipman. Improved Tools for Biological
+sequence comparison, Proc. Natl.  Acad.  Sci. USA 85 (1988), 2444-2448
+</P>
+
+<P>
+[19] William R Pearson, Protein Science Vol 4 1145-1160 (1995)
+<P>
+
+<P>
+[20] Torbjorn Rognes and Erling Seeberg. SALSA: Improved Protein Database
+Searching by a New Algorithm for Assembly of Sequence Fragments into Gapped
+Alignments Bioinformatics, Vol. 14 no. 10, Pages 839-845, 1998
+</P>
+
+<P>
+[21] Andrey Rzhetsky. <A HREF="http://blast.wustl.edu/blast/dbfmts.html">
+BLAST Database Formats</A>
+</P>
+
+<P>
+[23] Ron Shamir. Pairwise Alignment Algorithms for  Molecular Biology,
+Lecture 2, 1998. Tel Aviv University
+</P>
+
+<P>
+[24] Ron Shamir. Algorithms for Molecular Biology. Lecture 3. Fall 1998. Tel
+Aviv University
+</P>
+
+<P>
+[25] Ron Shamir. Approximatin Algorithms for Multiple Sequence Alignment
+Algorithms for  Molecular Biology, Lecture 5, 1999. Tel Aviv University
+</P>
+
+<P>
+[26] Smith, T.F. and M.S. Waterman. The identification of common molecular
+subsequences. J. Mol.  Biol. 147,195-197, 1981
+</P>
+
+<P>
+[27] Jean-Stephen Varre, Jean-Paul Delahaye, and Eric Rivals. Transformation
+Distances: A Family of Dissimilarity Measures Based on Movements of Segments
+Bioinformatics, Vol. 15 no. 3, Pages 194-202, 1999
+</P>
+
+<P>
+[28] David J. States, Warren Gish, Stephen F. Altschul Improved Sensivity of
+Nucleic Acid Databas Searches Using Application-Specific Scoring Matrices.
+Methods A Companion to Methods in Enzymology Vol. 3, No. 1, August, Pages
+66-70 1991
+</P>
+
+<P>
+[29] Tatiana A. Tatusova and Thomas L. Madden. BLAST 2 Sequences, a New Tool
+for Comparing Protein and Nucleotide Sequences FEMS Microbiology Letters 174
+(1999) 247-250
+</P>
+
+<P>
+[30] U.K. Human Genome Mapping Project Resource Centre.
+<A HREF="http://www.hgmp.mrc.ac.uk/MANUAL/faq/faq-dbsearch.html">
+Seaching Sequence Databases with Sequences</A>.
+</P>
+
+<P>
+[31] U.S. Department of Energy, DOE Human Genome Program, Primer on Molecular
+Genetics. June 1992.
+</P>
+
+<P>
+[32] Thomas Werner, The Biology and Bioinformatics of Regulatory Regions in
+Genomes. Institute of Mammalian Genetics, M&uuml;nchen, Germany.
+</P>
+
+<P>
+[33] H. Williams, Indexing and Retieval for Genomic Databases. Doctoral
+Dissertation, Royal Melbourne Institute of Technology, Victoria, Australia
+</P>
+
+<P>
+[34] Felix Wu and Guy Blelloch Algorithms in the Real World Lecture #20
+(Pattern Matching 2)
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,104 @@
+Current time is  7:45:57.95p
+Enter new time: 
+ FASTA searches a protein or DNA sequence data bank
+ version 3.2t06 July 29, 1999
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+query3.txt: 100 nt
+ >gi|1786542|gb|AE000142|ECAE000142 Escherichia coli , mhpB, mhpE, adhC genes from bases 367767 to 379237 (section 32 of
+ vs  ecoli.nt library
+searching ecoli.nt library
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 2 library sequences
+  24     0     0:
+  26     0     0:
+  28     0     0:
+  30     0     1:*
+  32     0     2:*
+  34     0     6:  *
+  36     0    12:     *
+  38     1    20:=        *
+  40    31    27:=============*==
+  42   107    33:================*=====================================
+  44    50    37:==================*======
+  46    24    37:============      *
+  48    28    36:==============   *
+  50    17    33:=========       *
+  52    27    29:==============*
+  54    23    25:============*
+  56    11    21:======    *
+  58    11    17:======  *
+  60     9    14:===== *
+  62     9    11:=====*
+  64     5     9:=== *
+  66     7     7:===*
+  68     6     5:==*
+  70    11     4:=*====
+  72     8     3:=*==
+  74     3     3:=*
+  76     1     2:*
+  78     3     2:*=
+  80     2     1:*
+  82     2     1:*
+  84     0     1:*
+  86     2     1:*
+  88     0     0:
+  90     0     0:
+  92     0     0:
+  94     1     0:=
+  96     0     0:
+  98     0     0:
+ 100     0     0:
+ 102     0     0:
+ 104     0     0:
+ 106     0     0:
+ 108     0     0:
+ 110     1     0:=
+ 112     0     0:
+ 114     0     0:
+ 116     0     0:
+ 118     0     0:
+>120     0     0:
+4662239 residues in   400 sequences
+  Expectation_n fit: rho(ln(x))= 15.7724+/-  0.39; mu= -37.4239+/-36.507;
+ mean_var=4313.7115+/-2127.458, 0's: 0 Z-trim: 1  B-trim: 0 in 0/8
+ Kolmogorov-Smirnov  statistic: 0.1290 (N=24) at  44
+
+FASTA (3.26 July, 1999) function [optimized, +5/-4 matrix (5:-4)] ktup: 6
+ join: 46, opt: 31, gap-pen: -16/ -4, width:  16 reg.-scaled
+ Scan time: 10.000
+Enter filename for results []:  How many scores would you like to see? [20] The best  scores are:                             initn init1 opt z-sc E(399)
+gi|1786542|gb|AE000142|ECAE000142 Esc (11471) [f]  500  500  500  109.4    0.11
+gi|2367351|gb|AE000483|ECAE000483 Esc (10484) [f]  384  314  398   94.1    0.87
+gi|1786683|gb|AE000154|ECAE000154 Esc (11519) [r]  347  347  347   86.1     2.2
+gi|1786415|gb|AE000131|ECAE000131 Esc (9931) [r]  355  347  347   86.4     2.5
+gi|2367382|gb|AE000508|ECAE000508 Esc (15518) [r]  277  187  327   82.3     2.7
+gi|1786542|gb|AE000142|ECAE000142 Esc (11471) [r]  225  184  334   84.1     2.9
+gi|2367173|gb|AE000373|ECAE000373 Esc (12831) [r]  316  316  320   81.7     3.5
+gi|1790440|gb|AE000474|ECAE000474 Esc (14833) [r]  270  270  307   79.4       4
+gi|1786510|gb|AE000139|ECAE000139 Esc (10089) [f]  269  179  308   80.5     5.2
+gi|2367315|gb|AE000460|ECAE000460 Esc (10190) [r]  308  261  307   80.3     5.2
+gi|2367182|gb|AE000382|ECAE000382 Esc (11024) [r]  288  172  304   79.6     5.3
+gi|1786383|gb|AE000128|ECAE000128 Esc (10483) [r]  244  163  298   78.8     6.1
+gi|1787015|gb|AE000182|ECAE000182 Esc (10958) [f]  292  211  291   77.7     6.8
+gi|2367383|gb|AE000509|ECAE000509 Esc (10589) [r]  283  163  273   75.0     9.9
+gi|1789431|gb|AE000387|ECAE000387 Esc (11307) [f]  262  172  266   73.8      11
+gi|1786520|gb|AE000140|ECAE000140 Esc (12498) [r]  277  196  262   72.9      11
+gi|2367131|gb|AE000310|ECAE000310 Esc (13275) [f]  192  111  258   72.2      11
+gi|1788813|gb|AE000334|ECAE000334 Esc (10269) [r]  282  171  265   73.9      12
+gi|1787248|gb|AE000203|ECAE000203 Esc (10751) [r]  285  213  263   73.4      12
+gi|1790670|gb|AE000494|ECAE000494 Esc (11100) [r]  252  162  260   72.9      12
+ More scores? [0]  Display alignments also? (y/n) [n] 
+
+100 residues in 1 query   sequences
+4662239 residues in 400 library sequences
+ Scomplib [version 3.2t06 July 29, 1999]
+ start: Sat Dec 11 19:45:58 1999 done: Sat Dec 11 19:46:08 1999
+ Scan time: 10.000 Display time:  0.000
+
+Function used was  FASTA 
+Current time is  7:46:08.60p
+Enter new time: 
