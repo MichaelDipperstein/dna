@@ -4,8 +4,8 @@ nucleotide data sets available from GenBank.  The data sets used were,
 the E. coli data set, the yeast data set, and the homosapien chromosome
 one.  The data sets were each obtained with the November 1999 updates.
 
-For an analysis of the results, please refer to
-https://github.com/MichaelDipperstein/mltp/raw/master/docs/DNApaper.html
+For an analysis of the results, please refer to:
+https://michaeldipperstein.github.io/dna/DNApaper.html
 
 The following is a brief description of the files contained in this
 archive:
